@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<repositories version="1.0">
+ <repo quality="experimental" status="unofficial">
+  <name>mrbitt-overlay
+</name>
+  <description lang="it">Custom Gentoo Overlay from mrbitt.</description>
+  <homepage>https://github.com/mrbitt/mrbit-overlay</homepage>
+  <owner type="person">
+   <name>Giacomo Giorgianni</name>
+   <email>giacomogiorgianni@gmail.com</email>
+  </owner>
+  <source type="git">git://github.com/mrbitt/mrbit-overlay.git</source>
+  <feed>https://github.com/mrbitt/mrbit-overlay/commits/master.atom</feed>
+ </repo>
+</repositories>
