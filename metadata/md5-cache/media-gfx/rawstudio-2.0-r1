@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=dev-db/sqlite:3 dev-libs/libxml2 >=dev-libs/openssl-1:0= >=gnome-base/gconf-2 media-libs/flickcurl media-libs/lcms:0 media-libs/lensfun media-libs/libgphoto2 media-libs/libpng:0= media-libs/tiff:0= media-gfx/exiv2 net-misc/curl sci-libs/fftw:3.0 sys-apps/dbus sys-libs/zlib:= virtual/jpeg:0= x11-libs/gtk+:2 x11-libs/libX11 sys-devel/gettext virtual/pkgconfig !<sys-devel/gettext-0.18.1.1-r3 || ( >=sys-devel/automake-1.14.1:1.14 >=sys-devel/automake-1.15:1.15 ) >=sys-devel/autoconf-2.69 >=sys-devel/libtool-2.4
+DESCRIPTION=A program for reading and manipulating raw images from digital cameras
+EAPI=5
+HOMEPAGE=http://rawstudio.org/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2 CC-BY-SA-3.0
+RDEPEND=dev-db/sqlite:3 dev-libs/libxml2 >=dev-libs/openssl-1:0= >=gnome-base/gconf-2 media-libs/flickcurl media-libs/lcms:0 media-libs/lensfun media-libs/libgphoto2 media-libs/libpng:0= media-libs/tiff:0= media-gfx/exiv2 net-misc/curl sci-libs/fftw:3.0 sys-apps/dbus sys-libs/zlib:= virtual/jpeg:0= x11-libs/gtk+:2 x11-libs/libX11
+SLOT=0
+SRC_URI=http://rawstudio.org/files/release/rawstudio-2.0.tar.gz
+_eclasses_=autotools	a9597abac7226d89ad9d010abeef6cfb	eutils	9fb270e417e0e83d64ca52586c4a79de	libtool	52d0e17251d04645ffaa61bfdd858944	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=237843251d0214e4cf4570f6a8cb977c

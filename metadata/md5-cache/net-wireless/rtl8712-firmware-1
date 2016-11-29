@@ -1,0 +1,9 @@
+DEFINED_PHASES=install prepare unpack
+DESCRIPTION=Realtek r8712u/RTL8191S wireless chipset firmware
+EAPI=4
+HOMEPAGE=http://www.realtek.com.tw/
+KEYWORDS=~amd64 ~x86
+LICENSE=freedist
+SLOT=0
+SRC_URI=ftp://ftp.pku.edu.cn/Linux/kernel.org/linux-firmware/rtlwifi/rtl8712u.bin
+_md5_=ed31995ba4ff56217ff4fb4efe74b024

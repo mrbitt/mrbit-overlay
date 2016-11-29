@@ -1,0 +1,11 @@
+DEFINED_PHASES=-
+DESCRIPTION=Libtubo is a library for remote process execution capable of processing output generated on stdout and stderr and also capable of sending information to the remote process stdin.
+EAPI=4
+HOMEPAGE=http://xffm.org/libtubo
+IUSE=examples debug trace
+KEYWORDS=x86 amd64
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=mirror://sourceforge/xffm/libtubo/libtubo0-5.0.14.tar.gz
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=5768f14ea34618ed77d936bef1f3d8fc

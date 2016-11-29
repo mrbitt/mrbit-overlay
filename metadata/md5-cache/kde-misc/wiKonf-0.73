@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install prepare
+DEPEND=kde-base/kommander
+DESCRIPTION=Is a front end for utilities network for kommander
+EAPI=5
+HOMEPAGE=http://opendesktop.org/content/show.php/wiKonf?content=88826
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+RDEPEND=kde-base/kommander
+SLOT=0
+SRC_URI=http://www.sya54m.eu/getfile.php?nome=file//wiKonf-0.73.tar.bz2
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=995a507340f68f293b4ffb00776cdfd4

@@ -1,0 +1,22 @@
+--- gb.desktop/src/gb.desktop/_DesktopScreenSaver.class.orig	2010-11-24 00:42:32.000000000 +0300
++++ gb.desktop/src/gb.desktop/_DesktopScreenSaver.class	2011-03-03 10:25:47.882900477 +0300
+@@ -5,15 +5,15 @@
+ 
+ STATIC PROPERTY READ Enabled AS Boolean
+ 
+-STATIC PUBLIC SUB Suspend(Window AS Window)
++STATIC PUBLIC SUB Suspend()
+   
+-  Main.RunXdgUtil("xdg-screensaver", ["suspend", CStr(Window.Id)])
++  'Main.RunXdgUtil("xdg-screensaver", ["suspend", CStr(Window.Id)])
+   
+ END
+ 
+-STATIC PUBLIC SUB Resume(Window AS Window)
++STATIC PUBLIC SUB Resume()
+   
+-  Main.RunXdgUtil("xdg-screensaver", ["resume", CStr(Window.Id)])
++  'Main.RunXdgUtil("xdg-screensaver", ["resume", CStr(Window.Id)])
+   
+ END
+ 

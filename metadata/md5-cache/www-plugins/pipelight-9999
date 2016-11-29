@@ -1,0 +1,11 @@
+DEFINED_PHASES=configure prepare unpack
+DEPEND=x11-libs/libX11 dev-vcs/git
+DESCRIPTION=Run Silverlight applications directly in the browser using Wine
+EAPI=5
+HOMEPAGE=https://launchpad.net/pipelight
+KEYWORDS=-* ~amd64
+LICENSE=MPL-1.1 GPL-2 LGPL-2.1
+RDEPEND=x11-libs/libX11 ~app-emulation/wine-1.7.0[abi_x86_32]
+SLOT=0
+_eclasses_=git-2	e28f0d8a9b321431b1e699782851b827	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=a371c9a1034083bd27d87c83e504d03e

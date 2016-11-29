@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=VeraCrypt
+GenericName=VeraCrypt
+Comment=VeraCrypt is a free disk encryption software that is based on TrueCrypt.
+Encoding=UTF-8
+Exec=/usr/bin/veracrypt
+Icon=/usr/share/pixmaps/veracrypt.png
+Type=Application
+Categories=Utility;
+Version=1.0

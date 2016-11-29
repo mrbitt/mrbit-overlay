@@ -1,0 +1,3 @@
+creepy/* /usr/share/creepy/
+debian/creepy.xpm usr/share/pixmaps/
+debian/creepy.desktop usr/share/applications

@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure
+DEPEND=gtk3? ( x11-libs/gtk+:3 ) !gtk3? ( x11-libs/gtk+:2 ) dev-libs/glib:2 dev-util/pkgconfig sys-devel/gettext dev-util/intltool app-arch/xz-utils
+DESCRIPTION=Display graphical dialogs from shell scripts or command line (a Zenity-fork)
+EAPI=4
+HOMEPAGE=http://code.google.com/p/yad/
+IUSE=gtk3 icon-browser
+KEYWORDS=~amd64
+LICENSE=GPL-3
+RDEPEND=gtk3? ( x11-libs/gtk+:3 ) !gtk3? ( x11-libs/gtk+:2 ) dev-libs/glib:2
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/yad-dialog/yad-0.28.0.tar.xz
+_md5_=a980ae27c7654b2df83ab0b9821bb50b

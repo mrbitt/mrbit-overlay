@@ -1,0 +1,12 @@
+--- source/blender/makesdna/DNA_object_types.h
++++ source/blender/makesdna/DNA_object_types.h
+@@ -598,7 +598,7 @@
+ /* any mode where the brush system is used */
+ #define OB_MODE_ALL_PAINT (OB_MODE_SCULPT|OB_MODE_VERTEX_PAINT|OB_MODE_WEIGHT_PAINT|OB_MODE_TEXTURE_PAINT)
+ 
+-#define MAX_DUPLI_RECUR 8
++#define MAX_DUPLI_RECUR 16
+ 
+ #ifdef __cplusplus
+ }
+

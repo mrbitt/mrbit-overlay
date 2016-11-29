@@ -1,0 +1,366 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>[gentoo-x86] Log of /media-gfx/rawstudio/metadata.xml</title>
+<meta name="generator" content="ViewVC 1.1.20" />
+<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/static/styles.css" type="text/css" />
+
+</head>
+<body>
+<div class="vc_navheader">
+<table><tr>
+<td><strong><a href="/cgi-bin/viewvc.cgi?hideattic=0"><span class="pathdiv">/</span></a><a href="/cgi-bin/viewvc.cgi/gentoo-x86/?hideattic=0">[gentoo-x86]</a><span class="pathdiv">/</span><a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/?hideattic=0">media-gfx</a><span class="pathdiv">/</span><a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/?hideattic=0">rawstudio</a><span class="pathdiv">/</span>metadata.xml</strong></td>
+<td style="text-align: right;">
+</td>
+</tr></table>
+</form>
+</div>
+<div style="float: right; padding: 5px;"><a href="http://www.gentoo.org/" title="Gentoo Linux"><img src="/static/images/gentoo-new.gif" alt="Gentoo" width="182" height="59" /></a></div>
+<h1>Log of /media-gfx/rawstudio/metadata.xml</h1>
+
+<p style="margin:0;">
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/?hideattic=0"><img src="/static/images/back_small.png" class="vc_icon" alt="Parent Directory" /> Parent Directory</a>
+
+| <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?hideattic=0&amp;view=log"><img src="/static/images/log.png" class="vc_icon" alt="Revision Log" /> Revision Log</a>
+
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?hideattic=0&amp;view=markup">view</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml">download</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?content-type=text%2Fplain">as text</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=annotate&amp;hideattic=0">annotate</a>)
+</td>
+</tr>
+
+
+
+</table>
+ 
+
+
+
+
+
+
+
+<div>
+<hr />
+
+Revision <strong>1.3</strong>
+
+
+<br />
+
+<em>Tue Feb  3 14:31:25 2015 UTC</em>
+(7 days, 19 hours ago)
+by <em>pacho</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;pathrev=HEAD"><strong>HEAD</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.2: +0 -0 lines</strong>
+
+
+
+
+
+
+<br /><strong><em>FILE REMOVED</em></strong>
+
+<pre class="vc_log">Remove masked for removal package
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.2"></a>
+
+
+Revision <strong>1.2</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?hideattic=0&amp;revision=1.2&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?revision=1.2">download</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?revision=1.2&amp;content-type=text%2Fplain">as text</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?annotate=1.2&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;r1=1.2">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Jul 26 00:09:31 2008 UTC</em>
+(6 years, 6 months ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.1: +1 -5 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?hideattic=0&amp;r1=1.1&amp;r2=1.2">previous 1.1</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">reassign to herd
+(Portage version: 2.2_rc1/cvs/Linux 2.6.26-rc3 x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.1"></a>
+
+
+Revision <strong>1.1</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?hideattic=0&amp;revision=1.1&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?revision=1.1">download</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?revision=1.1&amp;content-type=text%2Fplain">as text</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?annotate=1.1&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;r1=1.1">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Jan 21 19:09:20 2008 UTC</em>
+(7 years ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Initial commit.
+(Portage version: 2.1.4)
+
+</pre>
+</div>
+
+ 
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+select a symbolic revision name using the selection box, or choose
+'Use Text Field' and enter a numeric revision.
+
+</p>
+<form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml" id="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="hideattic" value="0"/><input type="hidden" name="view" value="diff"/>
+Diffs between
+
+<select name="r1">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.3:MAIN">MAIN</option>
+
+<option value="1.3:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr1"
+value="1.3"
+onchange="document.getElementById('diff_select').r1.selectedIndex=0" />
+
+and
+
+<select name="r2">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.3:MAIN">MAIN</option>
+
+<option value="1.3:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr2"
+value="1.1"
+onchange="document.getElementById('diff_select').r2.selectedIndex=0" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="f" >Full Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+
+<form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml">
+<div>
+<hr />
+<a name="logsort"></a>
+<input type="hidden" name="hideattic" value="0"/><input type="hidden" name="view" value="log"/>
+Sort log by:
+<select name="logsort" onchange="submit()">
+<option value="cvs" >Not sorted</option>
+<option value="date" selected="selected">Commit date</option>
+<option value="rev" >Revision</option>
+</select>
+<input type="submit" value=" Sort " />
+</div>
+</form>
+
+<br>
+<tr>
+<td>Sticky Tag:</td>
+<td><form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/metadata.xml" style="display: inline">
+<div style="display: inline">
+<input type="hidden" name="view" value="log"/><input type="hidden" name="hideattic" value="0"/>
+
+
+<select name="pathrev" onchange="submit()">
+<option value=""></option>
+
+<optgroup label="Branches">
+
+
+<option>MAIN</option>
+
+
+</optgroup>
+
+<optgroup label="Non-branch tags">
+
+
+<option>HEAD</option>
+
+
+</optgroup>
+
+</select>
+
+<input type="submit" value="Set" />
+</div>
+</form>
+
+</td>
+</tr>
+
+<hr />
+<table>
+<tr>
+<td>&nbsp;</td>
+<td style="text-align: right;"><strong><a href="/static/help_log.html">ViewVC Help</a></strong></td>
+</tr>
+<tr>
+<td>Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.1.20</a></td>
+<td style="text-align: right;">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+

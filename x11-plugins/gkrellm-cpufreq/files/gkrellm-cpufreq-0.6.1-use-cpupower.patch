@@ -1,0 +1,50 @@
+--- a/cpufreq.c
++++ b/cpufreq.c
+@@ -125,13 +125,13 @@ static void next_governor(unsigned int c
+ 
+ static void governor_userspace(unsigned int cpu) {
+   char cmd[length];
+-  sprintf(cmd, "sudo cpufreq-set -c %u -g userspace", cpu);
++  sprintf(cmd, "sudo cpupower -c %u frequency-set -g userspace", cpu);
+   system(cmd);
+ }
+ 
+ static void set_frequency(unsigned int cpu, unsigned long freq) {
+   char cmd[length];
+-  sprintf(cmd, "sudo cpufreq-set -c %u -f %lu", cpu, freq );
++  sprintf(cmd, "sudo cpupower -c %u frequency-set -f %lu", cpu, freq );
+   system(cmd);
+ }
+ 
+--- a/cpufreqnextgovernor
++++ b/cpufreqnextgovernor
+@@ -3,10 +3,10 @@
+ cpu="$1"
+ 
+ # determine actual governor
+-actual_gov=`cpufreq-info -c $cpu -p | sed 's/.*\ //'`
++actual_gov=`cpupower -c $cpu frequency-info -p | tail -1 | sed 's/.*\ //'`
+ 
+ # determine available governors
+-avail_gov=`cpufreq-info -c $cpu -g`
++avail_gov=`cpupower -c $cpu frequency-info -g | tail -1`
+ 
+ avail_gov1=`echo $avail_gov | sed "s/.*$actual_gov//"`
+ avail_gov2=`echo $avail_gov | sed "s/$actual_gov.*//"`
+@@ -14,4 +14,4 @@ avail_gov=`echo "$avail_gov1 $avail_gov2
+ 
+ next_gov=`echo $avail_gov | sed "s/\ .*//"`
+ 
+-cpufreq-set -c $cpu -g $next_gov
++cpupower -c $cpu frequency-set -g $next_gov
+--- a/Makefile
++++ b/Makefile
+@@ -6,7 +6,7 @@ GTK_LIB = `pkg-config gtk+-2.0 --libs`
+ FLAGS = -O2 -Wall -fPIC $(GTK_INCLUDE)
+ LIBS = $(GTK_LIB)
+ 
+-LFLAGS = -shared -lcpufreq
++LFLAGS = -shared -lcpupower
+ 
+ CC = gcc $(CFLAGS) $(FLAGS)
+ 

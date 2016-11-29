@@ -1,0 +1,12 @@
+DEFINED_PHASES=configure install
+DEPEND=dev-dotnet/notify-sharp dev-dotnet/ndesk-dbus dev-dotnet/ndesk-dbus-glib
+DESCRIPTION=Interfaz grafica para Logmein Hamachi
+EAPI=4
+HOMEPAGE=http://haguichi.net
+KEYWORDS=~x86 ~amd64
+LICENSE=LGPL-2
+RDEPEND=dev-dotnet/notify-sharp dev-dotnet/ndesk-dbus dev-dotnet/ndesk-dbus-glib
+SLOT=0
+SRC_URI=https://launchpad.net/haguichi/1.0/1.0.22/+download/haguichi-1.0.22-clr4.0.tar.gz
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=48e01f9999e8f35e08546a1cd7ffeccb

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm prepare setup
+DEPEND=>=dev-python/pykickstart-1.99.22 >=sys-apps/util-linux-2.15.1 >=sys-block/parted-1.8.1 sys-fs/cryptsetup >=dev-python/python-cryptsetup-0.1.1 sys-fs/mdadm sys-fs/dosfstools >=sys-fs/e2fsprogs-1.41.0 sys-fs/btrfs-progs >=dev-python/pyblock-0.45 sys-fs/multipath-tools sys-process/lsof selinux? ( sys-libs/libselinux ) dev-lang/python
+DESCRIPTION=python module for examining and modifying storage configuration.
+EAPI=5
+HOMEPAGE=https://fedoraproject.org/wiki/Blivet
+IUSE=selinux
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-python/pykickstart-1.99.22 >=sys-apps/util-linux-2.15.1 >=sys-block/parted-1.8.1 sys-fs/cryptsetup >=dev-python/python-cryptsetup-0.1.1 sys-fs/mdadm sys-fs/dosfstools >=sys-fs/e2fsprogs-1.41.0 sys-fs/btrfs-progs >=dev-python/pyblock-0.45 sys-fs/multipath-tools sys-process/lsof selinux? ( sys-libs/libselinux ) dev-lang/python
+SLOT=0
+SRC_URI=https://github.com/Sabayon/blivet/archive/blivet-0.23.9-1.tar.gz
+_eclasses_=distutils	92e738ea29389cb3f34778d7a349ac71	eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=b764f9e2cbd998de291f3daa261c1213

@@ -1,0 +1,37 @@
+diff -crB partclone-0.2.89/src/reiserfsclone.c partclone-0.2.89_new/src/reiserfsclone.c
+*** partclone-0.2.89/src/reiserfsclone.c	2016-06-23 06:14:56.000000000 +0200
+--- partclone-0.2.89_new/src/reiserfsclone.c	2016-09-06 19:43:51.438654978 +0200
+***************
+*** 39,45 ****
+  /// open device
+  static void fs_open(char* device){
+  
+!     if (!(dal = (dal_t*)file_dal_open(device, DEFAULT_BLOCK_SIZE, O_RDONLY))) {
+          log_mesg(0, 1, 1, fs_opt.debug, "%s: Couldn't create device abstraction for %s.\n", __FILE__, device);
+      }
+  
+--- 39,45 ----
+  /// open device
+  static void fs_open(char* device){
+  
+!     if (!(dal = (dal_t*)file_open(device, DEFAULT_BLOCK_SIZE, O_RDONLY))) {
+          log_mesg(0, 1, 1, fs_opt.debug, "%s: Couldn't create device abstraction for %s.\n", __FILE__, device);
+      }
+  
+***************
+*** 60,66 ****
+  static void fs_close(){
+  
+      reiserfs_fs_close(fs);
+!     file_dal_close(dal);
+  
+  }
+  
+--- 60,66 ----
+  static void fs_close(){
+  
+      reiserfs_fs_close(fs);
+!     file_close(dal);
+  
+  }
+  

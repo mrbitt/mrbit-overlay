@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install prepare test
+DEPEND=x11-libs/librfm5
+DESCRIPTION=A fast, small and powerful file manager and graphical shell
+EAPI=5
+HOMEPAGE=http://rodent.xffm.org/
+IUSE=bcrypt nfs sshfs bluetooth ftp ecryptfs cifs
+KEYWORDS=amd64 x86
+LICENSE=GPL-3
+RDEPEND=x11-libs/librfm5 sshfs? ( sys-fs/sshfs-fuse ) nfs? ( net-fs/nfs-utils ) ecryptfs? ( sys-fs/ecryptfs-utils ) bluetooth? ( sys-fs/obexfs net-wireless/bluez ) cifs? ( net-fs/samba ) bcrypt? ( app-crypt/bcrypt )
+SLOT=0
+SRC_URI=mirror://sourceforge/xffm/rodent/rodent-5.3.12.tar.bz2
+_eclasses_=autotools	a9597abac7226d89ad9d010abeef6cfb	autotools-utils	3727db64c7b960903d5033280f108080	eutils	9fb270e417e0e83d64ca52586c4a79de	libtool	52d0e17251d04645ffaa61bfdd858944	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=ef2dcd11121efa8fd015d1a1e1d51738

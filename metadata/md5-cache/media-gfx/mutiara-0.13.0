@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile configure install postinst postrm preinst prepare unpack
+DEPEND=dev-util/intltool app-text/gnome-doc-utils x11-libs/gtk+:3 >=x11-libs/cairo-1.14 app-arch/xz-utils >=sys-apps/sed-4 app-arch/xz-utils >=sys-apps/sed-4
+DESCRIPTION=Design motifs the fun way
+EAPI=5
+HOMEPAGE=http://mutiara.sourceforge.net/
+IUSE=debug debug
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=dev-util/intltool app-text/gnome-doc-utils x11-libs/gtk+:3 >=x11-libs/cairo-1.14
+SLOT=0
+SRC_URI=http://dfn.dl.sourceforge.net/project/mutiara/mutiara-0.13.0.tar.bz2
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	fdo-mime	0acfe1a88fd8751a1d5dc671168219fa	flag-o-matic	c9602887773166fe300444712fc7ff98	gnome.org	8fef8f967214f56e08fa92d61163d891	gnome2	10c513def52488230abb60a4b19a03b9	gnome2-utils	5cdfd22a2163c9d3a891648bd19453a7	libtool	52d0e17251d04645ffaa61bfdd858944	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=872c407d2758f55967f3df9bd9b65b6b

@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=app-arch/dpkg >=dev-python/setuptools-0.6_rc1 test? ( || ( ( >=dev-python/pysqlite-2.0.3 <dev-lang/python-2.5 ) >=dev-lang/python-2.5 ) )
+DESCRIPTION=Italian ERP Software
+EAPI=4
+HOMEPAGE=http://promogest.promotux.it
+IUSE=sqlite postgres mysql examples test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+RDEPEND=app-arch/dpkg >=dev-python/setuptools-0.6_rc1 test? ( || ( ( >=dev-python/pysqlite-2.0.3 <dev-lang/python-2.5 ) >=dev-lang/python-2.5 ) ) sqlite? ( || ( ( >=dev-python/pysqlite-2.0.3 <dev-lang/python-2.5 ) >=dev-lang/python-2.5 ) ) postgres? ( >=dev-python/psycopg-1.99 ) mysql? ( dev-python/mysql-python ) dev-python/reportlab dev-python/elementtree dev-python/celementtree app-text/scrollkeeper dev-python/html5lib dev-python/pywebkitgtk
+SLOT=0
+SRC_URI=http://www.promogest.me/templates/promoGest/ex_ftp/promogest_2.9.3-0_all.deb
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	unpacker	f300a7ca9131b1024a79762e8edd3c52
+_md5_=e7e5bacf7ee61ba781d6531cfa5abae3

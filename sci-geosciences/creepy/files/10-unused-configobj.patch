@@ -1,0 +1,31 @@
+Description: Remove unused imports of configobj
+ Avoid importing configobj where it isn't needed.
+Author: Petter Reinholdtsen <pere@hungry.com>
+Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
+Last-Update: 2016-01-09
+Forwarded: https://github.com/jkakavas/creepy/pull/26
+
+Index: creepy-git/creepy/plugins/instagram/instagram.py
+===================================================================
+--- creepy-git.orig/creepy/plugins/instagram/instagram.py	2016-01-09 10:43:41.238674034 +0100
++++ creepy-git/creepy/plugins/instagram/instagram.py	2016-01-09 10:44:19.678954462 +0100
+@@ -4,7 +4,6 @@
+ import logging
+ import urllib
+ from urlparse import urlparse, parse_qs
+-from configobj import ConfigObj
+ 
+ import pytz
+ from PyQt4.QtGui import QLabel, QLineEdit, QWizard, QWizardPage, QVBoxLayout, QMessageBox, QTextEdit, QPushButton
+Index: creepy-git/creepy/plugins/twitter/twitter.py
+===================================================================
+--- creepy-git.orig/creepy/plugins/twitter/twitter.py	2016-01-09 10:43:41.238674034 +0100
++++ creepy-git/creepy/plugins/twitter/twitter.py	2016-01-09 10:44:22.810977306 +0100
+@@ -11,7 +11,6 @@
+ from PyQt4.QtCore import QUrl, QString
+ from PyQt4.QtWebKit import QWebView
+ from tweepy import Cursor
+-from configobj import ConfigObj
+ from datetime import datetime
+ from dominate.tags import *
+ from collections import Counter

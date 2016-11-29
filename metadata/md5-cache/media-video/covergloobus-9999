@@ -1,0 +1,10 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup unpack
+DEPEND=dev-vcs/bzr dev-python/pygtk dev-python/pyxdg dev-python/dbus-python dev-lang/python >=dev-vcs/bzr-2.0.1
+DESCRIPTION=Qt4 cross-platform download manager
+EAPI=5
+HOMEPAGE=https://launchpad.net/~gloobus-dev/
+LICENSE=GPL-3
+RDEPEND=dev-vcs/bzr dev-python/pygtk dev-python/pyxdg dev-python/dbus-python dev-lang/python
+SLOT=0
+_eclasses_=bzr	87fd9041fcbe23dbc8f0e65ce0df6c28	distutils	92e738ea29389cb3f34778d7a349ac71	eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=aa49bf1178ce3aa684a51acbfe8f6ff8

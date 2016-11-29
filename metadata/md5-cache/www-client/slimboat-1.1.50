@@ -1,0 +1,13 @@
+DEFINED_PHASES=install unpack
+DEPEND=app-arch/dpkg
+DESCRIPTION=Fast,free secure and powerful web browser based on QtWebkit.
+EAPI=4
+HOMEPAGE=http://www.slimboat.com/en/dlpage.php
+KEYWORDS=~amd64 ~i686
+LICENSE=Freeware
+RDEPEND=sys-libs/libstdc++-v3 >=dev-libs/openssl-0.9 >=sys-libs/zlib-1.1.4 media-libs/libjpeg-turbo >=media-libs/gstreamer-0.10 media-libs/libpng
+RESTRICT=strip
+SLOT=0
+SRC_URI=amd64? ( http://www.slimbeacon.com/slimboat/release/slimboat_amd64.deb ) x86? ( http://www.slimbeacon.com/slimboat/release/slimboat_i386.deb )
+_eclasses_=multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	unpacker	f300a7ca9131b1024a79762e8edd3c52
+_md5_=b84e877f042940e167d2c11738346f20

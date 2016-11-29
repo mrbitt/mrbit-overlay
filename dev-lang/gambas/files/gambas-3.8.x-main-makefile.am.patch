@@ -1,0 +1,17 @@
+--- /main/Makefile.am.orig	2015-10-04 16:04:28.000000000 +0200
++++ /main/Makefile.am	2015-10-24 12:49:16.659910602 +0200
+@@ -28,14 +28,6 @@
+ 	@echo "Making runtime symbolic link"
+ 	@$(LN_S) -f gbx$(GAMBAS_VERSION) $(DESTDIR)$(bindir)/gbr$(GAMBAS_VERSION) || true
+ 	
+-	@if test x"$(XDG_UTILS)" != x; then \
+-		echo "Registering Gambas executable mimetype"; \
+-		$(INSTALL) -d $(DESTDIR)$(gbdatadir)/icons; \
+-		cp -f $(srcdir)/mime/application-x-gambas3.png $(DESTDIR)$(gbdatadir)/icons; \
+-		xdg-icon-resource install --context mimetypes --size 256 $(DESTDIR)$(gbdatadir)/icons/application-x-gambas3.png application-x-gambas3; \
+-		xdg-mime install $(srcdir)/mime/application-x-gambas3.xml; \
+-	fi
+-
+ 	@echo "Creating the information files for gb component..."
+ 	@$(INSTALL) -d $(DESTDIR)$(gbdatadir)/info
+ 	@$(DESTDIR)$(bindir)/gbi$(GAMBAS_VERSION) -r $(DESTDIR)$(prefix) gb

@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm prepare setup
+DEPEND=dev-lang/python test? ( !prefix? ( x11-base/xorg-server[xvfb] ) x11-apps/xhost )
+DESCRIPTION=A GTK frontend for VDE and QEMU/KVM
+EAPI=4
+HOMEPAGE=http://virtualbricks.eu/
+IUSE=vde test
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=dev-python/twisted-conch dev-python/pygraphviz vde? ( >=net-misc/vde-2.3.2[python] ) dev-lang/python
+SLOT=0
+SRC_URI=https://launchpad.net/virtualbrick/1.x/1.0.1/+download/virtualbricks-1.0.1.tar.gz
+_eclasses_=distutils	92e738ea29389cb3f34778d7a349ac71	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	toolchain-funcs	42408102d713fbad60ca21349865edb4	virtualx	73cfc129b4b9ba23aed1abb10c825d86
+_md5_=f2f3d3a57b4ed06da120fac088d4b99b

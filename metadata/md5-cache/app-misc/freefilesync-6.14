@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=app-arch/unzip >=sys-devel/gcc-4.7 x11-libs/wxGTK:2.9[X] >=dev-libs/zenxml-2.1
+DESCRIPTION=FreeFileSync is a folder comparison and synchronization tool
+EAPI=4
+HOMEPAGE=http://sf.net/projects/freefilesync
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=x11-libs/wxGTK-2.9.5[X] >=net-libs/webkit-gtk-2.4.8 dev-libs/boost
+SLOT=0
+SRC_URI=http://downloads.sourceforge.net/project/freefilesync/FreeFileSync/6.14/FreeFileSync_6.14_Source.zip
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	wxwidgets	6d6eec2685256d35511e7b6d5461bec9
+_md5_=c57b656eb3776db2450a1e8b1c9bf841

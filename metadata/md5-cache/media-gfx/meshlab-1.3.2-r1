@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare unpack
+DEPEND=media-libs/glew sys-libs/libunwind sci-libs/levmar =media-libs/lib3ds-1* dev-cpp/muParser media-libs/qhull media-libs/openctm dev-qt/qtcore dev-qt/qtopengl dev-cpp/eigen:3
+DESCRIPTION=A mesh processing system
+EAPI=5
+HOMEPAGE=http://meshlab.sourceforge.net/
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=media-libs/glew sys-libs/libunwind sci-libs/levmar =media-libs/lib3ds-1* dev-cpp/muParser media-libs/qhull media-libs/openctm dev-qt/qtcore dev-qt/qtopengl dev-cpp/eigen:3
+SLOT=0
+SRC_URI=mirror://sourceforge/project/meshlab/meshlab/MeshLab%20v1.3.2/MeshLabSrc_AllInc_v132.tgz
+_eclasses_=base	87f7447ccfc06fd0729ff4684e11e0d6	eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	qmake-utils	1c0e4f885b876595f09a9bb6c78a687d	qt4-r2	7199e3db5b5908325487d379c6f67cf0	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=437648d27737a84bed63d05ebd9693c6

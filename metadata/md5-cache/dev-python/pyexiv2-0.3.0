@@ -1,0 +1,13 @@
+DEFINED_PHASES=compile install postinst postrm
+DEPEND=>=dev-util/scons-0.97 doc? ( dev-python/sphinx ) >=dev-libs/boost-1.38 >=media-gfx/exiv2-0.19 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+DESCRIPTION=A Python binding to exiv2 for manipulation of EXIF and IPTC image metadata
+EAPI=2
+HOMEPAGE=http://tilloy.net/dev/pyexiv2/
+IUSE=doc examples
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-2
+RDEPEND=>=dev-libs/boost-1.38 >=media-gfx/exiv2-0.19 || ( =dev-lang/python-2.7* =dev-lang/python-2.6* =dev-lang/python-2.5* )
+SLOT=0
+SRC_URI=http://launchpad.net/pyexiv2/0.3.x/0.3/+download/pyexiv2-0.3.0.tar.bz2
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=e11c710b4dc054eea02d0e7a2e3a5f14

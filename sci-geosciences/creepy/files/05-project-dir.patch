@@ -1,0 +1,162 @@
+Description: Store project data in a consistent place
+ Creepy is currently designed to save its project and temporary data
+ in the current directory. This is a different place depending on the
+ current directory when Creepy is started.
+ .
+ As the user currently has no choice, this patch forces Creepy to always
+ use the ~/.creepy directory rather than whatever happens to be the
+ current working directory.
+Author: Ross Gammon <rossgammon@mail.dk>, Petter Reinholdtsen <pere@hungry.com>
+Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
+Last-Update: 2016-01-04
+Forwarded: https://github.com/jkakavas/creepy/pull/24
+Applied-Upstream: https://github.com/jkakavas/creepy/commit/b21e7d33d2d8762212eb615c47c425cc33f02271
+
+Index: creepy-git/creepy/CreepyMain.py
+===================================================================
+--- creepy-git.orig/creepy/CreepyMain.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/CreepyMain.py	2016-01-05 21:33:01.168735366 +0100
+@@ -133,10 +133,8 @@
+         self.ui = Ui_CreepyMainWindow()
+         self.ui.setupUi(self)
+         # Create folders for projects and temp if they do not exist
+-        if not os.path.exists(os.path.join(os.getcwd(), 'projects')):
+-            os.makedirs(os.path.join(os.getcwd(), 'projects'))
+-        if not os.path.exists(os.path.join(os.getcwd(), 'temp')):
+-            os.makedirs(os.path.join(os.getcwd(), 'temp'))
++        GeneralUtilities.getProjectsDir()
++        GeneralUtilities.getTempDir()
+         self.projectsList = []
+         self.currentProject = None
+         self.ui.mapWebPage = QWebPage()
+@@ -849,7 +847,7 @@
+         Loads all the existing projects from the storage to be shown in the UI
+         """
+         # Show the existing Projects 
+-        projectsDir = os.path.join(os.getcwd(), 'projects')
++        projectsDir = GeneralUtilities.getProjectsDir()
+         projectFileNames = [os.path.join(projectsDir, f) for f in os.listdir(projectsDir) if
+                             (os.path.isfile(os.path.join(projectsDir, f)) and f.endswith('.db'))]
+         self.projectNames = [n.replace('.db', '').replace(str(projectsDir) + '/', '') for n in projectFileNames]
+Index: creepy-git/creepy/models/ProjectWizardPossibleTargetsTable.py
+===================================================================
+--- creepy-git.orig/creepy/models/ProjectWizardPossibleTargetsTable.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/models/ProjectWizardPossibleTargetsTable.py	2016-01-05 21:33:01.168735366 +0100
+@@ -3,6 +3,7 @@
+ from PyQt4.QtCore import QVariant, QAbstractTableModel, Qt
+ from PyQt4.Qt import QPixmap, QIcon, QMimeData, QByteArray, QDataStream, QIODevice
+ import os
++from utilities import GeneralUtilities
+ class ProjectWizardPossibleTargetsTable(QAbstractTableModel):
+     def __init__(self, targets, parents=None):
+         super(ProjectWizardPossibleTargetsTable, self).__init__()
+@@ -41,7 +42,8 @@
+             column = index.column()
+             if role == Qt.DecorationRole:
+                 if column == 1:
+-                    picturePath = os.path.join(os.getcwdu(), 'temp', target['targetPicture'])
++                    picturePath = os.path.join(GeneralUtilities.getTempDir(),
++                                               target['targetPicture'])
+                     if picturePath and os.path.exists(picturePath):
+                         pixmap = QPixmap(picturePath)
+                         return QIcon(pixmap.scaled(30, 30, Qt.IgnoreAspectRatio, Qt.FastTransformation))
+Index: creepy-git/creepy/plugins/twitter/twitter.py
+===================================================================
+--- creepy-git.orig/creepy/plugins/twitter/twitter.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/plugins/twitter/twitter.py	2016-01-05 21:33:01.168735366 +0100
+@@ -70,7 +70,7 @@
+                     target['targetFullname'] = i.name
+                     # save the pic in the temp folder to show it later
+                     filename = 'profile_pic_%s' % i.id_str
+-                    temp_file = os.path.join(os.getcwd(), "temp", filename)
++                    temp_file = os.path.join(GeneralUtilities.getTempDir(), filename)
+                     # Retieve and save the profile phot only if it does not exist
+                     if not os.path.exists(temp_file):
+                         urllib.urlretrieve(i.profile_image_url, temp_file)
+Index: creepy-git/creepy/models/Project.py
+===================================================================
+--- creepy-git.orig/creepy/models/Project.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/models/Project.py	2016-01-05 21:33:01.168735366 +0100
+@@ -39,7 +39,7 @@
+         """
+         projectName = projectNodeObject.name().encode('utf-8') + '.db'
+ 
+-        storedProject = shelve.open(os.path.join(os.getcwd(), 'projects', projectName))
++        storedProject = shelve.open(os.path.join(GeneralUtilities.getProjectsDir(), projectName))
+         try:
+             storedProject['project'] = projectNodeObject
+         except Exception, err:
+@@ -51,7 +51,7 @@
+     def deleteProject(self, projectName):
+         # projectName comes as a Unicode, so we need to encode it to a string for shelve to find it
+         try:
+-            os.remove(os.path.join(os.getcwd(), 'projects', projectName.encode('utf-8')))
++            os.remove(os.path.join(GeneralUtilities.getProjectsDir(), projectName.encode('utf-8')))
+         except Exception, err:
+             logger.error('Error deleting the project')
+             logger.exception(err)
+Index: creepy-git/creepy/plugins/googleplus/googleplus.py
+===================================================================
+--- creepy-git.orig/creepy/plugins/googleplus/googleplus.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/plugins/googleplus/googleplus.py	2016-01-05 21:33:01.168735366 +0100
+@@ -66,7 +66,7 @@
+                               'targetFullname': person['displayName']}
+                     #save the pic in the temp folder to show it later
+                     filename = 'profile_pic_%s' % person['id']
+-                    temp_file = os.path.join(os.getcwd(), 'temp', filename)
++                    temp_file = os.path.join(GeneralUtilities.getTempDir(), filename)
+                     #Retieve and save the profile photo only if it does not exist
+                     if not os.path.exists(temp_file):
+                         urllib.urlretrieve(person['image']['url'], temp_file)
+Index: creepy-git/creepy/plugins/instagram/instagram.py
+===================================================================
+--- creepy-git.orig/creepy/plugins/instagram/instagram.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/plugins/instagram/instagram.py	2016-01-05 21:33:01.168735366 +0100
+@@ -73,7 +73,7 @@
+                 target['targetFullname'] = i.full_name
+                 # save the pic in the temp folder to show it later
+                 filename = 'profile_pic_%s' % i.id
+-                temp_file = os.path.join(os.getcwdu(), "temp", filename)
++                temp_file = os.path.join(GeneralUtilities.getTempDir(), filename)
+                 if not os.path.exists(temp_file):
+                     urllib.urlretrieve(i.profile_picture, temp_file)
+                 possibleTargets.append(target)
+Index: creepy-git/creepy/utilities/GeneralUtilities.py
+===================================================================
+--- creepy-git.orig/creepy/utilities/GeneralUtilities.py	2016-01-05 21:33:01.172735396 +0100
++++ creepy-git/creepy/utilities/GeneralUtilities.py	2016-01-05 21:33:01.168735366 +0100
+@@ -32,6 +32,34 @@
+     return logdir
+ 
+ 
++def getProjectsDir():
++    if os.path.exists("/usr/share/creepy"):
++        dir = os.path.join(expanduser("~/.creepy"), "projects")
++    else:
++        dir = os.path.join(os.getcwd(), 'projects')
++    try:
++        os.makedirs(dir)
++    except OSError as e:
++        if e.errno == errno.EEXIST and os.path.isdir(dir):
++            pass
++        else:
++            raise
++    return dir
++
++def getTempDir():
++    if os.path.exists("/usr/share/creepy"):
++        dir = os.path.join(expanduser("~/.creepy"), "temp")
++    else:
++        dir = os.path.join(os.getcwd(), 'temp')
++    try:
++        os.makedirs(dir)
++    except OSError as e:
++        if e.errno == errno.EEXIST and os.path.isdir(dir):
++            pass
++        else:
++            raise
++    return dir
++
+ def getPluginDirs():
+     if os.path.exists("/usr/share/creepy/plugins"):
+         # if creepy is installed via debian package

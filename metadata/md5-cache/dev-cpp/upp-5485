@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=dev-libs/atk dev-libs/expat dev-libs/glib media-libs/freetype x11-libs/cairo x11-libs/gtk+:2 x11-libs/libnotify x11-libs/libXinerama x11-libs/pango
+DESCRIPTION=Ultimate++ is a C++ cross-platform rapid application development framework
+EAPI=1
+HOMEPAGE=http://www.ultimatepp.org/
+KEYWORDS=~amd64 ~x86
+LICENSE=BSD
+RDEPEND=dev-libs/atk dev-libs/expat dev-libs/glib media-libs/freetype x11-libs/cairo x11-libs/gtk+:2 x11-libs/libnotify x11-libs/libXinerama x11-libs/pango
+SLOT=0
+SRC_URI=http://sourceforge.net/projects/upp/files/upp/5485/upp-x11-src-5485.tar.gz
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=ed7be9d6f71cca13716cd5d110a87e28

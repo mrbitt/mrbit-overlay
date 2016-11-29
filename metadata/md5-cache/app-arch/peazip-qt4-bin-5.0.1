@@ -1,0 +1,13 @@
+DEFINED_PHASES=install postinst
+DESCRIPTION=Open Source file and archive manager: flexible, portable, secure, and free as in freedom
+EAPI=3
+HOMEPAGE=http://www.peazip.org
+IUSE=kde gnome
+KEYWORDS=-* ~amd64 ~x86
+LICENSE=LGPL-3 GPL-2 unRAR LGPL-2.1 GPL-3
+RDEPEND=!app-arch/peazip-gtk-bin amd64? ( app-emulation/emul-linux-x86-qtlibs ) x86? ( dev-qt/qtcore dev-qt/qtgui ) amd64? ( app-emulation/emul-linux-x86-baselibs app-emulation/emul-linux-x86-xlibs ) x86? ( dev-libs/atk media-libs/fontconfig media-libs/freetype net-misc/curl )
+RESTRICT=mirror strip
+SLOT=0
+SRC_URI=http://sourceforge.net/projects/peazip/files/peazip-qt4-bin/peazip-5.0.1.LINUX.Qt.tgz
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=7cd5ac4d5f87a75c1eea89adbf9da1b9

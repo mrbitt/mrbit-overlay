@@ -1,0 +1,11 @@
+DEFINED_PHASES=install prepare unpack
+DEPEND=|| ( dev-lang/vala:0.26 dev-lang/vala:0.24 dev-lang/vala:0.22 dev-lang/vala:0.20 ) virtual/pkgconfig dev-vcs/git
+DESCRIPTION=PVala / GTK3 drop-down terminal emulator
+EAPI=5
+HOMEPAGE=https://github.com/linvinus/AltYo
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL-3
+RDEPEND=>=dev-libs/glib-2 x11-libs/gtk+:3 x11-libs/vte:3
+SLOT=0
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	git-2	e28f0d8a9b321431b1e699782851b827	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	vala	a41415fe361172827ed11b6a32ee38fb
+_md5_=5839d9bc139967240ebcac59c761f09d

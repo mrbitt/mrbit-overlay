@@ -1,0 +1,28 @@
+Description: Disable rateStatusButton for plugins where it does not work
+ Some plugins can check the rate status, while others can not.  Disable
+ the button for those that can not.
+Author: Petter Reinholdtsen <pere@hungry.com>
+Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
+Last-Update: 2016-01-09
+Forwarded: https://github.com/jkakavas/creepy/pull/31
+
+Index: creepy-git/creepy/CreepyMain.py
+===================================================================
+--- creepy-git.orig/creepy/CreepyMain.py	2016-01-09 10:04:06.604936001 +0100
++++ creepy-git/creepy/CreepyMain.py	2016-01-09 10:08:30.186951015 +0100
+@@ -712,8 +712,13 @@
+             pluginsConfigButtonContainer = QHBoxLayout()
+             rateStatusButton = QPushButton(self.trUtf8('Check Rate Limits'))
+             rateStatusButton.setObjectName(_fromUtf8('checkRateButton_' + plugin.name))
+-            rateStatusButton.setToolTip(
+-                self.trUtf8('Click here to get information about the plugin\'s API rate limits'))
++            if not plugin.plugin_object.hasRateLimitInfo:
++                rateStatusButton.setEnabled(False)
++                rateStatusButton.setToolTip(
++                    self.trUtf8('Plugin do not support getting API rate limits'))
++            else:
++                rateStatusButton.setToolTip(
++                    self.trUtf8('Click here to get information about the plugin\'s API rate limits'))
+             rateStatusButton.resize(rateStatusButton.sizeHint())
+             rateStatusButton.clicked.connect(
+                 functools.partial(self.pluginsConfigurationDialog.getRateLimitStatus, plugin)

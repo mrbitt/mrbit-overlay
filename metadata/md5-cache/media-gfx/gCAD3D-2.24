@@ -1,0 +1,12 @@
+DEFINED_PHASES=install unpack
+DEPEND=app-arch/dpkg
+DESCRIPTION=3D CAD-CAM application that features an integrated 3D OpenGL viewer.
+EAPI=4
+HOMEPAGE=http://opendesktop.org/content/show.php/gCAD3D?content=88766
+KEYWORDS=~amd64 ~i686
+LICENSE=GPL-v3
+RDEPEND=>=dev-libs/glib-2.32 >=x11-libs/gtk+-2.24:2 dev-util/pkgconfig
+SLOT=0
+SRC_URI=amd64? ( http://www.gcad3d.org/download/gCAD3D-2.24-bin-amd64.deb ) x86? ( http://www.gcad3d.org/download/gCAD3D-2.24-bin-i386.deb )
+_eclasses_=multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4	unpacker	f300a7ca9131b1024a79762e8edd3c52
+_md5_=c38c1acc9ab24a5635c50eeb07445466

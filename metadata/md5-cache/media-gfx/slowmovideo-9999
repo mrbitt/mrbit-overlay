@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile configure install prepare test unpack
+DEPEND=virtual/ffmpeg media-libs/freeglut media-libs/glew media-libs/libsdl media-libs/opencv dev-qt/qtopengl dev-qt/qtscript dev-qt/qttest dev-qt/qtxmlpatterns virtual/jpeg sys-devel/make >=dev-util/cmake-2.8.12 userland_GNU? ( >=sys-apps/findutils-4.4.0 ) dev-vcs/git
+DESCRIPTION=Create slow-motion videos from your footage
+EAPI=4
+HOMEPAGE=http://slowmovideo.granjow.net/
+IUSE=video_cards_nvidia
+LICENSE=GPL-3
+PDEPEND=video_cards_nvidia? ( media-gfx/v3d )
+RDEPEND=virtual/ffmpeg media-libs/freeglut media-libs/glew media-libs/libsdl media-libs/opencv dev-qt/qtopengl dev-qt/qtscript dev-qt/qttest dev-qt/qtxmlpatterns virtual/jpeg
+SLOT=0
+_eclasses_=cmake-utils	0430c386d85cec959d72640afd63ea91	eutils	9fb270e417e0e83d64ca52586c4a79de	flag-o-matic	c9602887773166fe300444712fc7ff98	git-2	e28f0d8a9b321431b1e699782851b827	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=0cc93e38e90ed1fac3145fb637e9a753

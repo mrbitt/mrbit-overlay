@@ -1,0 +1,2556 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- ViewVC :: http://www.viewvc.org/ -->
+<head>
+<title>[gentoo-x86] Log of /media-gfx/rawstudio/ChangeLog</title>
+<meta name="generator" content="ViewVC 1.1.20" />
+<link rel="shortcut icon" href="/static/images/favicon.ico" type="image/x-icon" />
+<link rel="stylesheet" href="/static/styles.css" type="text/css" />
+
+</head>
+<body>
+<div class="vc_navheader">
+<table><tr>
+<td><strong><a href="/cgi-bin/viewvc.cgi?hideattic=0"><span class="pathdiv">/</span></a><a href="/cgi-bin/viewvc.cgi/gentoo-x86/?hideattic=0">[gentoo-x86]</a><span class="pathdiv">/</span><a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/?hideattic=0">media-gfx</a><span class="pathdiv">/</span><a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/?hideattic=0">rawstudio</a><span class="pathdiv">/</span>ChangeLog</strong></td>
+<td style="text-align: right;">
+</td>
+</tr></table>
+</form>
+</div>
+<div style="float: right; padding: 5px;"><a href="http://www.gentoo.org/" title="Gentoo Linux"><img src="/static/images/gentoo-new.gif" alt="Gentoo" width="182" height="59" /></a></div>
+<h1>Log of /media-gfx/rawstudio/ChangeLog</h1>
+
+<p style="margin:0;">
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/?hideattic=0"><img src="/static/images/back_small.png" class="vc_icon" alt="Parent Directory" /> Parent Directory</a>
+
+| <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;view=log"><img src="/static/images/log.png" class="vc_icon" alt="Revision Log" /> Revision Log</a>
+
+
+
+
+</p>
+
+<hr />
+<table class="auto">
+
+
+
+<tr>
+<td>Links to HEAD:</td>
+<td>
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;view=markup">view</a>)
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=annotate&amp;hideattic=0">annotate</a>)
+</td>
+</tr>
+
+
+
+</table>
+ 
+
+
+
+
+
+
+
+<div>
+<hr />
+
+Revision <strong>1.35</strong>
+
+
+<br />
+
+<em>Tue Feb  3 14:31:25 2015 UTC</em>
+(7 days, 19 hours ago)
+by <em>pacho</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+<br />CVS Tags:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=HEAD"><strong>HEAD</strong></a>
+
+
+
+
+
+
+<br />Changes since <strong>1.34: +1 -1 lines</strong>
+
+
+
+
+
+
+<br /><strong><em>FILE REMOVED</em></strong>
+
+<pre class="vc_log">Remove masked for removal package
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.34"></a>
+
+
+Revision <strong>1.34</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.34&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.34">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.34&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.34">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Sep 29 11:31:55 2013 UTC</em>
+(16 months, 1 week ago)
+by <em>pacho</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.33: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.33&amp;r2=1.34">previous 1.33</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Use subslot for libgphoto2 (#455500)
+
+(Portage version: 2.2.7/cvs/Linux x86_64, signed Manifest commit with key A188FBD4)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.33"></a>
+
+
+Revision <strong>1.33</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.33&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.33">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.33&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.33">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Aug 18 15:58:06 2013 UTC</em>
+(17 months, 3 weeks ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.32: +6 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.32&amp;r2=1.33">previous 1.32</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">old
+
+(Portage version: 2.2.0/cvs/Linux x86_64, signed Manifest commit with key 4868F14D)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.32"></a>
+
+
+Revision <strong>1.32</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.32&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.32">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.32&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.32">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Aug 18 13:27:21 2013 UTC</em>
+(17 months, 3 weeks ago)
+by <em>ago</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.31: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.31&amp;r2=1.32">previous 1.31</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Stable for x86, wrt bug #479810
+
+(Portage version: 2.1.13.7/cvs/Linux x86_64, RepoMan options: --include-arches=&quot;x86&quot;, signed Manifest commit with key 7194459F)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.31"></a>
+
+
+Revision <strong>1.31</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.31&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.31">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.31&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.31">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Aug  7 14:57:58 2013 UTC</em>
+(18 months ago)
+by <em>ago</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.30: +4 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.30&amp;r2=1.31">previous 1.30</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Stable for amd64, wrt bug #479810
+
+(Portage version: 2.1.13.2/cvs/Linux x86_64, RepoMan options: --include-arches=&quot;amd64&quot;, signed Manifest commit with key 7194459F)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.30"></a>
+
+
+Revision <strong>1.30</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.30&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.30">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.30&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.30">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Aug  5 09:37:08 2013 UTC</em>
+(18 months, 1 week ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.29: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.29&amp;r2=1.30">previous 1.29</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Update the libjpeg dependency to use correct SLOT.
+
+(Portage version: 2.2.0_alpha191/cvs/Linux x86_64, signed Manifest commit with key 4868F14D)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.29"></a>
+
+
+Revision <strong>1.29</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.29&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.29">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.29&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.29">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Jun 21 03:40:40 2013 UTC</em>
+(19 months, 3 weeks ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.28: +8 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.28&amp;r2=1.29">previous 1.28</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Patch for fixing the path to the singular rawstudio.png wrt #389397
+
+(Portage version: 2.2.0_alpha183/cvs/Linux x86_64, signed Manifest commit with key 4868F14D)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.28"></a>
+
+
+Revision <strong>1.28</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.28&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.28">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.28&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.28">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Thu Feb  7 22:29:07 2013 UTC</em>
+(2 years ago)
+by <em>ulm</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.27: +6 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.27&amp;r2=1.28">previous 1.27</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Move Creative Commons licenses to shorter names.
+
+(Portage version: 2.1.11.50/cvs/Linux x86_64, signed Manifest commit with key E7BE08CA7DC6EA25)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.27"></a>
+
+
+Revision <strong>1.27</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.27&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.27">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.27&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.27">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Sep 23 08:53:57 2012 UTC</em>
+(2 years, 4 months ago)
+by <em>phajdan.jr</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.26: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.26&amp;r2=1.27">previous 1.26</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">x86 stable wrt bug #431060
+
+(Portage version: 2.1.11.9/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.26"></a>
+
+
+Revision <strong>1.26</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.26&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.26">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.26&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.26">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Aug 12 11:47:53 2012 UTC</em>
+(2 years, 6 months ago)
+by <em>ago</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.25: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.25&amp;r2=1.26">previous 1.25</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Stable for amd64, wrt bug #431060
+
+(Portage version: 2.1.11.9/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.25"></a>
+
+
+Revision <strong>1.25</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.25&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.25">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.25&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.25">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Aug 12 10:01:13 2012 UTC</em>
+(2 years, 6 months ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.24: +5 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.24&amp;r2=1.25">previous 1.24</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Link to -lgthread-2.0 for symbol g_thread_init wrt #424505 by Andreas Prieß
+
+(Portage version: 2.2.0_alpha121/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.24"></a>
+
+
+Revision <strong>1.24</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.24&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.24">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.24&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.24">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat May  5 07:00:24 2012 UTC</em>
+(2 years, 9 months ago)
+by <em>jdhore</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.23: +6 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.23&amp;r2=1.24">previous 1.23</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">dev-util/pkgconfig -&gt; virtual/pkgconfig
+
+(Portage version: 2.2.0_alpha101/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.23"></a>
+
+
+Revision <strong>1.23</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.23&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.23">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.23&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.23">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Oct  8 16:47:08 2011 UTC</em>
+(3 years, 4 months ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.22: +8 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.22&amp;r2=1.23">previous 1.22</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Version bump wrt #362919 by Jens-Uwe Peter, Martijn van den Broek and Stefan Wimmer
+
+(Portage version: 2.2.0_alpha63/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.22"></a>
+
+
+Revision <strong>1.22</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.22&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.22">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.22&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.22">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Mar 12 10:34:50 2011 UTC</em>
+(3 years, 11 months ago)
+by <em>radhermit</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.21: +5 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.21&amp;r2=1.22">previous 1.21</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Use slot dep for gtk+.
+
+(Portage version: 2.2.0_alpha26/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.21"></a>
+
+
+Revision <strong>1.21</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.21&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.21">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.21&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.21">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Nov  8 22:59:21 2010 UTC</em>
+(4 years, 3 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.20: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.20&amp;r2=1.21">previous 1.20</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">change jpeg dep to virtual/jpeg
+
+(Portage version: 2.1.9.24/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.20"></a>
+
+
+Revision <strong>1.20</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.20&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.20">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.20&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.20">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Jun 21 10:10:04 2010 UTC</em>
+(4 years, 7 months ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.19: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.19&amp;r2=1.20">previous 1.19</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Restrict media-libs/lcms depend to old version.
+(Portage version: 2.2_rc67/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.19"></a>
+
+
+Revision <strong>1.19</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.19&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.19">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.19&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.19">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Jan  8 12:23:12 2010 UTC</em>
+(5 years, 1 month ago)
+by <em>ssuominen</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.18: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.18&amp;r2=1.19">previous 1.18</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">amd64 stable wrt #297531
+(Portage version: 2.2_rc61/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.18"></a>
+
+
+Revision <strong>1.18</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.18&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.18">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.18&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.18">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Jan  8 11:20:09 2010 UTC</em>
+(5 years, 1 month ago)
+by <em>fauli</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.17: +5 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.17&amp;r2=1.18">previous 1.17</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">stable x86, bug 297531
+(Portage version: 2.1.6.13/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.17"></a>
+
+
+Revision <strong>1.17</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.17&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.17">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.17&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.17">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Aug  8 08:31:15 2009 UTC</em>
+(5 years, 6 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.16: +5 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.16&amp;r2=1.17">previous 1.16</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">fix building with glibc-2.10 wrt bug #277837
+(Portage version: 2.2_rc36/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.16"></a>
+
+
+Revision <strong>1.16</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.16&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.16">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.16&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.16">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun May 24 20:16:33 2009 UTC</em>
+(5 years, 8 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.15: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.15&amp;r2=1.16">previous 1.15</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">old
+(Portage version: 2.1.6.11/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.15"></a>
+
+
+Revision <strong>1.15</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.15&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.15">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.15&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.15">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun May 24 08:56:05 2009 UTC</em>
+(5 years, 8 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.14: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.14&amp;r2=1.15">previous 1.14</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">amd64 stable, bug #268868
+(Portage version: 2.1.6.11/cvs/Linux x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.14"></a>
+
+
+Revision <strong>1.14</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.14&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.14">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.14&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.14">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri May 15 08:30:52 2009 UTC</em>
+(5 years, 8 months ago)
+by <em>fauli</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.13: +5 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.13&amp;r2=1.14">previous 1.13</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">stable x86, bug 268868
+(Portage version: 2.1.6.11/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.13"></a>
+
+
+Revision <strong>1.13</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.13&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.13">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.13&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.13">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Apr 27 19:15:30 2009 UTC</em>
+(5 years, 9 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.12: +6 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.12&amp;r2=1.13">previous 1.12</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">version bump, reported by Tommaso Falchi Delitala in bug #267207
+(Portage version: 2.2_rc31/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.12"></a>
+
+
+Revision <strong>1.12</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.12&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.12">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.12&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.12">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Apr  5 12:26:34 2009 UTC</em>
+(5 years, 10 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.11: +9 -2 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.11&amp;r2=1.12">previous 1.11</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">revision bump to fix nikon raw files with media-gfx/exiv2-0.18, bug #258058
+(Portage version: 2.2_rc28/cvs/Linux i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.11"></a>
+
+
+Revision <strong>1.11</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.11&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.11">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.11&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.11">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Nov 22 17:37:14 2008 UTC</em>
+(6 years, 2 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.10: +6 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.10&amp;r2=1.11">previous 1.10</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">old
+(Portage version: 2.2_rc15/cvs/Linux 2.6.26.8 x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.10"></a>
+
+
+Revision <strong>1.10</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.10&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.10">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.10&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.10">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Nov 22 17:30:31 2008 UTC</em>
+(6 years, 2 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.9: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.9&amp;r2=1.10">previous 1.9</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">amd64/x86 stable, bug #247639
+(Portage version: 2.2_rc15/cvs/Linux 2.6.26.8 x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.9"></a>
+
+
+Revision <strong>1.9</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.9&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.9">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.9&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.9">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Fri Oct 17 16:32:21 2008 UTC</em>
+(6 years, 3 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.8: +7 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.8&amp;r2=1.9">previous 1.8</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">bump to 1.1.1, remove 1.1
+(Portage version: 2.2_rc12/cvs/Linux 2.6.27.1 i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.8"></a>
+
+
+Revision <strong>1.8</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.8&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.8">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.8&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.8">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat Oct  4 14:33:10 2008 UTC</em>
+(6 years, 4 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.7: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.7&amp;r2=1.8">previous 1.7</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">add media-gfx/exiv2 dep, bug #239361
+(Portage version: 2.2_rc11/cvs/Linux 2.6.27-rc8 i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.7"></a>
+
+
+Revision <strong>1.7</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.7&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.7">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.7&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.7">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sun Sep 21 12:07:01 2008 UTC</em>
+(6 years, 4 months ago)
+by <em>maekke</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.6: +8 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.6&amp;r2=1.7">previous 1.6</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">bump to version 1.1
+(Portage version: 2.2_rc8/cvs/Linux 2.6.27-rc6 i686)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.6"></a>
+
+
+Revision <strong>1.6</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.6&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.6">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.6&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.6">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Wed Jul 30 19:51:15 2008 UTC</em>
+(6 years, 6 months ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.5: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.5&amp;r2=1.6">previous 1.5</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">amd64 stable
+(Portage version: 2.2_rc3/cvs/Linux 2.6.26-rc3 x86_64)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.5"></a>
+
+
+Revision <strong>1.5</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.5&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.5">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.5&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.5">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Tue Jul 29 14:31:26 2008 UTC</em>
+(6 years, 6 months ago)
+by <em>armin76</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.4: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.4&amp;r2=1.5">previous 1.4</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">x86 stable wrt #232809
+(Portage version: 2.1.4.4)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.4"></a>
+
+
+Revision <strong>1.4</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.4&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.4">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.4&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.4">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Sat May  3 08:48:45 2008 UTC</em>
+(6 years, 9 months ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.3: +10 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.3&amp;r2=1.4">previous 1.3</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Version bump wrt #220016. Patching .desktop file to respect latest specification. Fixing icondir from /usr/share/icons to /usr/share/pixmaps.
+(Portage version: 2.1.5_rc6)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.3"></a>
+
+
+Revision <strong>1.3</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.3&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.3">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.3&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.3">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Feb  4 15:08:49 2008 UTC</em>
+(7 years ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.2: +6 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.2&amp;r2=1.3">previous 1.2</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Version bump wrt #208823 by toto &lt;toto at darkside.tomsk.ru&gt;
+(Portage version: 2.1.4.1)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.2"></a>
+
+
+Revision <strong>1.2</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.2&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.2">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.2&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.2">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Feb  4 10:07:25 2008 UTC</em>
+(7 years ago)
+by <em>cla</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+<br />Changes since <strong>1.1: +4 -1 lines</strong>
+
+
+
+
+
+
+
+
+<br />Diff to <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;r1=1.1&amp;r2=1.2">previous 1.1</a>
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Keyword ~x86 wrt bug #208825
+(Portage version: 2.1.3.19)
+
+</pre>
+</div>
+
+
+
+<div>
+<hr />
+
+<a name="rev1.1"></a>
+
+
+Revision <strong>1.1</strong> -
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?hideattic=0&amp;revision=1.1&amp;view=markup">view</a>)
+
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?revision=1.1">download</a>)
+
+(<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?annotate=1.1&amp;hideattic=0">annotate</a>)
+
+
+
+- <a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;r1=1.1">[select for diffs]</a>
+
+
+
+
+<br />
+
+<em>Mon Jan 21 19:09:20 2008 UTC</em>
+(7 years ago)
+by <em>drac</em>
+
+
+<br />Branch:
+
+<a href="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog?view=log&amp;hideattic=0&amp;pathrev=MAIN"><strong>MAIN</strong></a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<pre class="vc_log">Initial commit.
+(Portage version: 2.1.4)
+
+</pre>
+</div>
+
+ 
+
+
+ <hr />
+<p><a name="diff"></a>
+This form allows you to request diffs between any two revisions of this file.
+For each of the two "sides" of the diff,
+
+select a symbolic revision name using the selection box, or choose
+'Use Text Field' and enter a numeric revision.
+
+</p>
+<form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog" id="diff_select">
+<table cellpadding="2" cellspacing="0" class="auto">
+<tr>
+<td>&nbsp;</td>
+<td>
+<input type="hidden" name="hideattic" value="0"/><input type="hidden" name="view" value="diff"/>
+Diffs between
+
+<select name="r1">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.35:MAIN">MAIN</option>
+
+<option value="1.35:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr1"
+value="1.35"
+onchange="document.getElementById('diff_select').r1.selectedIndex=0" />
+
+and
+
+<select name="r2">
+<option value="text" selected="selected">Use Text Field</option>
+
+<option value="1.35:MAIN">MAIN</option>
+
+<option value="1.35:HEAD">HEAD</option>
+
+</select>
+<input type="text" size="12" name="tr2"
+value="1.1"
+onchange="document.getElementById('diff_select').r2.selectedIndex=0" />
+
+</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td>
+Type of Diff should be a
+<select name="diff_format" onchange="submit()">
+<option value="h" selected="selected">Colored Diff</option>
+<option value="l" >Long Colored Diff</option>
+<option value="f" >Full Colored Diff</option>
+<option value="u" >Unidiff</option>
+<option value="c" >Context Diff</option>
+<option value="s" >Side by Side</option>
+</select>
+<input type="submit" value=" Get Diffs " />
+</td>
+</tr>
+</table>
+</form>
+
+
+
+<form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog">
+<div>
+<hr />
+<a name="logsort"></a>
+<input type="hidden" name="hideattic" value="0"/><input type="hidden" name="view" value="log"/>
+Sort log by:
+<select name="logsort" onchange="submit()">
+<option value="cvs" >Not sorted</option>
+<option value="date" selected="selected">Commit date</option>
+<option value="rev" >Revision</option>
+</select>
+<input type="submit" value=" Sort " />
+</div>
+</form>
+
+<br>
+<tr>
+<td>Sticky Tag:</td>
+<td><form method="get" action="/cgi-bin/viewvc.cgi/gentoo-x86/media-gfx/rawstudio/ChangeLog" style="display: inline">
+<div style="display: inline">
+<input type="hidden" name="view" value="log"/><input type="hidden" name="hideattic" value="0"/>
+
+
+<select name="pathrev" onchange="submit()">
+<option value=""></option>
+
+<optgroup label="Branches">
+
+
+<option>MAIN</option>
+
+
+</optgroup>
+
+<optgroup label="Non-branch tags">
+
+
+<option>HEAD</option>
+
+
+</optgroup>
+
+</select>
+
+<input type="submit" value="Set" />
+</div>
+</form>
+
+</td>
+</tr>
+
+<hr />
+<table>
+<tr>
+<td>&nbsp;</td>
+<td style="text-align: right;"><strong><a href="/static/help_log.html">ViewVC Help</a></strong></td>
+</tr>
+<tr>
+<td>Powered by <a href="http://viewvc.tigris.org/">ViewVC 1.1.20</a></td>
+<td style="text-align: right;">&nbsp;</td>
+</tr>
+</table>
+</body>
+</html>
+
+

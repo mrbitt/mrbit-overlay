@@ -1,0 +1,25 @@
+diff --git a/cdogs-sdl-0.6.2-system-enet.patch b/cdogs-sdl-0.6.2-system-enet.patch
+new file mode 100644
+index 0000000..46a90b8
+--- /dev/null
++++ b/cdogs-sdl-0.6.2-system-enet.patch
+@@ -0,0 +1,19 @@
++diff -up cdogs-sdl-0.6.2-2/src/cdogs/CMakeLists.txt~ cdogs-sdl-0.6.2-2/src/cdogs/CMakeLists.txt
++--- cdogs-sdl-0.6.2-2/src/cdogs/CMakeLists.txt~	2016-07-21 11:50:15.000000000 +0200
+++++ cdogs-sdl-0.6.2-2/src/cdogs/CMakeLists.txt	2016-08-12 14:12:54.702512753 +0200
++@@ -202,9 +202,6 @@ set(NANOPB_HEADERS
++     proto/nanopb/pb_encode.h
++ )
++ 
++-# enet
++-ADD_SUBDIRECTORY(enet)
++-
++ # proto
++ include_directories(proto/nanopb)
++ 
++@@ -221,4 +221,4 @@ target_link_libraries(cdogs
++ 	${SDL2_LIBRARY}
++ 	${SDL2_IMAGE_LIBRARIES}
++ 	${SDL2_MIXER_LIBRARIES}
++-	${ENet_LIBRARIES})
+++	enet)

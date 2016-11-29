@@ -1,0 +1,9 @@
+DEFINED_PHASES=compile install
+DESCRIPTION=Fight Flash Fraud, or Fight Fake Flash
+EAPI=4
+HOMEPAGE=http://oss.digirati.com.br/f3/
+KEYWORDS=~amd64
+LICENSE=GPL-3
+SLOT=0
+SRC_URI=https://github.com/AltraMayor/f3/archive/v3.0.tar.gz -> f3-3.0.tar.gz
+_md5_=22df44f9f7444dc634a09bbba53f8bbd

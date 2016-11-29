@@ -1,0 +1,52 @@
+Description: Get setup.py working on Debian/Linux.
+ The provided setup.py script uses C: style paths and the py2exe
+ module only relevant on Windows.  Rewrite the script to work on
+ Debian by dropping those parts.
+
+ A better approach should be found together with upstream to try
+ to get a setup.py in the source tarball that work everywhere.
+Author: Petter Reinholdtsen <pere@hungry.com>
+Forwarded: no
+Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
+Last-Update: 2015-06-21
+
+Index: creepy-git/setup.py
+===================================================================
+--- creepy-git.orig/setup.py	2015-06-21 00:04:39.000000000 +0200
++++ creepy-git/setup.py	2015-06-21 00:08:55.004969195 +0200
+@@ -1,7 +1,5 @@
+ from distutils.core import setup
+-import py2exe, sys, os
+-
+-sys.argv.append('py2exe')
++import sys, os
+ 
+ includes = ["sip",
+             "distutils",
+@@ -14,17 +12,22 @@
+             "dateutil.parser",
+             "dbhash"]
+ 
+-DATA = [
+-    ('imageformats', ['C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qjpeg4.dll',
++winimageformats = ['C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qjpeg4.dll',
+                       'C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qgif4.dll',
+                       'C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qico4.dll',
+                       'C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qmng4.dll',
+                       'C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qsvg4.dll',
+                       'C:\\Users/ikakavas/.virtualenvs/creepy/Lib/site-packages/PyQt4/plugins/imageformats/qtiff4.dll'
+     ]
+-    ),
+-    'include/cacerts.txt'
++# Set this to winimageformats on Windows
++imageformats = None
++
++DATA = [
++# Do not exist in source tarball
++#    'include/cacerts.txt'
+ ]
++if imageformats is not None:
++    DATA.append( ('imageformats', imageformats) )
+ 
+ setup(
+     name='creepy',

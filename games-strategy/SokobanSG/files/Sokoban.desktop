@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Sokoban
+Type=Application
+Comment=The classic Japanese game of Soko-Ban
+Exec=Sokoban
+Path=/usr/share/SokobanSG
+TryExec=Sokoban
+Icon=sokoban
+Categories=Game;StrategyGame;

@@ -1,0 +1,12 @@
+DEFINED_PHASES=compile install
+DEPEND=>=kde-base/oxygen-icons-4.4:4[aqua=] dev-qt/qtcore:4 sys-apps/dmidecode app-text/poppler media-video/ffmpeg media-video/transcode app-text/ghostscript-gpl sys-fs/fuseiso app-cdr/cdrtools sys-apps/diffutils dev-util/pkgconfig >=kde-base/kdelibs-4.4:4[aqua=]
+DESCRIPTION=kde-service multifunction
+EAPI=4
+HOMEPAGE=thttps://opendesktop.org/content/show.php/kde-services?content=147065
+KEYWORDS=amd64 ~mips x86
+LICENSE=GPL
+RDEPEND=>=kde-base/oxygen-icons-4.4:4[aqua=]
+SLOT=0
+SRC_URI=http://sourceforge.net/projects/kde-services/files/Source-Code/kde-services-2.0.tar.bz2
+_eclasses_=eutils	9fb270e417e0e83d64ca52586c4a79de	multilib	62927b3db3a589b0806255f3a002d5d3	toolchain-funcs	42408102d713fbad60ca21349865edb4
+_md5_=1ce0dbacbf2d74ab4d6e0ed7e31c5beb

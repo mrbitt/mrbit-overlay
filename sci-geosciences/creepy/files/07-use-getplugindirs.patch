@@ -1,0 +1,69 @@
+Description: Use GeneralUtilities.getIncludeDir() instead of hardcoding plugins path.
+ Remove hardcoded paths to plugins directory used to find icon images.
+ Also remove redundant os.path.join() call.
+Author: Petter Reinholdtsen <pere@hungry.com>
+Reviewed-By: Petter Reinholdtsen <pere@hungry.com>
+Last-Update: 2016-01-07
+Forwarded: https://github.com/jkakavas/creepy/pull/27
+Forwarded: https://github.com/jkakavas/creepy/pull/28
+
+Index: creepy-git/creepy/models/PluginConfigurationListModel.py
+===================================================================
+--- creepy-git.orig/creepy/models/PluginConfigurationListModel.py	2016-01-04 17:30:11.983931991 +0100
++++ creepy-git/creepy/models/PluginConfigurationListModel.py	2016-01-04 17:30:11.983931991 +0100
+@@ -3,6 +3,7 @@
+ from PyQt4.QtCore import QVariant, QAbstractListModel, Qt
+ from PyQt4.Qt import QPixmap, QIcon
+ import os
++from utilities import GeneralUtilities
+ 
+ class PluginConfigurationListModel(QAbstractListModel):
+     def __init__(self, plugins, parent=None):
+@@ -29,12 +30,12 @@
+             if role == Qt.DisplayRole:
+                 return QVariant(pluginListItem[0].name)
+             if role == Qt.DecorationRole:
+-                picturePath = os.path.join(os.getcwdu(), 'plugins', pluginListItem[0].plugin_object.name, 'logo.png')
+-                if picturePath and os.path.exists(picturePath):
+-                    pixmap = QPixmap(picturePath)
+-                    return QIcon(pixmap)
+-                else:
+-                    pixmap = QPixmap(':/creepy/folder')
+-                    return QIcon(pixmap)
++                for dir in GeneralUtilities.getPluginDirs():
++                    picturePath = os.path.join(dir, pluginListItem[0].plugin_object.name, 'logo.png')
++                    if picturePath and os.path.exists(picturePath):
++                        pixmap = QPixmap(picturePath)
++                        return QIcon(pixmap)
++                pixmap = QPixmap(':/creepy/folder')
++                return QIcon(pixmap)
+         else: 
+             return QVariant()
+\ No newline at end of file
+Index: creepy-git/creepy/models/ProjectWizardPluginListModel.py
+===================================================================
+--- creepy-git.orig/creepy/models/ProjectWizardPluginListModel.py	2016-01-04 17:30:11.983931991 +0100
++++ creepy-git/creepy/models/ProjectWizardPluginListModel.py	2016-01-04 17:30:11.983931991 +0100
+@@ -21,14 +21,14 @@
+             if role == Qt.DisplayRole:
+                 return QVariant(plugin.name)
+             if role == Qt.DecorationRole:
+-                picturePath = os.path.join(os.getcwdu(), 'plugins', plugin.plugin_object.name, 'logo.png')
+-                if picturePath and os.path.exists(picturePath):
+-                    pixmap = QPixmap(picturePath)
+-                    return QIcon(pixmap.scaled(30, 30, Qt.IgnoreAspectRatio, Qt.FastTransformation))
+-                else:
+-                    pixmap = QPixmap(os.path.join(os.path.join(GeneralUtilities.getIncludeDir(), 'generic_plugin.png')))
+-                    pixmap.scaled(30, 30, Qt.IgnoreAspectRatio)
+-                    return QIcon(pixmap)
++                for dir in GeneralUtilities.getPluginDirs():
++                    picturePath = os.path.join(dir, plugin.plugin_object.name, 'logo.png')
++                    if picturePath and os.path.exists(picturePath):
++                        pixmap = QPixmap(picturePath)
++                        return QIcon(pixmap.scaled(30, 30, Qt.IgnoreAspectRatio, Qt.FastTransformation))
++                pixmap = QPixmap(os.path.join(GeneralUtilities.getIncludeDir(), 'generic_plugin.png'))
++                pixmap.scaled(30, 30, Qt.IgnoreAspectRatio)
++                return QIcon(pixmap)
+             if role == Qt.CheckStateRole:
+                 if plugin:
+                     return (Qt.Checked if plugin.name in self.checkedPlugins else Qt.Unchecked)

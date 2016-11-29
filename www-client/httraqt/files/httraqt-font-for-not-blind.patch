@@ -1,0 +1,82 @@
+diff -Naur httraqt-1.4.4/sources/main/httraqt.cpp httraqt-1.4.4-new/sources/main/httraqt.cpp
+--- httraqt-1.4.4/sources/main/httraqt.cpp	2014-07-18 20:03:45.000000000 +0400
++++ httraqt-1.4.4-new/sources/main/httraqt.cpp	2014-12-07 19:38:29.752591605 +0300
+@@ -432,11 +432,8 @@
+     QPainter painterIcon(mainicon);
+     painterIcon.drawPixmap(25, 5, QPixmap(pump_xpm));
+ 
+-    programStyleSheet = QString().sprintf("font-size: %dpt", fontSize);
+-
+     if ( fontSize == -1) {
+         fontSize = sysFont.pixelSize();
+-        programStyleSheet = QString().sprintf("font-size: %dpx", fontSize);
+     }
+ 
+     if (programStyleSheet.length() > 0) {
+@@ -451,8 +448,6 @@
+     currentTab = 0;
+ 
+     groupMain->setFont(sysFont);
+-    groupButtons->setFont(sysFont);
+-    dirView->setFont(sysFont);
+ 
+     // this function i need only for converting! normally is disabled
+     // old help file format -> new
+@@ -568,10 +563,8 @@
+ 
+ void HTTraQt::setFontForWidgets()
+ {
+-    buttonsWidget->setStyleSheet(programStyleSheet);
+-
+     for (int i = 0; i < 6; i++) {
+-        widgets[i]->setStyleSheet(programStyleSheet);
++        widgets[i]->setStyleSheet(QString().sprintf("font-size: %dpt",fontSize-2));
+     }
+ }
+ 
+@@ -1529,10 +1522,6 @@
+ 
+     int sz = sysFont.pointSize();
+ 
+-    if ( sz == -1) {
+-        sz = sysFont.pixelSize();
+-    }
+-
+     fontSize = sz;
+ 
+     for (int i = 0; i < 8; i++) {
+@@ -2487,16 +2476,6 @@
+ 
+ void HTTraQt::quit()
+ {
+-    int ans;
+-
+-    if (pcHibernate == false && pcShutdown == false ) {
+-        ans = MessageBox::exec(this, translate(_QUIT), translate(_REALLYQUIT), QMessageBox::Question);
+-
+-        if (ans == QMessageBox::No) {
+-            return;
+-        }
+-    }
+-
+     writeGUISettings();
+ 
+     qApp->quit();
+@@ -2505,17 +2484,6 @@
+ 
+ void HTTraQt::closeEvent(QCloseEvent* ce)
+ {
+-    int ans;
+-
+-    if (pcHibernate == false && pcShutdown == false ) {
+-        ans = MessageBox::exec(this, translate(_QUIT), translate(_REALLYQUIT), QMessageBox::Question);
+-
+-        if (ans == QMessageBox::No) {
+-            ce->ignore();
+-            return;
+-        }
+-    }
+-
+     writeGUISettings();
+ 
+ //     ce->accept();

@@ -1,0 +1,11 @@
+DEFINED_PHASES=compile configure install postinst postrm prepare setup unpack
+DEPEND=dev-qt/qtcore:4 >=dev-lib/boost-1.49 app-arch/zip sys-libs/zlib net-misc/curl media-libs/flac media-libs/libvorbis media-sound/lame media-libs/alsa-lib dev-lang/python dev-vcs/git
+DESCRIPTION=QT application based on crossplatform library for playing different chiptune modules
+EAPI=5
+HOMEPAGE=http://zxtune.bitbucket.org
+KEYWORDS=~amd64 ~x86
+LICENSE=GPL
+RDEPEND=dev-qt/qtcore:4 >=dev-lib/boost-1.49 app-arch/zip sys-libs/zlib net-misc/curl media-libs/flac media-libs/libvorbis media-sound/lame media-libs/alsa-lib >=sys-devel/gcc-4.8 dev-lang/python
+SLOT=0
+_eclasses_=base	87f7447ccfc06fd0729ff4684e11e0d6	distutils	92e738ea29389cb3f34778d7a349ac71	eutils	9fb270e417e0e83d64ca52586c4a79de	git-2	e28f0d8a9b321431b1e699782851b827	multilib	62927b3db3a589b0806255f3a002d5d3	python	3a270b7b1d1e679847ff0faeac25c5a3	qmake-utils	1c0e4f885b876595f09a9bb6c78a687d	qt4-r2	7199e3db5b5908325487d379c6f67cf0	toolchain-funcs	42408102d713fbad60ca21349865edb4	versionator	cd0bcdb170807e4a1984115e9d53a26f
+_md5_=c6231256478729223d97a876aeaff7c1

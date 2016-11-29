@@ -1,0 +1,13 @@
+diff --git a/configure b/configure
+index e8205f6..0ee2e3c 100755
+--- a/configure
++++ b/configure
+@@ -552,7 +552,7 @@ else
+ 
+ 	if [ "$DEBUG" = NO ]
+ 	then
+-		GTK_LIB="$GTK_LIB -s"
++		GTK_LIB="$GTK_LIB"
+ 	else
+ 		I_EX="$I_EX -ggdb"
+ 	fi
