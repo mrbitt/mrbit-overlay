@@ -13,6 +13,8 @@ Then, in the section "overlays" in the /etc/layman/layman.cfg, add the following
 
 If you want to refresh the overlay (and all another overlays), just type:
 
-layman -S
+layman -S 
+
+layman -a mrbit-overlay
 
 That's all, folks!
