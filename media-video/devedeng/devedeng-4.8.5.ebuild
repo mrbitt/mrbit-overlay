@@ -31,7 +31,7 @@ RDEPEND="dev-python/dbus-python
 				|| ( media-video/mplayer2[symlink] media-video/mplayer ) )"
 DEPEND=""
 
-S=${WORKDIR}/${PN}ng-${PV}
+S=${WORKDIR}/${PN}-${PV}
 
 python_compile() {
 	python_is_python3 || local -x CFLAGS="${CFLAGS} -fno-strict-aliasing -lrt"
