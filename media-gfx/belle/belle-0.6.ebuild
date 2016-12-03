@@ -19,6 +19,7 @@ KEYWORDS="amd64 ~mips x86"
 RDEPEND="kde-frameworks/oxygen-icons"
 DEPEND="${RDEPEND}
     dev-qt/qtcore:4
+    kde-frameworks/kdewebkit
     >=kde-base/kdelibs-4.4:4"
     
 S=${WORKDIR}/Belle-${PV}a
