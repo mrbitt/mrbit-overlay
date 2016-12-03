@@ -16,10 +16,10 @@ inherit eutils kde4-base qt4-r2 fdo-mime
 
 KEYWORDS="amd64 ~mips x86"
 
-RDEPEND=">=kdeframeworks-/oxygen-icons-4.13:4[aqua=]"
+RDEPEND="kde-frameworks/oxygen-icons"
 DEPEND="${RDEPEND}
     dev-qt/qtcore:4
-    >=kde-base/kdelibs-4.4:4[aqua=]"
+    >=kde-base/kdelibs-4.4:4"
     
 S=${WORKDIR}/Belle-${PV}a
 
@@ -38,7 +38,7 @@ src_install() {
     mkdir -p "${D}"/usr/{bin,share/{pixmaps,applications}}
     dobin belle
     newicon editor/media/go-to-scene.png Belle.png
-    make_desktop_entry "Belle" "Qt Graphic Editor" "Belle" "Graphics;"
+    make_desktop_entry "belle" "Belle" "Belle" "Graphics;"
 }
 
 pkg_postinst() {
