@@ -7,7 +7,7 @@ EAPI="5"
 DESCRIPTION="Qt Graphic Editor"
 HOMEPAGE="http://opendesktop.org/content/show.php/Belle?content=155259"
 #SRC_URI="http://download.savannah.gnu.org/releases/${PN}/Belle_${PV}a-src.tar.gz"
-SRC_URI="https://github.com/fr33mind/Belle/archive/${PV}a.tar.gz"
+SRC_URI="https://github.com/fr33mind/Belle/archive/${PV}a.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL"
 SLOT="0"
