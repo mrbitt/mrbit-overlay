@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
     >=kde-base/kdelibs-4.4:4[aqua=]"
     
 S=${WORKDIR}/${PN}-${PV}
-RESTRICT="strip"
+#RESTRICT="strip"
 
 src_configure(){
     echo "${WORKDIR}"

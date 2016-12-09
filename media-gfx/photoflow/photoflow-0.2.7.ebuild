@@ -41,6 +41,7 @@ src_install() {
          echo "${WORKDIR}"
          #make install INSTALL_ROOT="${D}"/usr
          emake DESTDIR="${D}" install || die "Install failed!"
+         strip -s "${D}"usr/bin/*
          make_desktop_entry ${PN} "PhotoFlow" "/usr/share/${PN}/icons/preview_active.svg" "Graphics;"
          rm -R "${D}"/usr/share/applications/${PN}.desktop || die "not exist file"
 }

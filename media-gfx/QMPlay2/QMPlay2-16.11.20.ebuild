@@ -47,10 +47,10 @@ RDEPEND="
 	pulseaudio? ( media-sound/pulseaudio )
 	openal? ( media-libs/openal )
 	"
-
 S=${WORKDIR}/${PN}-src-${PV}
 
-RESTRICT="strip"
+#RESTRICT="strip"  strip on
+
 
 src_configure(){
         cd "${S}"
@@ -76,7 +76,8 @@ src_configure(){
 
 src_install() {
 	cd ${S}
-	dodir /usr
+	
+	 dodir /usr
 	 mkdir -p app/share/qmplay2/lang
 	 mv lang/*.qm app/share/qmplay2/lang
 	 
