@@ -76,17 +76,29 @@ RDEPEND="${COMMON_DEPEND}
 src_configure() {
 	local mycmakeargs=(
 		-DUSEOPENGL=ON
-		$(cmake-utils_use_with color-management OCIO)
-		$(cmake-utils_use_with fftw FFTW3)
-		$(cmake-utils_use_with gsl GSL)
-		$(cmake-utils_use_with jpeg JPEG)
-		$(cmake-utils_use_with jpeg2k OpenJPEG)
-		$(cmake-utils_use_with raw KF5KDcraw)
-		$(cmake-utils_use_with openexr OpenEXR)
-		$(cmake-utils_use_with pdf Poppler)
-		$(cmake-utils_use_with png PNG)
-		$(cmake-utils_use_with tiff TIFF)
-		$(cmake-utils_use_with vc Vc)
+		
+		-DWITH_OCIO="$(usex color-management)"
+		-DWITH_FFTW3="$(usex fftw)"
+		-DWITH_GSL="$(usex gsl)"
+		-DWITH_JPEG="$(usex jpeg)"
+		-DWITH_OpenJPEG="$(usex jpeg2k)"
+		-DWITH_KF5KDcraw="$(usex raw)"
+		-DWITH_OpenEXR="$(usex openexr)"
+		-DWITH_Poppler="$(usex pdf)"
+		-DWITH_PNG="$(usex png)"
+		-DWITH_TIFF="$(usex tiff)"
+		-DWITH_Vc="$(usex vc)"
+		#$(cmake-utils_use_with color-management OCIO)
+		#$(cmake-utils_use_with fftw FFTW3)
+		#$(cmake-utils_use_with gsl GSL)
+		#$(cmake-utils_use_with jpeg JPEG)
+		#$(cmake-utils_use_with jpeg2k OpenJPEG)
+		#$(cmake-utils_use_with raw KF5KDcraw)
+		#$(cmake-utils_use_with openexr OpenEXR)
+		#$(cmake-utils_use_with pdf Poppler)
+		#$(cmake-utils_use_with png PNG)
+		#$(cmake-utils_use_with tiff TIFF)
+		#$(cmake-utils_use_with vc Vc)
 	)
 
 	kde5_src_configure
