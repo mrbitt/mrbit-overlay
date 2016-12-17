@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI="6"
 
 DESCRIPTION="Ascii Design is an ascii-art program based on figlet engine."
 HOMEPAGE="https://github.com/Faster3ck/Ascii-Design"
@@ -14,7 +14,7 @@ LICENSE="GPL"
 SLOT="0"
 IUSE="+figlet"
 
-inherit eutils kde4-base qt4-r2
+inherit eutils kde5
 
 KEYWORDS="amd64 x86"
 
@@ -34,14 +34,14 @@ src_prepare() {
 src_configure(){
     echo "${WORKDIR}"
     cd "${S}"
-    kde4-base_src_configure
+    kde5_src_configure
 }
 
 	
 src_install() {
     cd "${S}"
     echo "${WORKDIR}"
-    kde4-base_src_install
+    kde5_src_install
     mkdir ${D}/usr/share/figlet
     #For collision file.flt of figlet
     if use figlet; then
