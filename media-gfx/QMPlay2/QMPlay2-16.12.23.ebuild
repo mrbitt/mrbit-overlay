@@ -9,7 +9,7 @@ inherit  user eutils
 DESCRIPTION="QMPlay2 is a video player, it can plays all formats and stream"
 HOMEPAGE="http://qt-apps.org/content/show.php/QMPlay2?content=153339"
 #SRC_URI="http://downloads.sourceforge.net/project/zaps166/${PN}/${PN}-src-${PV}.tar.xz"
-SRC_URI="http://github.com/zaps166/${PN}/releases/download/${PV}/${PN}-src-${PV}.tar.xz"
+SRC_URI="https://github.com/zaps166/${PN}/releases/download/${PV}/${PN}-src-${PV}.tar.xz"
 
 LICENSE="LGPL"
 SLOT="0"

@@ -11,7 +11,7 @@ VALA_USE_DEPEND=vapigen
 DESCRIPTION="Simple tool for managing conky scripts"
 HOMEPAGE="http://www.teejeetech.in/p/conky-manager.html"
 #SRC_URI="http://ppa.launchpad.net/teejee2008/ppa/ubuntu/pool/main/c/${PN}/${PN}_${PV}~105~ubuntu14.10.1.tar.xz"
-SRC_URI="http://ppa.launchpad.net/teejee2008/ppa/ubuntu/pool/main/c/${PN}/${PN}_${PV}~136~ubuntu15.10.1.tar.xz"
+SRC_URI="http://ppa.launchpad.net/teejee2008/ppa/ubuntu/pool/main/c/${PN}/${PN}_${PV}~136~ubuntu16.04.1.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 
@@ -34,7 +34,7 @@ DEPEND="${RDEPEND}
     dev-util/desktop-file-utils
     net-misc/rsync"
     
-S="${WORKDIR}/${PN}-${PV}~136~ubuntu15.10.1"
+S="${WORKDIR}/${PN}-${PV}~136~ubuntu16.04.1"
 #RESTRICT="strip"
 
 src_prepare() {

@@ -1,8 +1,8 @@
 # Distributed under the terms of the GNU General Public License v2
 
-EAPI="6"
+EAPI="5"
 
-inherit autotools eutils flag-o-matic fdo-mime gnome2-utils xdg
+inherit autotools eutils fdo-mime gnome2-utils xdg
 
 SLOT="3"
 MY_PN="${PN}${SLOT}"
@@ -14,11 +14,11 @@ SRC_URI="mirror://sourceforge/${PN}/${MY_PN}-${PV}.tar.bz2"
 RESTRICT="mirror"
 
 LICENSE="GPL-2"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="*"
 
 IUSE="+curl +net +qt4 +x11
 	bzip2 cairo crypt dbus examples gmp gnome gsl gstreamer gtk2 gtk3 httpd image-imlib image-io jit libxml mime
-	mysql ncurses odbc openal opengl openssl pcre pdf pop3 postgres qt4-opengl qt4-webkit -qt5 sdl sdl-sound sdl2 sqlite v4l xml zlib"
+	mysql ncurses odbc openal opengl openssl pcre pdf pop3 postgres qt4-opengl qt4-webkit qt5 sdl sdl-sound sdl2 sqlite v4l xml zlib"
 
 # gambas3 have the only one gui. it is based on qt4.
 # these use flags (modules/plugins) require this qt4 gui to be present at the system to work properly:
@@ -107,12 +107,25 @@ autocrap_cleanup() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/${PN}-3.9.x-xdgutils.patch" || die "patch failed"
-	
+	# funtoo-ism
+	#epatch "${FILESDIR}/xdgutils${PV}.patch"
+    xdg_src_prepare
+
+	# do not call xdg-* utils
+	find . -name "Makefile.am" | xargs \
+		sed -r -e 's|^[ \t]*xdg-.*\\|\\|' -i --
+	assert
+
+	local sedargs=(
+		# respect C(XX)FLAGS
+		-e '/C(XX)?FLAGS=""/d'
+		-e '/CX*FLAGS[_A-Z]*=/ s:(-O[a-z0-9]*|-g[a-z0-9]*|-fno-omit-[a-z-]*)::g'
+	)
+	sed -r "${sedargs[@]}" -i -- acinclude.m4 || die
+
 	# deprecated
 	autocrap_cleanup sqlite2
-    autocrap_cleanup qt5
-    
+
 	use_if_iuse bzip2 || autocrap_cleanup bzlib2
 	use_if_iuse cairo || autocrap_cleanup cairo
 	use_if_iuse crypt || autocrap_cleanup crypt
@@ -153,26 +166,13 @@ src_prepare() {
 	use_if_iuse zlib || autocrap_cleanup zlib
 
 	eautoreconf
-	eapply_user
 }
 
 src_configure() {
 	
-	if [[ $(gcc-major-version) -lt 4 ]]; then
-		append-cxxflags -fno-stack-protector   #gcc < 4.0
-	 fi
+	 append-cxxflags -std=gnu++11
+	 append-cflags -std=gnu++11
 	 
-	if [[ $(gcc-major-version) -lt 4.8 ]]; then
-		append-cxxflags  -std=gnu++11  #gcc < 5.0
-	 fi
-	    
-	if [[ $(gcc-major-version) -gt 4.9 ]]; then
-		append-cxxflags  -std=gnu++14  #gcc > 5.0
-	 fi  
-	    
-	 
-	 
-	 	  		
 	use_if_iuse qt4 && cd ${S}/gb.qt4 && \
 		econf $(use_enable qt4-opengl qtopengl) \
 			$(use_enable qt4-webkit qtwebkit)
@@ -213,11 +213,10 @@ src_configure() {
 		$(use_enable x11) \
 		$(use_enable xml) \
 		$(use_enable zlib) \
-        $(use_enable qt5)
+		$(use_enable qt5)
 }
 
 src_install() {
-	
 	emake DESTDIR="${D}" install -j1
 
 	dodoc AUTHORS ChangeLog NEWS README
@@ -245,8 +244,6 @@ src_install() {
 			"${S}/app/mime/application-x-gambasserverpage.xml" \
 			"${S}/main/mime/application-x-gambas3.xml"
 	fi
-	
-	prune_libtool_files --modules
 }
 
 pkg_preinst() {

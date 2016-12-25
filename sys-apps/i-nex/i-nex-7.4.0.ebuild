@@ -7,12 +7,12 @@ EAPI=5
 inherit eutils autotools versionator 
 
 DESCRIPTION="A Gambas software that gathers information on CPU, motherboard and more (like CPU-Z)"
-HOMEPAGE="http://i-nex.linux.pl/"
+HOMEPAGE="http://i-nex.linux.pl/" # sourceforge.net/projects/i-nex/
 SRC_URI="https://github.com/eloaders/I-Nex/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE=""
 
 RDEPEND="dev-lang/gambas:3
