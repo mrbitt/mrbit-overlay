@@ -1,0 +1,28 @@
+From ca2b8974bd5108879850e4b916f93a845e51936f Mon Sep 17 00:00:00 2001
+From: Peter De Wachter <pdewacht@gmail.com>
+Date: Tue, 12 May 2015 23:38:19 +0200
+Subject: [PATCH 4/5] swi_blitz_hammerop(): missing fclose()
+
+---
+ file.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/file.c b/file.c
+index deda6fe..d3ece9a 100644
+--- a/file.c
++++ b/file.c
+@@ -362,7 +362,10 @@ int swi_blitz_hammerop(int op, char* name, char* path, char* space)
+         fclose(f); return op;
+     }                            // file is not Hammered
+ 
+-    if (op == 0) return 0x24000; // hack: should return length
++    if (op == 0)
++    {
++        fclose(f); return 0x24000; // hack: should return length
++    }
+     char a[524288];
+     int p = 0;
+     char c;
+-- 
+2.1.4
+

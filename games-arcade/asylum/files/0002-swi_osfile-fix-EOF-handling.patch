@@ -1,0 +1,27 @@
+From eea77829cc17817abd5b218b3e1d969cec619a32 Mon Sep 17 00:00:00 2001
+From: Peter De Wachter <pdewacht@gmail.com>
+Date: Tue, 12 May 2015 23:33:00 +0200
+Subject: [PATCH 2/5] swi_osfile(): fix EOF handling
+
+Old code wrote an extra -1 byte, which caused a buffer overflow in
+loadvitalfile().
+---
+ file.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/file.c b/file.c
+index 48e1346..deda6fe 100644
+--- a/file.c
++++ b/file.c
+@@ -343,7 +343,7 @@ int swi_osfile(int op, const char* name, char* start, char* end)
+     case 14: // load file
+         f = fopen(name, "rb");
+         if (f == NULL) return -1;
+-        for (char* i = start; !feof(f); i++) *i = fgetc(f);
++        while ((x = fgetc(f)) != EOF) *start++ = x;
+         fclose(f);
+         return 0;
+     }
+-- 
+2.1.4
+

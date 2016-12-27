@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Asylum
+Comment=surreal platform shooting game
+Comment[de]=Surrealistisches Plattform-Ballerspiel
+Icon=asylum
+Exec=asylum
+Terminal=false
+Categories=Game;ActionGame;
+StartupNotify=false
+Keywords=platform;surreal;shooting;

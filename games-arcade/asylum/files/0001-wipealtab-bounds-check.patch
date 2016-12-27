@@ -1,0 +1,25 @@
+From f7ef4d3c285d7946f577469e9e0b93da658f0b75 Mon Sep 17 00:00:00 2001
+From: Peter De Wachter <pdewacht@gmail.com>
+Date: Tue, 12 May 2015 23:27:34 +0200
+Subject: [PATCH 1/5] wipealtab(): bounds check
+
+---
+ alien.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/alien.c b/alien.c
+index 90c2a4e..ac9ff53 100644
+--- a/alien.c
++++ b/alien.c
+@@ -1689,7 +1689,7 @@ void wipealtab()
+     //aladr = alofs;
+     alent* r10 = aladr;
+     alctr = 0;
+-    for (int r9 = _alno; r9 >= 0; r9--)
++    for (int r9 = _alno; r9 > 0; r9--)
+     {
+        l9:
+         r10->type = 0;
+-- 
+2.1.4
+

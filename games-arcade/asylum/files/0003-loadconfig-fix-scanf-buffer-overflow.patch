@@ -1,0 +1,27 @@
+From 59c1b6eb856fb50157750aefe1c6f01b92c0ee10 Mon Sep 17 00:00:00 2001
+From: Peter De Wachter <pdewacht@gmail.com>
+Date: Tue, 12 May 2015 23:29:26 +0200
+Subject: [PATCH 3/5] loadconfig(): fix scanf buffer overflow
+
+scanf "%12s" needs a 13 byte buffer, as it will write up to 12
+characters and a nul byte.
+---
+ asylum.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/asylum.c b/asylum.c
+index 8fe9a5b..0caf0fb 100644
+--- a/asylum.c
++++ b/asylum.c
+@@ -665,7 +665,7 @@ char idpermitstring[] = "You are now permitted to play the ID!!!\n";
+ 
+ void loadconfig()
+ {
+-    char keyword[12];
++    char keyword[13];
+ 
+     FILE* r0 = find_config(0x40); // read access
+     if (r0 != NULL)
+-- 
+2.1.4
+
