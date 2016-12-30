@@ -4,7 +4,7 @@
 
 EAPI="6"
 
-inherit eutils kde5 multilib unpacker
+inherit multilib unpacker
 
 DESCRIPTION="FastoRedis (fork of FastoNoSQL) — is a database cross-platform open source Redis management tool"
 HOMEPAGE="www.fastoredis.com"

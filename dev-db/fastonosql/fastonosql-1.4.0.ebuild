@@ -4,7 +4,7 @@
 
 EAPI="6"
 
-inherit eutils kde5 multilib unpacker
+inherit multilib unpacker
 
 DESCRIPTION="FastoRedis it is GUI platform for NoSQL databases"
 HOMEPAGE="www.fastoredis.com"
@@ -24,7 +24,7 @@ DEPEND="${RDEPEND}
 		>=dev-qt/qtwebkit-5.4.0:5"
 
 #S=${WORKDIR}/${P}.0
-S=${WORKDIR}/${P}
+S=${WORKDIR}
 
 #RESTRICT="strip"
 
