@@ -4,11 +4,12 @@
 
 EAPI="6"
 
-inherit multilib unpacker
+inherit eutils kde5 multilib unpacker
 
 DESCRIPTION="FastoRedis it is GUI platform for NoSQL databases"
 HOMEPAGE="www.fastoredis.com"
 SRC_URI="https://dl.opendesktop.org/api/files/download/id/1483084159/${P}-x86_64.deb"
+#SRC_URI="https://github.com/fastogt/${PN}/archive/v1.4.0.0.tar.gz -> ${P}.tar.gz"
 
 LICENSE="GPL-v3"
 SLOT="0"
@@ -22,7 +23,8 @@ DEPEND="${RDEPEND}
 		>=dev-qt/qtgui-5.4.0:5
 		>=dev-qt/qtwebkit-5.4.0:5"
 
-S=${WORKDIR}
+#S=${WORKDIR}/${P}.0
+S=${WORKDIR}/${P}
 
 #RESTRICT="strip"
 

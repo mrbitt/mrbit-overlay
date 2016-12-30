@@ -4,12 +4,13 @@
 
 EAPI="6"
 
-inherit multilib unpacker
+inherit eutils kde5 multilib unpacker
 
 DESCRIPTION="FastoRedis (fork of FastoNoSQL) — is a database cross-platform open source Redis management tool"
 HOMEPAGE="www.fastoredis.com"
 SRC_URI="https://dl.opendesktop.org/api/files/download/id/1483084363/${P}-x86_64.deb"
-	
+#SRC_URI="https://github.com/fastogt/${PN}/archive/v1.4.0.0.tar.gz -> ${P}.tar.gz
+
 LICENSE="GPL-v3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -21,6 +22,7 @@ DEPEND="${RDEPEND}
 		>=dev-qt/qtgui-5.4.0:5
 		>=dev-qt/qtwebkit-5.4.0:5"
 
+##S=${WORKDIR}/${P}.0
 S=${WORKDIR}
 
 #RESTRICT="strip"
