@@ -20,11 +20,11 @@ DEPEND="dev-qt/qtcore:4"
 RDEPEND="${DEPEND}"
 S=${WORKDIR}/${P}-src
 
-src_prepare() {
-	sed -i -e 's|usr/games|usr/bin|' ${PN}.pro || die
+#src_prepare() {
+	#sed -i -e 's|usr/games|usr/bin|' ${PN}.pro || die
 	#qt4-r2_src_prepare
-}
+#}
 
 src_configure() {
-	eqmake4
+	eqmake4 PREFIX="${EPREFIX}/usr"
 }
