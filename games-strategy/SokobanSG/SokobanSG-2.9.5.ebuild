@@ -6,9 +6,8 @@ EAPI="5"
 
 DESCRIPTION="The classic Japanese game of Soko-Ban"
 HOMEPAGE="https://www.linux-apps.com/p/1109295"
-SRC_URI="https://dl.opendesktop.org/api/files/download/id/1480136707/${P}.tgz"
+SRC_URI="https://dl.opendesktop.org/api/files/download/id/1483349314/${P}.tgz"
 
-LICENSE="GPL"
 SLOT="0"
 
 inherit eutils games
@@ -17,7 +16,7 @@ KEYWORDS="amd64 ~mips x86"
 
 RDEPEND=""
 DEPEND="${RDEPEND}
-    dev-qt/qtcore:4S"
+    dev-qt/qtcore:4"
     
 S=${WORKDIR}/${PN}
 RESTRICT="strip"

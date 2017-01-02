@@ -21,7 +21,8 @@ if [[ ${PV} == *9999* ]] ; then
 	MY_P=$P
 	KEYWORDS=""
 	PROPERTIES="live"
-	EGIT_REPO_URI="https://github.com/mean00/avidemux2"
+	EGIT_REPO_URI="git://gitorious.org/${MY_P}2-6/${MY_P}2-6.git https://git.gitorious.org/${MY_P}2-6/${MY_P}2-6.git"
+	EGIT_REPO_URI="https://github.com/mean00/${MY_P}2"
 	inherit git-r3
 else
 	MY_P="${MY_PN}_${PV}"
@@ -67,9 +68,13 @@ src_prepare() {
 		local error="Failed to remove ffmpeg."
 
 		rm -rf cmake/admFFmpeg* cmake/ffmpeg* avidemux_core/ffmpeg_package buildCore/ffmpeg || die "${error}"
-		sed -i -e 's/include(admFFmpegUtil)//g' avidemux/commonCmakeApplication.cmake || die "${error}"
-		sed -i -e '/registerFFmpeg/d' avidemux/commonCmakeApplication.cmake || die "${error}"
-		sed -i -e 's/include(admFFmpegBuild)//g' avidemux_core/CMakeLists.txt || die "${error}"
+		sed -i \
+			-e 's/include(admFFmpegUtil)//g' \
+			-e '/registerFFmpeg/d' \
+			-- cmake/commonCmakeApplication.cmake || die "${error}"
+		sed -i \
+			-e 's/include(admFFmpegBuild)//g' \
+			-- avidemux_core/CMakeLists.txt || die "${error}"
 	else
 		# Avoid existing avidemux installations from making the build process fail, bug #461496.
 		sed -i -e "s:getFfmpegLibNames(\"\${sourceDir}\"):getFfmpegLibNames(\"${S}/buildCore/ffmpeg/source/\"):g" cmake/admFFmpegUtil.cmake \
@@ -86,6 +91,10 @@ src_prepare() {
 
 	# Needed for gcc-6
 	append-cxxflags $(test-flags-CXX -std=gnu++98)
+
+	# Filter problematic flags
+	filter-flags -fwhole-program -flto
+
 	eapply_user
 }
 
@@ -113,5 +122,7 @@ src_compile() {
 }
 
 src_install() {
+	# revert edit from src_prepare prior to installing
+	sed -i -e "s:getFfmpegLibNames(\"${S}/buildCore/ffmpeg/source/\"):getFfmpegLibNames(\"\${sourceDir}\"):g" cmake/admFFmpegUtil.cmake
 	cmake-utils_src_install -j1
 }

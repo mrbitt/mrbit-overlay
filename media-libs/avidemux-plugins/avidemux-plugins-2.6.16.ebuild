@@ -1,8 +1,8 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 2016 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI="5"
+EAPI=6
+RESTRICT="mirror"
 
 PYTHON_COMPAT=( python2_7 )
 
@@ -10,28 +10,30 @@ inherit cmake-utils eutils flag-o-matic python-single-r1
 
 SLOT="2.6"
 
-DESCRIPTION="Plugins for avidemux; a video editor designed for simple cutting, filtering and encoding tasks"
+DESCRIPTION="Plugins for media-video/avidemux"
 HOMEPAGE="http://fixounet.free.fr/avidemux"
 
 # Multiple licenses because of all the bundled stuff.
 LICENSE="GPL-1 GPL-2 MIT PSF-2 public-domain"
-IUSE="aac aften a52 alsa amr debug dts fontconfig fribidi jack lame libsamplerate cpu_flags_x86_mmx nvenc opengl opus oss pulseaudio qt4 vorbis truetype twolame xv xvid x264 x265 vdpau vpx"
+IUSE="aac aften a52 alsa amr debug dts fontconfig fribidi jack lame libsamplerate cpu_flags_x86_mmx nvenc opengl opus oss pulseaudio qt4 qt5 vorbis truetype twolame xv xvid x264 x265 vdpau vpx"
 KEYWORDS="amd64 ~x86"
 
 MY_PN="${PN/-plugins/}"
 if [[ ${PV} == *9999* ]] ; then
+	MY_P=$P
 	KEYWORDS=""
-	EGIT_REPO_URI="git://gitorious.org/${MY_PN}2-6/${MY_PN}2-6.git https://git.gitorious.org/${MY_PN}2-6/${MY_PN}2-6.git"
-
-	inherit git-2
+	PROPERTIES="live"
+	EGIT_REPO_URI="git://gitorious.org/${MY_P}2-6/${MY_P}2-6.git https://git.gitorious.org/${MY_P}2-6/${MY_P}2-6.git"
+	EGIT_REPO_URI="https://github.com/mean00/${MY_P}2"
+	inherit git-r3
 else
 	MY_P="${MY_PN}_${PV}"
 	SRC_URI="mirror://sourceforge/${MY_PN}/${MY_PN}/${PV}/${MY_P}.tar.gz"
 fi
 
-DEPEND="
+RDEPEND="
 	~media-libs/avidemux-core-${PV}:${SLOT}[vdpau?]
-	~media-video/avidemux-${PV}:${SLOT}[opengl?,qt4?]
+	~media-video/avidemux-${PV}:${SLOT}[opengl?,qt4?,qt5?]
 	>=dev-lang/spidermonkey-1.5-r2:0=
 	dev-libs/libxml2:2
 	media-libs/libpng:0=
@@ -51,7 +53,7 @@ DEPEND="
 		libsamplerate? ( media-libs/libsamplerate:0 )
 	)
 	lame? ( media-sound/lame:0 )
-	nvenc? ( media-video/nvidia_video_sdk:0 )
+	nvenc? ( amd64? ( media-video/nvidia_video_sdk:0 ) )
 	opus? ( media-libs/opus:0 )
 	oss? ( virtual/os-headers:0 )
 	pulseaudio? ( media-sound/pulseaudio:0 )
@@ -67,13 +69,21 @@ DEPEND="
 	xvid? ( media-libs/xvid:0 )
 	vorbis? ( media-libs/libvorbis:0 )
 	vpx? ( media-libs/libvpx:0 )
-	${PYTHON_DEPS}
 "
-RDEPEND="$DEPEND"
+DEPEND="$RDEPEND
+	${PYTHON_DEPS}"
 
 S="${WORKDIR}/${MY_P}"
 
-PATCHES=( "${FILESDIR}"/${PN}-2.6.4-optional-pulse.patch )
+REQUIRED_USE="!amd64? ( !nvenc ) qt5? ( !qt4 ) "
+
+PATCHES=(
+	"${FILESDIR}"/${PN}-2.6.14-optional-pulse.patch
+)
+
+src_prepare() {
+	default
+}
 
 src_configure() {
 	# Add lax vector typing for PowerPC.
@@ -84,45 +94,61 @@ src_configure() {
 	# See bug 432322.
 	use x86 && replace-flags -O0 -O1
 
+	# Needed for gcc-6
+	append-cxxflags $(test-flags-CXX -std=gnu++98)
+
+	# Filter problematic flags
+	filter-flags -fwhole-program -flto
+
 	processes="buildPluginsCommon:avidemux_plugins
 		buildPluginsCLI:avidemux_plugins"
-	use qt4 && processes+=" buildPluginsQt4:avidemux_plugins"
+	if use qt4 || use qt5 ; then
+		export QT_SELECT
+		processes+=" buildPluginsQt4:avidemux_plugins"
+	fi
 
 	for process in ${processes} ; do
 		local build="${process%%:*}"
 
-		local mycmakeargs="
-			-DAVIDEMUX_SOURCE_DIR='${S}'
+		local mycmakeargs
+		mycmakeargs=(
+			-DAVIDEMUX_SOURCE_DIR="'${S}'"
 			-DPLUGIN_UI=$(echo ${build/buildPlugins/} | tr '[:lower:]' '[:upper:]')
-			$(cmake-utils_use aac FAAC)
-			$(cmake-utils_use aac FAAD)
-			$(cmake-utils_use alsa)
-			$(cmake-utils_use aften)
-			$(cmake-utils_use amr OPENCORE_AMRWB)
-			$(cmake-utils_use amr OPENCORE_AMRNB)
-			$(cmake-utils_use dts LIBDCA)
-			$(cmake-utils_use fontconfig)
-			$(cmake-utils_use jack)
-			$(cmake-utils_use lame)
-			$(cmake-utils_use nvenc)
-			$(cmake-utils_use opus)
-			$(cmake-utils_use oss)
-			$(cmake-utils_use pulseaudio PULSEAUDIOSIMPLE)
-			$(cmake-utils_use qt4)
-			$(cmake-utils_use truetype FREETYPE2)
-			$(cmake-utils_use twolame)
-			$(cmake-utils_use x264)
-			$(cmake-utils_use x265)
-			$(cmake-utils_use xv XVIDEO)
-			$(cmake-utils_use xvid)
-			$(cmake-utils_use vdpau)
-			$(cmake-utils_use vorbis)
-			$(cmake-utils_use vorbis LIBVORBIS)
-			$(cmake-utils_use vpx VPXDEC)
-		"
+			-DFAAC="$(usex aac)"
+			-DFAAD="$(usex aac)"
+			-DALSA="$(usex alsa)"
+			-DAFTEN="$(usex aften)"
+			-DOPENCORE_AMRWB="$(usex amr)"
+			-DOPENCORE_AMRNB="$(usex amr)"
+			-DLIBDCA="$(usex dts)"
+			-DFONTCONFIG="$(usex fontconfig)"
+			-DJACK="$(usex jack)"
+			-DLAME="$(usex lame)"
+			-DNVENC="$(usex nvenc)"
+			-DOPUS="$(usex opus)"
+			-DOSS="$(usex oss)"
+			-DPULSEAUDIOSIMPLE="$(usex pulseaudio)"
+			-DQT4="$(usex qt4)"
+			-DFREETYPE2="$(usex truetype)"
+			-DTWOLAME="$(usex twolame)"
+			-DX264="$(usex x264)"
+			-DX265="$(usex x265)"
+			-DXVIDEO="$(usex xv)"
+			-DXVID="$(usex xvid)"
+			-DVDPAU="$(usex vdpau)"
+			-DVORBIS="$(usex vorbis)"
+			-DLIBVORBIS="$(usex vorbis)"
+			-DVPXDEC="$(usex vpx)"
+		)
+		if use qt5 ; then
+			mycmakeargs+=( -DENABLE_QT5=True )
+			QT_SELECT=5
+		elif use qt4 ; then
+			QT_SELECT=4
+		fi
 
 		if use debug ; then
-			mycmakeargs+=" -DVERBOSE=1 -DCMAKE_BUILD_TYPE=Debug -DADM_DEBUG=1"
+			mycmakeargs+=( -DVERBOSE=1 -DCMAKE_BUILD_TYPE=Debug -DADM_DEBUG=1 )
 		fi
 
 		mkdir "${S}"/${build} || die "Can't create build folder."
@@ -147,5 +173,5 @@ src_install() {
 		popd > /dev/null || die
 	done
 
-	python_fix_shebang "${D}"
+	#python_fix_shebang "${D}"
 }
