@@ -11,7 +11,7 @@ inherit qmake-utils
 
 DESCRIPTION="Lumina desktop environment"
 HOMEPAGE="http://lumina-desktop.org/"
-SRC_URI="https://github.com/trueos/lumina/archive/v${PV}-p1.tar.gz -> ${P}-p1.tar.gz"
+SRC_URI="https://github.com/trueos/lumina/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
@@ -42,7 +42,7 @@ RDEPEND="${COMMON_DEPEND}
 	x11-misc/numlockx
 	x11-wm/fluxbox"
 
-S="${WORKDIR}/${P}-p1"
+S="${WORKDIR}/${P}"
 
 src_configure(){
 	eqmake5 PREFIX="${ROOT}usr" L_BINDIR="${ROOT}usr/bin" \
