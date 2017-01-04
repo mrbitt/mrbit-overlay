@@ -48,7 +48,7 @@ fi
 
 SLOT="0"
 LICENSE="|| ( GPL-2 BL )"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="+boost +bullet collada colorio cycles +dds debug doc +elbeem ffmpeg fftw +game-engine jack jpeg2k libav ndof nls openal openimageio +opennl openmp +openexr player redcode sdl sndfile cpu_flags_x86_sse cpu_flags_x86_sse2 tiff"
 REQUIRED_USE="${PYTHON_REQUIRED_USE}
 	player? ( game-engine )
@@ -101,7 +101,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	doc? (
 		app-doc/doxygen[-nodot(-),dot(+)]
-		>=dev-python/sphinx-1.3.1
+		dev-python/sphinx
 	)
 	nls? ( sys-devel/gettext )"
 
@@ -125,10 +125,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.68-doxyfile.patch \
 		"${FILESDIR}"/${PN}-2.68-fix-install-rules.patch \
 		"${FILESDIR}"/${PN}-2.70-sse2.patch 
-		#"${FILESDIR}"/${PN}-2.72-T42797.diff
-		"${FILESDIR}"/sequencer_extra_actions-3.8.patch.bz2 \
-		"${FILESDIR}"/01_include_addon_contrib_in_release \
-		"${FILESDIR}"/050_thumbnailer_use_python3
+	#	"${FILESDIR}"/${PN}-2.72-T42797.diff
+
 	epatch_user
 
 	# we don't want static glew, but it's scattered across

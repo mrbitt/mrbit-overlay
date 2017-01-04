@@ -101,7 +101,7 @@ RDEPEND="
 DEPEND="${RDEPEND}
 	doc? (
 		app-doc/doxygen[-nodot(-),dot(+)]
-		>=dev-python/sphinx-1.3.1
+		dev-python/sphinx
 	)
 	nls? ( sys-devel/gettext )"
 
@@ -125,10 +125,8 @@ src_prepare() {
 	epatch "${FILESDIR}"/${PN}-2.68-doxyfile.patch \
 		"${FILESDIR}"/${PN}-2.68-fix-install-rules.patch \
 		"${FILESDIR}"/${PN}-2.70-sse2.patch 
-		#"${FILESDIR}"/${PN}-2.72-T42797.diff
-		"${FILESDIR}"/sequencer_extra_actions-3.8.patch.bz2 \
-		"${FILESDIR}"/01_include_addon_contrib_in_release \
-		"${FILESDIR}"/050_thumbnailer_use_python3
+	#	"${FILESDIR}"/${PN}-2.72-T42797.diff
+
 	epatch_user
 
 	# we don't want static glew, but it's scattered across
