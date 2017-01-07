@@ -9,8 +9,8 @@ inherit qt4-r2 unpacker
 DESCRIPTION="LeoCAD is a CAD program that uses bricks similar to those found in many toys."
 HOMEPAGE="http://www.leocad.org"
 SRC_URI="https://github.com/leozide/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-         https://github.com/leozide/${PN}/releases/download/v${PV}/Library-Linux-9306.zip
-         http://www.ldraw.org/library/unofficial/ldrawunf.zip"
+         https://github.com/leozide/${PN}/releases/download/v${PV}/Library-Linux-9306.zip"
+         #http://www.ldraw.org/library/unofficial/ldrawunf.zip"
           
           
 LICENSE="GPL-2"
@@ -23,6 +23,7 @@ RDEPEND="virtual/opengl
 	x11-libs/gtk+:2
 	jpeg? ( virtual/jpeg )
 	zlib? ( sys-libs/zlib )
+	ldraw? ( media-libs/ldraw )
 	png? ( media-libs/libpng )"
 DEPEND="${RDEPEND}"
 
@@ -51,7 +52,7 @@ src_prepare() {
 
 src_compile() {
 	cd ${S}/trunk
-    eqmake4 DISABLE_UPDATE_CHECK=1
+    eqmake4 LDRAW_LIBRARY_PATH=/usr/share/ldraw DISABLE_UPDATE_CHECK=1
 	make clean && make
 }
 
@@ -60,13 +61,13 @@ src_install() {
     
     make INSTALL_ROOT="${D}" install
     
-    dodir /usr/share/leocad
-    insinto /usr/share/leocad/
+    dodir /usr/share/ldraw
+    insinto /usr/share/ldraw/
     doins "${WORKDIR}"/library.bin
  
-  if use ldraw; then
-    wget -P "${D}"/usr/share/leocad/ http://www.ldraw.org/library/unofficial/ldrawunf.zip || die
-    #doins -r "${WORKDIR}"/{p,parts} || die
-  fi
+  #if use ldraw; then
+    #wget -P "${D}"/usr/share/leocad/ http://www.ldraw.org/library/unofficial/ldrawunf.zip || die
+    ##doins -r "${WORKDIR}"/{p,parts} || die
+  #fi
 }
 
