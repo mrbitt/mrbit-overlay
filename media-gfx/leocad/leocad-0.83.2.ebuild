@@ -65,9 +65,9 @@ src_install() {
     insinto /usr/share/ldraw/
     doins "${WORKDIR}"/library.bin
  
-  #if use ldraw; then
-    #wget -P "${D}"/usr/share/leocad/ http://www.ldraw.org/library/unofficial/ldrawunf.zip || die
-    ##doins -r "${WORKDIR}"/{p,parts} || die
+  #if use unofficial; then
+    #wget -P "${D}"/usr/share/ldraw/ http://www.ldraw.org/library/unofficial/ldrawunf.zip || die
+   #doins -r "${WORKDIR}"/{p,parts} || die
   #fi
 }
 
