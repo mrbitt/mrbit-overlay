@@ -15,7 +15,8 @@ EGIT_REPO_URI="https://github.com/netblue30/${PN}"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+bind +chroot +seccomp"
+IUSE="apparmor +bind +chroot +file-transfer +network
+	network-restricted +seccomp +userns x11"
 
 DEPEND=""
 RDEPEND="${DEPEND}"
@@ -34,12 +35,24 @@ src_prepare() {
 			src/${PN}/usage.c \
 			src/${PN}/sandbox.c \
 			src/${PN}/main.c
+
+    epatch "${FILESDIR}"/${P}-sysmacros.patch
+	find -name Makefile.in -exec sed -i -r \
+			-e '/CFLAGS/s: (-O2|-ggdb) : :g' \
+			-e '1iCC=@CC@' {} + || die
 }
 
 src_configure() {
-	for flag in ${IUSE}; do
-		EXTRA_ECONF+=( $(use_enable "${flag/+}") )
-	done
-	EXTRA_ECONF="${EXTRA_ECONF[@]}"
-	default
+	local myeconfargs=(
+		$(use_enable apparmor)
+		$(use_enable bind)
+		$(use_enable chroot)
+		$(use_enable file-transfer)
+		$(use_enable network)
+		$(use_enable seccomp)
+		$(use_enable userns)
+		$(use_enable x11)
+	)
+	use network-restricted && myeconfargs+=( --enable-network=restricted )
+	econf "${myeconfargs[@]}"
 }

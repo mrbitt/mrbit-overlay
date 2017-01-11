@@ -13,7 +13,8 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64"
-IUSE="+seccomp"
+IUSE="apparmor +bind +chroot +file-transfer +network
+	network-restricted +seccomp +userns x11"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${P}-sysmacros.patch
@@ -23,5 +24,16 @@ src_prepare() {
 }
 
 src_configure() {
-	econf $(use_enable seccomp)
+	local myeconfargs=(
+		$(use_enable apparmor)
+		$(use_enable bind)
+		$(use_enable chroot)
+		$(use_enable file-transfer)
+		$(use_enable network)
+		$(use_enable seccomp)
+		$(use_enable userns)
+		$(use_enable x11)
+	)
+	use network-restricted && myeconfargs+=( --enable-network=restricted )
+	econf "${myeconfargs[@]}"
 }
