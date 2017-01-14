@@ -12,20 +12,17 @@ RUBY_FAKEGEM_EXTRADOC="History.rdoc README.rdoc MIT-LICENSE"
 
 inherit multilib ruby-fakegem 
 
-DESCRIPTION="Glut bindings for ruby. Used with the opengl gem.
+DESCRIPTION="Glu bindings for ruby. Used with the opengl gem.
 "
-HOMEPAGE="https://github.com/archSeer/glut"
+HOMEPAGE="https://rubygems.org/gems/glu"
 LICENSE="MIT"
-
-SRC_URI="https://github.com/archSeer/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="~alpha ~amd64 ~arm ~hppa ~ia64 ~ppc ~ppc64 ~sparc ~x86 ~x86-fbsd ~amd64-linux ~x86-linux ~ppc-macos ~x64-macos ~x86-macos ~sparc-solaris ~sparc64-solaris ~x64-solaris ~x86-solaris"
 SLOT="0"
 IUSE=""
 
-ruby_add_rdepend "dev-ruby/rake
+ruby_add_rdepend "
                  >=dev-ruby/hoe-3.14
-                 >=dev-ruby/mini_portile2-2.1 
                  >=dev-ruby/rake-compiler-0.9.1
                  >=dev-ruby/rake-compiler-dock-0.5.0 
                  >=dev-ruby/rdoc-4.0"
@@ -48,10 +45,10 @@ each_ruby_test() {
 }
 
 each_ruby_configure() {
-	${RUBY} -Cext/glut extconf.rb || die
+	${RUBY} -Cext/glu extconf.rb || die
 }
 
 each_ruby_compile() {
-	emake -C ext/glut V=1
+	emake -C ext/glu V=1
     cp ext/*/*$(get_modname) lib/ || die
 }
