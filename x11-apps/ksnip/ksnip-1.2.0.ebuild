@@ -17,7 +17,8 @@ IUSE="debug +qt4"
 
 DEPEND="
 	dev-qt/qtcore:4
-	dev-qt/qtgui:4"
+	dev-qt/qtgui:4
+	dev-qt/qtwidgets:4"
 RDEPEND="${DEPEND}"
 
 S="${WORKDIR}/${P}"
