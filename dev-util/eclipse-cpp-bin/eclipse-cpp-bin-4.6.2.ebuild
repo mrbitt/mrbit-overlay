@@ -4,8 +4,8 @@ EAPI=5
 
 inherit eutils versionator
 
-SR=R
-RNAME="mars"
+SR=2
+RNAME="neon"
 
 
 DESCRIPTION="Eclipse IDE for C/C++"
@@ -18,7 +18,7 @@ SRC_URI="
          x86? ( ${SRC_BASE}.tar.gz&r=1 -> ${P}.tar.gz )"
 
 LICENSE="EPL-1.0"
-SLOT="4.5"
+SLOT="4.6"
 KEYWORDS="amd64 x86"
 IUSE=""
 

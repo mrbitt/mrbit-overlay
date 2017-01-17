@@ -18,7 +18,7 @@ LICENSE="GPL-3"
 SLOT="0"
 [[ ${PV} == *9999* ]] || \
 KEYWORDS="~amd64 ~arm ~x86 ~amd64-linux ~x86-linux"
-IUSE="debug phonon +qt4 qt5"
+IUSE="debug phonon qt4 +qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
 RDEPEND="
