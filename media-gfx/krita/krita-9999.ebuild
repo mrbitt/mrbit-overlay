@@ -7,7 +7,9 @@ EAPI=6
 KDE_DOXYGEN="true"
 KDE_HANDBOOK="true"
 KDE_TEST="true"
-inherit kde5
+inherit kde5 
+
+LICENSE="GPL-2+"
 
 DESCRIPTION="A free digital painting application. Digital Painting, Creative Freedom!"
 HOMEPAGE="https://www.kde.org/applications/graphics/krita/ https://krita.org/"
@@ -71,6 +73,7 @@ DEPEND="${COMMON_DEPEND}
 "
 RDEPEND="${COMMON_DEPEND}
 	!app-office/calligra[calligra_features_krita]
+	!app-office/calligra-l10n:4[calligra_features_krita(+)]
 "
 
 src_configure() {
