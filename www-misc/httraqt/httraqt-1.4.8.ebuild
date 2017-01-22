@@ -2,22 +2,22 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI="6"
 
 inherit eutils l10n cmake-utils
 
-MY_P=${PN}-${PV}
+#MY_P=${PN}-${PV}
 
 DESCRIPTION="Graphical user interface for HTTrack library, developed in C++ and based on Qt4"
 HOMEPAGE="http://httraqt.sourceforge.net"
 
-RESTRICT="mirror"
-SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.gz"
+#RESTRICT="mirror"
+SRC_URI="https://sourceforge.net/projects/${PN}/files/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE="qt4 qt5"
+KEYWORDS="amd64 ~x86"
+IUSE="qt4 +qt5"
 
 DEPEND=">=www-client/httrack-3.45.4
     qt4? (
@@ -61,6 +61,8 @@ src_configure() {
 	cmake-utils_src_configure
 }
 
-pkg_postinst() {
-	chmod 755 ${ROOT}/usr/bin/httraqt
+src_install() {
+	cmake-utils_src_install
+	chmod 755 ${D}/usr/bin/httraqt
+	newicon icons/hicolor/32x32/apps/${PN}.png  ${PN}.png||  die "doicons failed!"
 }
