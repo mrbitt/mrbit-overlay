@@ -24,4 +24,5 @@ DEPEND="${RDEPEND}"
 src_prepare() {
 	#epatch "${FILESDIR}"/${P}-update_for_new_PyQt4_build.patch
 	distutils-r1_src_prepare
+	 export CXXFLAGS="$CXXFLAGS -std=c++11" 
 }
