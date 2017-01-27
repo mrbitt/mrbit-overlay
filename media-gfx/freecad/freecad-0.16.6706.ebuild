@@ -14,7 +14,7 @@ SRC_URI="https://github.com/FreeCAD/FreeCAD/releases/download/0.16/FreeCAD-${PV}
 
 LICENSE="GPL-2"
 SLOT="0"
-KEYWORDS="amd64 ~x86"
+KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 COMMON_DEPEND="dev-cpp/eigen:3
@@ -39,6 +39,7 @@ RDEPEND="${COMMON_DEPEND}
 	dev-python/numpy"
 DEPEND="${COMMON_DEPEND}
 	dev-python/pyside-tools
+	dev-python/pycollada
 	>=dev-lang/swig-2.0.4-r1:0"
 
 # https://bugs.gentoo.org/show_bug.cgi?id=352435
