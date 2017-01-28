@@ -29,6 +29,7 @@ IUSE=""
 
 DEPEND="app-text/dvipng
 	dev-python/PyQt4
+	kde-apps/pykde4 
 	virtual/latex-base"
 RDEPEND="${DEPEND}"
 
