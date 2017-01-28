@@ -8,7 +8,7 @@ PYTHON_DEPEND="2"
 MY_PN=TeXamator
 
 DESCRIPTION="A program aimed at helping you making your exercise sheets"
-HOMEPAGE="www.linux-apps.com/p/1127989/"
+HOMEPAGE="http://alexisfles.ch/en/texamator/texamator.html"
 
 if [[ ${PV} == *9999* ]]; then
 	inherit git-r3 eutils multilib python
