@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /usr/lib/texamator
+exec python2 texamator.py
