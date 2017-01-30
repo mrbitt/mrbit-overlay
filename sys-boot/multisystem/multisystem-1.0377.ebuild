@@ -59,6 +59,11 @@ src_prepare() {
 	 sed -i -e '6d' "${S}"/usr/local/share/multisystem/dependances.txt || die "sed failed"
 	 sed -i -e '10d' "${S}"/usr/local/share/multisystem/dependances.txt || die "sed failed"
 	 sed -i -e '12d' "${S}"/usr/local/share/multisystem/dependances.txt || die "sed failed"
+	 #sed -i '/fatresize/d' "${S}"/usr/local/share/multisystem/dependances.txt || die "sed failed"
+     #sed -i '/kvm/d' "${S}"/usr/local/share/multisystem/dependances.txt || die "sed failed"
+     #sed -i '227,236d' "${S}"/usr/local/share/multisystem/gui_multisystem.sh || die "sed failed"
+     #sed -i '304,311d' "${S}"/usr/local/share/multisystem/gui-detect.sh || die "sed failed"
+     #sed -i "s|multisystem-mountpoint-usb|multisystem-detection-usb|g" "${S}"/usr/local/share/multisystem/gui-detect.sh || die "sed failed"
 }
 
 src_install() {
@@ -70,7 +75,8 @@ src_install() {
 
 pkg_postinst() {
 	
-	elog "sudo gpasswd -a <USER> adm"
+	elog "sudo gpasswd -a <USER> adm 
+	      sudo usermod -aG adm <USER> "
 	elog " 	15 sudo nano /etc/sudoers
 	        16 # User privilege specification
 			17 root    ALL=(ALL) ALL
