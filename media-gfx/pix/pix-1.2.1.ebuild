@@ -14,7 +14,7 @@ HOMEPAGE="https://community.linuxmint.com/software/view/pix"
 LICENSE="GPL-2+"
 SLOT="0"
 
-SRC_URI="https://github.com/linuxmint/${PN}/archive/${PV}.tar.gz"
+SRC_URI="https://github.com/linuxmint/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
 KEYWORDS="amd64 ~arm ~ppc ~ppc64 x86 ~amd64-linux ~x86-linux ~x86-solaris"
 IUSE="cdr exif +gnome-keyring gstreamer +http +jpeg +json lcms raw +slideshow svg tiff test webkit webp"
