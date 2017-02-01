@@ -4,9 +4,12 @@
 
 EAPI="5"
 
+inherit  versionator
+
+MY_P="$(replace_version_separator 1 '.')"
 DESCRIPTION="A Qt/C++ GUI front end to cryfs,gocryptfs,securefs and encfs"
 HOMEPAGE="github.com/mhogomchungu/sirikali"
-SRC_URI="https://github.com/mhogomchungu/sirikali/releases/download/1.2.3/${P}.tar.xz"
+SRC_URI="https://github.com/mhogomchungu/sirikali/releases/download/${MY_P}/${P}.tar.xz"
 
 LICENSE="GPL-v2"
 SLOT="0"
