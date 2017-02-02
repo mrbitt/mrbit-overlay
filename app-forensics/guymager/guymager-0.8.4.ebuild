@@ -15,7 +15,7 @@ SRC_URI="https://sourceforge.net/projects/${PN}/files/${PN}/LatestSource/${P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~arm amd64"
-IUSE="debug hdparm udisk smart parted qt4 +qt5"
+IUSE="debug +hdparm +udisk +smart +parted qt4 +qt5"
 
 RDEPEND="qt4? (
 				dev-qt/qtcore:4
@@ -75,6 +75,7 @@ src_install() {
 	insinto /etc/guymager
 	doins guymager.cfg
 
-	doicon guymager_128.png
+	sed -i -e "s:guymager_128.png:guymager:" ${PN}.desktop || die
+	newicon guymager_128.png ${PN}.png ||  die "doicons failed!"
 	domenu guymager.desktop
 }
