@@ -1,0 +1,48 @@
+# ChangeLog for games-arcade/paintown
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+  28 Jan 2011; Piotr Szymaniak <szarpaj@grubelek.pl> paintown-3.4.0.ebuild:
+  Fixed useless line.
+
+*paintown-3.4.0 (14 Jan 2011)
+
+  14 Jan 2011; Piotr Szymaniak <szarpaj@grubelek.pl> -paintown-3.3.1.ebuild,
+  +paintown-3.4.0.ebuild, metadata.xml:
+  Bumped not working version. (:
+
+*paintown-3.3.1 (08 Jun 2010)
+
+  08 Jun 2010; Piotr Szymaniak <lazy_bum@o2.pl> +paintown-3.3.1.ebuild:
+  Version bump with missing keywords due to compile issues.
+
+  07 Mar 2010; Michał Ziąbkowski <mziab@o2.pl> paintown-3.2.ebuild:
+  Removed blank line to pacify repoman.
+
+  20 Feb 2010; Piotr Szymaniak <lazy_bum@o2.pl> paintown-3.2.ebuild:
+  Removed -Werror and fixed dobin.
+
+  02 Jun 2009; Piotr Szymaniak <lazy_bum@o2.pl> files/3.2-gcc44.patch:
+  Updated patch, still needs more love.
+
+  02 Jun 2009; Michał Ziąbkowski <mziab@o2.pl> files/3.2-gcc44.patch:
+  Updated patch AGAIN.
+
+  02 Jun 2009; Michał Ziąbkowski <mziab@o2.pl> files/3.2-gcc44.patch:
+  Another missing include. Updated patch.
+
+  02 Jun 2009; Piotr Szymaniak <lazy_bum@o2.pl> paintown-3.2.ebuild,
+  +files/3.2-gcc44.patch, -files/paintown-gcc44.patch:
+  Fixed typo in epatch.
+
+  02 Jun 2009; Michał Ziąbkowski <mziab@o2.pl> -paintown-3.0.ebuild,
+  +files/paintown-gcc44.patch, paintown-3.2.ebuild:
+  Removed cruft. Added GCC 4.4 patch.
+
+  02 Feb 2009; Michał Ziąbkowski <mziab@o2.pl> +paintown-3.2.ebuild:
+  Bumped.
+
+  21 Jan 2009; Piotr Szymaniak <lazy_bum@o2.pl> -paintown-2.1.ebuild,
+  paintown-3.0.ebuild:
+  Fixed some errors. Needs more love.
+

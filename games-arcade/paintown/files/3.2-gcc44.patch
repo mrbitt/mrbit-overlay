@@ -1,0 +1,54 @@
+diff -Naur paintown-3.2.orig/src/game.cpp paintown-3.2/src/game.cpp
+--- paintown-3.2.orig/src/game.cpp	2009-01-05 01:40:39.000000000 +0100
++++ paintown-3.2/src/game.cpp	2009-06-02 20:55:46.444428096 +0200
+@@ -112,7 +112,7 @@
+ 
+ static string findNextFile( const char * name ){
+ 	char buf[ 128 ];
+-	char * extension = strchr( name, '.' );
++	const char * extension = strchr( name, '.' );
+ 	char first[ 128 ];
+ 	strncpy( first, name, extension - name );
+ 	first[ extension - name ] = '\0';
+diff -Naur paintown-3.2.orig/src/menu/option_lives.cpp paintown-3.2/src/menu/option_lives.cpp
+--- paintown-3.2.orig/src/menu/option_lives.cpp	2009-01-05 22:56:32.000000000 +0100
++++ paintown-3.2/src/menu/option_lives.cpp	2009-06-02 20:55:46.445427140 +0200
+@@ -1,3 +1,5 @@
++#include <cstdio>
++
+ #include "util/bitmap.h"
+ #include "menu/option_lives.h"
+ #include "util/token.h"
+diff -Naur paintown-3.2.orig/src/menu/option_npc_buddies.cpp paintown-3.2/src/menu/option_npc_buddies.cpp
+--- paintown-3.2.orig/src/menu/option_npc_buddies.cpp	2009-01-05 22:56:32.000000000 +0100
++++ paintown-3.2/src/menu/option_npc_buddies.cpp	2009-06-02 20:54:49.196085921 +0200
+@@ -4,6 +4,7 @@
+ #include "menu/menu.h"
+ #include "menu/menu_global.h"
+ #include "globals.h"
++#include <cstdio>
+ 
+ OptionNpcBuddies::OptionNpcBuddies( Token * token ) throw( LoadException ):
+ MenuOption(token, AdjustableOption),
+diff -Naur paintown-3.2.orig/src/menu/option_speed.cpp paintown-3.2/src/menu/option_speed.cpp
+--- paintown-3.2.orig/src/menu/option_speed.cpp	2009-01-05 22:56:32.000000000 +0100
++++ paintown-3.2/src/menu/option_speed.cpp	2009-06-02 21:05:59.986320301 +0200
+@@ -4,6 +4,7 @@
+ #include "menu/menu.h"
+ #include "menu/menu_global.h"
+ #include "globals.h"
++#include <cstdio>
+ 
+ OptionSpeed::OptionSpeed(Token *token) throw (LoadException): MenuOption(token, AdjustableOption), name(""), lblue(255), lgreen(255), rblue(255), rgreen(255)
+ {
+diff -Naur paintown-3.2.orig/src/util/bitmap.cpp paintown-3.2/src/util/bitmap.cpp
+--- paintown-3.2.orig/src/util/bitmap.cpp	2009-01-08 18:55:53.000000000 +0100
++++ paintown-3.2/src/util/bitmap.cpp	2009-06-02 20:55:46.446426648 +0200
+@@ -5,6 +5,7 @@
+ #include <vector>
+ #include <string>
+ #include <iostream>
++#include <cstdio>
+ // #include <fblend.h>
+ 
+ #ifdef _WIN32

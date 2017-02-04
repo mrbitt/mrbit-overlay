@@ -34,8 +34,12 @@ RDEPEND="${DEPEND}
 
 S=${WORKDIR}/${P}
 
+DOCS="README.md LICENSE"
+
 src_prepare(){
-    sed -i "s/pypi/arch/" __init__.py || die
-     sed -i "s/PyQt5 >= 5.5/PyQt5 >= 5.7/" setup.py || die
+    sed -i "s/pypi/arch/" vidcutter/__init__.py || die
+    sed -i -e '50d' setup.py || die "sed failed"
+    sed -i "s/PyQt5 >= 5.5/PyQt5 >= 5.7/" setup.py || die
     eapply_user
 }
+
