@@ -33,7 +33,7 @@ DOCS=( CHANGES COPYING README )
 
 src_prepare() {
 	# Remove unneeded icon resources update needing running X
-	 epatch "${FILESDIR}/${P}-PIL_modules_imports_fix.patch"
+	epatch "${FILESDIR}/${P}-PIL_modules_imports_fix.patch"
 	sed -i \
         -e '/self\._make_resources\(\)/d' \
         setup.py
