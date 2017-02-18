@@ -4,7 +4,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_4 )
 
 inherit distutils-r1 eutils gnome2-utils xdg ${GIT_ECLASS}
 
@@ -22,7 +22,7 @@ fi
 
 LICENSE="LGPL-3.0"
 SLOT="0"
-IUSE="designer"
+IUSE="+designer"
 
 DEPEND="
 	dev-python/pyside[X,designer?,${PYTHON_USEDEP}]
@@ -30,8 +30,8 @@ DEPEND="
 	dev-python/rarfile[${PYTHON_USEDEP}]
 	dev-python/peewee[${PYTHON_USEDEP}]
 	dev-qt/linguist:5
-	dev-python/PyQt4[X,designer?,${PYTHON_USEDEP}]
-	dev-qt/qtsql:4[sqlite]
+	dev-python/PyQt5[sql,designer?,${PYTHON_USEDEP}]
+	dev-qt/qtsql:5[sqlite]
 	app-arch/unrar-gpl
 "
 RDEPEND="${DEPEND}
