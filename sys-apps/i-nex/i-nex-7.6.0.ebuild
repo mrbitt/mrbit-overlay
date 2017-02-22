@@ -18,7 +18,7 @@ IUSE=""
 RDEPEND="dev-lang/gambas:3[qt5]
 	media-libs/mesa
 	net-misc/curl
-	sys-power/libcpuid
+	dev-libs/libcpuid
 	sys-apps/pciutils
 	sys-apps/lsb-release
 	sys-fs/udisks:0

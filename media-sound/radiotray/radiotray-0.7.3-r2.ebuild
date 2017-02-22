@@ -28,7 +28,8 @@ RDEPEND="sys-apps/dbus[X]
 	>=media-libs/gst-plugins-ugly-0.10
 	media-plugins/gst-plugins-alsa:0.10
 	media-plugins/gst-plugins-libmms
-	media-plugins/gst-plugins-ffmpeg:0.10
+	media-video/ffmpeg
+	media-plugins/gst-plugins-libav
 	media-plugins/gst-plugins-mad:0.10
 	media-plugins/gst-plugins-ogg:0.10
 	media-plugins/gst-plugins-soup:0.10

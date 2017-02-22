@@ -4,9 +4,12 @@
 
 EAPI=5
 
+inherit versionator
+MY_PV="$(get_version_component_range 1-2)"
+
 DESCRIPTION="3D Creation/Animation/Publishing System"
 HOMEPAGE="http://www.blender.org/"
-SRC_URI="http://download.blender.org/release/Blender${PV}/blender-${PV}-linux-glibc219-x86_64.tar.bz2"
+SRC_URI="http://download.blender.org/release/Blender${MY_PV}/blender-${PV}-linux-glibc219-x86_64.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="1"
