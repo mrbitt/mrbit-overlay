@@ -13,7 +13,7 @@ EGIT_REPO_URI="https://github.com/netblue30/firetools"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt4 qt5"
+IUSE="qt4 +qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
 DEPEND="
@@ -40,4 +40,18 @@ src_prepare() {
 		configure.ac
 	default
 	eautoreconf
+}
+
+src_configure() {
+
+	 if use qt4 ; then
+	      local myconf=(
+	      --with-qmake=/usr/$(get_libdir)/qt4/bin/qmake )
+	   
+	    else 
+	      local myconf=(
+	      --with-qmake=/usr/$(get_libdir)/qt5/bin/qmake )
+	   fi
+	   
+	econf ${myconf[@]}
 }

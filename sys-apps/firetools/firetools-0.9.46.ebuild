@@ -4,7 +4,7 @@
 
 EAPI=6
 
-inherit autotools
+inherit autotools qmake-utils
 
 DESCRIPTION="Graphical user interface of app-emulation/firejail"
 HOMEPAGE="https://l3net.wordpress.com/projects/firejail"
@@ -13,7 +13,7 @@ SRC_URI="https://github.com/netblue30/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="qt4 qt5"
+IUSE="qt4 +qt5"
 REQUIRED_USE="^^ ( qt4 qt5 )"
 
 DEPEND="
@@ -40,4 +40,18 @@ src_prepare() {
 		configure.ac
 	default
 	eautoreconf
+}
+
+src_configure() {
+
+ 	  if use qt4 ; then
+	      local myconf=(
+	      --with-qmake=/usr/$(get_libdir)/qt4/bin/qmake )
+	   
+	    else 
+	      local myconf=(
+	      --with-qmake=/usr/$(get_libdir)/qt5/bin/qmake )
+	   fi
+	   
+	econf ${myconf[@]}
 }
