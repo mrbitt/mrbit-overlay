@@ -32,6 +32,7 @@ RDEPEND="
 			 dev-qt/qtxml:5 ) "
 DEPEND="${RDEPEND}
         dev-libs/libgcrypt
+        sys-fs/encfs
         app-admin/chrpath
         app-crypt/libsecret
         app-arch/bzip2 "
