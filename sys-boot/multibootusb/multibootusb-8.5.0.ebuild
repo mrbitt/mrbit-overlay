@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python3_4 )
 
 inherit versionator distutils-r1 python-r1 fdo-mime
 
@@ -25,8 +25,12 @@ RDEPEND="
 	dev-python/pygtk
 	dev-python/pyxdg[${PYTHON_USEDEP}]
 	dev-python/pillow[${PYTHON_USEDEP}]
+	dev-python/dbus-python[${PYTHON_USEDEP}]
+	dev-python/six[${PYTHON_USEDEP}]
 	x11-libs/gtk+:2
 	sys-block/parted
+	app-arch/p7zip
+	sys-fs/mtools
 	sys-apps/util-linux
 "
 S=${WORKDIR}/${P}

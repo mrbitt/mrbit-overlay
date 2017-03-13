@@ -9,7 +9,8 @@ inherit eutils versionator multilib
 DESCRIPTION="A mesh processing system"
 HOMEPAGE="http://meshlab.sourceforge.net/"
 MY_PV="$(delete_all_version_separators ${PV})"
-SRC_URI="mirror://sourceforge/project/${PN}/${PN}/MeshLab%20v${PV}/MeshLabSrc_AllInc_v${MY_PV}.tgz"
+#SRC_URI="mirror://sourceforge/project/${PN}/${PN}/MeshLab%20v${PV}/MeshLabSrc_AllInc_v${MY_PV}.tgz"
+SRC_URI="http://github.com/cnr-isti-vclab/meshlab/archive/v2016.12.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
@@ -28,11 +29,21 @@ DEPEND="dev-cpp/eigen:3
 	sci-libs/mpir"
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/meshlab/src"
+S="${WORKDIR}/meshlab-2016.12/src"
 
 src_prepare() {
 	cd "${WORKDIR}"
-	epatch	"${FILESDIR}"/*.patch
+	#epatch	"${FILESDIR}"/*.patch
+	epatch	"${FILESDIR}/${PV}"/gcc-4.7.patch \
+		"${FILESDIR}/${PV}"/lapack.patch \
+		"${FILESDIR}/${PV}"/mpir.patch \
+		"${FILESDIR}/${PV}"/qt-4.8.patch \
+		"${FILESDIR}/${PV}"/rpath.patch \
+		"${FILESDIR}/${PV}"/pluginmanager.patch \
+		"${FILESDIR}/${PV}"/meshrender.patch \
+		"${FILESDIR}/${PV}"/rmmeshrender.patch \
+		"${FILESDIR}/${PV}"/rfx.patch
+	
 }
 
 src_configure() {
