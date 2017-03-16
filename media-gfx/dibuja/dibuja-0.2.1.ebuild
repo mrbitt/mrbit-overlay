@@ -35,6 +35,9 @@ DOCS=( AUTHORS ChangeLog NEWS README )
 
 src_configure() {
      	if use gegl03 ; then
+     	sed -i "s|gegl-chant.h|gegl-op.h|g" gegl/insta-1977/dibuja-insta-1977.c || die "sed failed"
+     	sed -i "s|gegl-chant.h|gegl-op.h|g" gegl/insta-brannan/dibuja-insta-brannan.c || die "sed failed"
+     	sed -i "s|gegl-chant.h|gegl-op.h|g" gegl/red-eye-removal/dibuja-red-eye-removal.c || die "sed failed"
 	      local myconf=(
 	         --with-gegl-0.3  )
 	    fi
