@@ -34,6 +34,7 @@ RDEPEND="${PYTHON_DEPS}
 DEPEND="${RDEPEND}"
 
 REQUIRED_USE="${PYTHON_REQ_USE}"
+S="${WORKDIR}/LegacyCura-${PV}"
 
 src_prepare() {
 	epatch "${FILESDIR}"/${PN}-nopower.patch
