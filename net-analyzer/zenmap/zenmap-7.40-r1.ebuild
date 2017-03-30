@@ -3,10 +3,12 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="4"
-PYTHON_DEPEND="2"
+EAPI="5"
+PYTHON_COMPAT=( python{2_7,3_4,3_5} )
 
-inherit eutils flag-o-matic python
+#PYTHON_DEPEND="2"
+
+inherit eutils flag-o-matic python-single-r1 toolchain-funcs
 
 MY_P=${P/_beta/BETA}
 NM_PN=${PN/zenmap/nmap}
@@ -24,10 +26,12 @@ SLOT="0"
 KEYWORDS="amd64 ~arm ~x86"
 
 IUSE="nls"
-NMAP_LINGUAS="de es fr hr hu id it ja pl pt_BR pt_PT ro ru sk zh"
-for lingua in ${NMAP_LINGUAS}; do
-	IUSE+=" linguas_${lingua}"
-done
+NMAP_LINGUAS=( de fr hi hr it ja pl pt_BR ru zh )
+IUSE+=" ${NMAP_LINGUAS[@]/#/linguas_}"
+#NMAP_LINGUAS="de es fr hr hu id it ja pl pt_BR pt_PT ro ru sk zh"
+#for lingua in ${NMAP_LINGUAS}; do
+	#IUSE+=" linguas_${lingua}"
+#done
 
 NMAP_PYTHON_DEPEND="
 || (
@@ -44,13 +48,13 @@ DEPEND="
 "
 RDEPEND="
 	${DEPEND}
-	=net-analyzer/nmap-${PV}
+	~net-analyzer/nmap-${PV}
 "
 
 S="${WORKDIR}/${NM_P}"
 
 pkg_setup() {
-	python_set_active_version 2
+	python-single-r1_pkg_setup
 }
 
 src_unpack() {
@@ -101,6 +105,7 @@ src_configure() {
 	# tree, so we cannot use the system library here.
 	# nls disabled for split nmap ebuild - flag used for manipulations above
 	econf \
+		--enable-ipv6 \
 		--with-zenmap \
 		--without-liblua \
 		--without-ncat \
@@ -109,6 +114,7 @@ src_configure() {
 		--without-nmap-update \
 		--without-nping \
 		--without-openssl \
+		--cache-file="${S}"/config.cache \
 		--with-libdnet=included
 }
 

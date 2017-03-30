@@ -1,10 +1,10 @@
-# Copyright 1999-2011 Gentoo Foundation
+# Copyright 1999-2015 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
-# $Id$
 
-EAPI=3
-PYTHON_DEPEND="python? 2"
-inherit eutils versionator python
+EAPI=5
+PYTHON_COMPAT=( python2_7 )
+
+inherit eutils python-single-r1 versionator
 
 # TODO:
 # matio? ( sci-libs/matio ) - in science overlay #269598 (wait for new release
@@ -15,61 +15,75 @@ SRC_URI="http://www.vips.ecs.soton.ac.uk/supported/$(get_version_component_range
 HOMEPAGE="http://vips.sourceforge.net"
 
 LICENSE="LGPL-2.1"
-SLOT="1"
+SLOT="0/35"
 KEYWORDS="~amd64 ~x86"
-IUSE="debug exif fits fftw imagemagick jpeg lcms openexr +orc png python static-libs tiff"
+IUSE="debug exif fits fftw gsf imagemagick jpeg lcms openexr +orc png python static-libs tiff webp"
 
-RDEPEND=">=dev-libs/glib-2.6:2
+RDEPEND="
+	>=dev-libs/glib-2.32:2
+	>=dev-libs/gobject-introspection-1.30
 	>=dev-libs/liboil-0.3
 	dev-libs/libxml2
 	sys-libs/zlib
 	>=x11-libs/pango-1.8
-	fftw? ( sci-libs/fftw:3.0 )
-	imagemagick? ( || ( >=media-gfx/imagemagick-5.0.0
-		media-gfx/graphicsmagick[imagemagick] ) )
-	lcms? ( media-libs/lcms )
-	openexr? ( >=media-libs/openexr-1.2.2 )
+
 	exif? ( >=media-libs/libexif-0.6 )
-	tiff? ( media-libs/tiff )
-	jpeg? ( virtual/jpeg )
 	fits? ( sci-libs/cfitsio )
-	png? ( >=media-libs/libpng-1.2.9 )
-	orc? ( >=dev-lang/orc-0.4.11 )"
+	fftw? ( sci-libs/fftw:3.0 )
+	gsf? ( >=gnome-extra/libgsf-1.14.27 )
+	imagemagick? (
+		|| ( >=media-gfx/imagemagick-5.0.0
+			media-gfx/graphicsmagick[imagemagick] ) )
+	jpeg? ( virtual/jpeg:0 )
+	lcms? ( media-libs/lcms:2 )
+	openexr? ( >=media-libs/openexr-1.2.2 )
+	orc? ( >=dev-lang/orc-0.4.11 )
+	png? ( >=media-libs/libpng-1.2.9:0 )
+	python? (
+		${PYTHON_DEPS}
+		>=dev-python/pygobject-3.12:3[${PYTHON_USEDEP}] )
+	tiff? ( media-libs/tiff:0 )
+	webp? ( media-libs/libwebp )
+"
 DEPEND="${RDEPEND}
-	dev-util/gtk-doc-am"
+	>=dev-util/gtk-doc-am-1.14
+	virtual/pkgconfig
+"
 
 pkg_setup() {
-	if use python; then
-		python_set_active_version 2
-		python_pkg_setup
-	fi
+	use python && python-single-r1_pkg_setup
 }
 
 src_configure() {
+	# debug handling still sucks but better have minimum than no
 	econf \
-		$(use_enable debug) \
-		$(use_with fftw fftw3) \
+		--disable-gtk-doc \
+		$(usex debug yes minimum) \
+		$(use_with exif libexif) \
+		$(use_with fftw) \
+		$(use_with fits cfitsio) \
+		$(use_with gsf) \
+		$(use_with imagemagick magick) \
+		$(use_with jpeg) \
 		$(use_with lcms) \
 		$(use_with openexr OpenEXR) \
-		$(use_with exif libexif) \
-		$(use_with imagemagick magick) \
-		$(use_with png) \
-		$(use_with tiff) \
-		$(use_with fits cfitsio) \
-		$(use_with jpeg) \
 		$(use_with orc) \
+		$(use_with png) \
 		$(use_with python) \
+		$(use_enable python pyvips8) \
+		$(use_with tiff) \
+		$(use_with webp libwebp) \
 		$(use_enable static-libs static)
 }
 
 src_install() {
 	emake DESTDIR="${D}" install || die
-	dodoc AUTHORS ChangeLog NEWS README.md THANKS TODO || die
+	dodoc AUTHORS ChangeLog NEWS THANKS TODO || die
 
 	# 314101
-	mv "${ED}"/usr/share/doc/${PN}/* "${ED}"/usr/share/doc/${PF} || die
-	rmdir "${ED}"/usr/share/doc/${PN}/ || die
-	dosym /usr/share/doc/${PF} /usr/share/doc/${PN}
-        rm -R "${D}"/gi || die
-	find "${ED}" -name '*.la' -exec rm -f {} +
+	#mv "${ED}"/usr/share/doc/${P}/* "${ED}"/usr/share/doc/${PF} || die
+	#rmdir "${ED}"/usr/share/doc/${P}/ || die
+	#dosym /usr/share/doc/${PF} /usr/share/doc/${P}
+    sed -i 's|^#!.*python$|&2|' "${D}/usr/bin/vipsprofile"
+	prune_libtool_files
 }

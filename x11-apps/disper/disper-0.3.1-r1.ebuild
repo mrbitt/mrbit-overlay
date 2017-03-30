@@ -3,7 +3,8 @@
 # $Id$
 
 EAPI="5"
-inherit eutils multilib python
+PYTHON_COMPAT=( python2_7 )
+inherit eutils multilib python-r1
 
 DESCRIPTION="Disper is an on-the-fly display switch utility"
 HOMEPAGE="http://willem.engen.nl/projects/disper/"

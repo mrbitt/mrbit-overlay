@@ -19,7 +19,7 @@ MOZ_LANGPACK_SUFFIX=".langpack.xpi"
 
 MOZ_HTTP_URI="http://archive.mozilla.org/pub/mozilla.org/${MOZ_PN}/releases"
 
-inherit eutils multilib mozextension pax-utils nsplugins fdo-mime gnome2-utils mozlinguas
+inherit eutils multilib mozextension pax-utils nsplugins fdo-mime gnome2-utils
 
 DESCRIPTION="Mozilla Application Suite - web browser, email, HTML editor, IRC"
 SRC_URI="${SRC_URI}

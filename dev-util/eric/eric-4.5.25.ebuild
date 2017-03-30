@@ -3,7 +3,7 @@
 # $Header: /var/cvsroot/gentoo-x86/dev-util/eric/eric-4.5.17.ebuild,v 1.1 2013/12/27 01:54:52 pesa Exp $
 
 EAPI=5
-
+PYTHON_COMPAT=( python2_7 )
 PYTHON_DEPEND="2:2.6"
 SUPPORT_PYTHON_ABIS="1"
 # 2.4 and 2.5 are restricted to avoid conditional dependency on dev-python/simplejson.
@@ -11,7 +11,7 @@ RESTRICT_PYTHON_ABIS="2.4 2.5 3.* *-jython 2.7-pypy-*"
 
 PLOCALES="cs de en es fr it ru tr zh_CN"
 
-inherit eutils l10n python
+inherit eutils l10n python-r1
 
 DESCRIPTION="A full featured Python IDE using PyQt4 and QScintilla"
 HOMEPAGE="http://eric-ide.python-projects.org/"

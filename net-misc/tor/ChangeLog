@@ -1,0 +1,120 @@
+# ChangeLog for net-misc/tor
+# Copyright 1999-2011 Gentoo Foundation; Distributed under the GPL v2
+# $Header: $
+
+*tor-0.2.2.24_alpha (18 Apr 2011)
+
+  18 Apr 2011; Ycarus <ycarus@zugaina.org> +tor-0.2.2.24_alpha.ebuild:
+  Bump to 0.2.2.24 alpha
+
+*tor-0.2.2.22_alpha (31 Jan 2011)
+
+  31 Jan 2011; Ycarus <ycarus@zugaina.org> +tor-0.2.2.22_alpha.ebuild:
+  Bump to 0.2.2.22 alpha
+
+*tor-0.2.2.19_alpha (28 Nov 2010)
+
+  28 Nov 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.19_alpha.ebuild:
+  Bump to 0.2.2.19 alpha
+
+*tor-0.2.2.18_alpha (18 Nov 2010)
+
+  18 Nov 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.18_alpha.ebuild:
+  Bumpt to 0.2.2.18 alpha
+
+*tor-0.2.2.17_alpha (01 Oct 2010)
+
+  01 Oct 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.17_alpha.ebuild:
+  Bump to 0.2.2.17 alpha
+
+*tor-0.2.2.15_alpha (21 Aug 2010)
+
+  21 Aug 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.15_alpha.ebuild:
+  Bump to tor 0.2.2.15 alpha
+
+*tor-0.2.2.14_alpha (14 Jul 2010)
+
+  14 Jul 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.14_alpha.ebuild:
+  Bump to 0.2.2.14 alpha
+
+*tor-0.2.2.13_alpha (26 Apr 2010)
+
+  26 Apr 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.13_alpha.ebuild:
+  Bump to 0.2.2.13 alpha
+
+*tor-0.2.2.12_alpha (23 Apr 2010)
+
+  23 Apr 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.12_alpha.ebuild:
+  Bump to 0.2.2.12 alpha
+
+*tor-0.2.2.11_alpha (16 Apr 2010)
+
+  16 Apr 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.11_alpha.ebuild:
+  Bump to 0.2.2.11 alpha
+
+*tor-0.2.2.10_alpha (09 Mar 2010)
+
+  09 Mar 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.10_alpha.ebuild:
+  Bump to 0.2.2.10 alpha
+
+*tor-0.2.2.9_alpha (03 Mar 2010)
+
+  03 Mar 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.9_alpha.ebuild:
+  Bump to 0.2.2.9 alpha
+
+*tor-0.2.2.8_alpha (04 Feb 2010)
+
+  04 Feb 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.8_alpha.ebuild:
+  Bump to 0.2.2.8 alpha
+
+*tor-0.2.2.7_alpha (22 Jan 2010)
+
+  22 Jan 2010; Ycarus <ycarus@zugaina.org> +tor-0.2.2.7_alpha.ebuild,
+  +files/tor.conf:
+  Bump to 0.2.2.7 alpha
+
+*tor-0.2.2.6_alpha (27 Dec 2009)
+
+  27 Dec 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.2.6_alpha.ebuild:
+  Bump to 0.2.2.6 alpha
+
+*tor-0.2.2.5_alpha (31 Oct 2009)
+
+  31 Oct 2009; Ycarus <ycarus@zugaina.org>
+  +files/tor-0.2.1.19-logrotate.patch, +tor-0.2.2.5_alpha.ebuild:
+  Bump to 0.2.2.5 alpha
+
+  18 Jul 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.1.17_rc.ebuild:
+  Bump to 0.2.1.17 rc
+
+  24 Jun 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.1.16_rc.ebuild:
+  Bump to 0.2.1.16 rc
+
+*tor-0.2.1.15_rc (15 Jun 2009)
+
+  15 Jun 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.1.15_rc.ebuild:
+  Bump to 0.2.1.15 rc
+
+* tor-0.2.1.14_rc (17 Apr 2009)
+
+  17 Apr 2009; Ycarus <ycarus@zugaina.org> tor-0.2.1.14_rc:
+  Bump to 0.2.1.14 rc
+
+  26 Mar 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.1.13_alpha.ebuild:
+  Bump to 0.2.1.13 alpha
+
+  05 Jan 2009; Ycarus <ycarus@zugaina.org> +tor-0.2.1.9_alpha.ebuild:
+  Bump to 0.2.1.9 alpha
+
+  21 Nov 2008; Ycarus <ycarus@zugaina.org> +tor-0.2.1.7_alpha.ebuild:
+  Bump to 0.2.1.7
+
+  13 Oct 2008; Ycarus <ycarus@zugaina.org> +tor-0.2.1.6_alpha.ebuild:
+  Bump to 0.2.1.6 alpha
+
+  02 Jul 2008; Ycarus <ycarus@zugaina.org> +tor-0.2.1.2_alpha.ebuild:
+  Bump to version 0.2.1.2 alpha
+
+  16 Jun 2008; <ycarus@zugaina.org> +metadata.xml, +tor-0.2.0.28_rc.ebuild:
+  Bump to version 0.2.0.28 rc
+

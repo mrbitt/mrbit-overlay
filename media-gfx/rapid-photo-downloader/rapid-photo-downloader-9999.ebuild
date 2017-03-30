@@ -1,9 +1,10 @@
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
-EAPI="3"
+EAPI="5"
+PYTHON_COMPAT=( python{3_4,3_5} )
 
-inherit distutils bzr
+inherit distutils-r1 bzr
 
 EBZR_REPO_URI="https://code.launchpad.net/~dlynch3/rapid/trunk"
 
@@ -28,9 +29,9 @@ DEPEND="${RDEPEND}"
 
 
 src_compile() {
-	distutils_src_compile || die
+	distutils-r1_src_compile || die
 }
 
 src_install( ) {
-	distutils_src_install
+	distutils-r1_src_install
 }
