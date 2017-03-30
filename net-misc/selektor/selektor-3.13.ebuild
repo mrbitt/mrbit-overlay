@@ -16,7 +16,7 @@ inherit
 
 KEYWORDS="amd64 x86"
 
-RDEPEND="net-misc/tor"
+RDEPEND="net-vpn/tor"
 DEPEND="${RDEPEND}"
 
 S="${WORKDIR}/${PN}_${PV}-${_minor}_all"

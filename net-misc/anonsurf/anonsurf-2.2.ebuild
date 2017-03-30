@@ -16,7 +16,7 @@ KEYWORDS="amd64 ~x86"
 IUSE=""
 
 RDEPEND="net-firewall/iptables
-	net-misc/tor
+	net-vpn/tor
 	net-p2p/i2p"
 DEPEND="${RDEPEND}
 	app-arch/unzip

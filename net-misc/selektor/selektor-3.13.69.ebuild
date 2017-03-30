@@ -20,7 +20,7 @@ IUSE="debug"
 
 KEYWORDS="amd64 x86"
 
-RDEPEND="net-misc/tor
+RDEPEND="net-vpn/tor
         >=dev-java/proguard-4.8
         dev-java/icedtea-bin:7
         >=virtual/jdk-1.7"
