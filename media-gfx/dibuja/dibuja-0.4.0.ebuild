@@ -13,7 +13,7 @@ SRC_URI="https://launchpad.net/${PN}/trunk/${PV}/+download/${P}.tar.gz"
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="-gegl03"
+IUSE="+gegl03"
 
 DEPEND="x11-libs/gtk+:2[introspection]
 	    >=media-libs/gegl-0.2
