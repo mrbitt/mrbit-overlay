@@ -17,7 +17,7 @@ IUSE=""
 
 RDEPEND="net-firewall/iptables
 	net-vpn/tor
-	net-p2p/i2p"
+	net-vpn/i2p"
 DEPEND="${RDEPEND}
 	app-arch/unzip
 	app-arch/dpkg"
