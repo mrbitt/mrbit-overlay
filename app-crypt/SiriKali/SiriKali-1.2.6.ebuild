@@ -13,7 +13,7 @@ SRC_URI="https://github.com/mhogomchungu/sirikali/releases/download/${MY_P}/${P}
 
 LICENSE="GPL-v2"
 SLOT="0"
-IUSE="qt4 +qt5"
+IUSE="qt4 +qt5 +polikit"
 
 inherit eutils cmake-utils
 
@@ -31,6 +31,7 @@ RDEPEND="
 			dev-qt/qtwidgets:5
 			 dev-qt/qtxml:5 ) "
 DEPEND="${RDEPEND}
+ polikit? ( sys-auth/polkit )
         dev-libs/libgcrypt
         sys-fs/encfs
         app-admin/chrpath
@@ -44,6 +45,7 @@ src_configure() {
 		-DCMAKE_INSTALL_PREFIX=/usr -DQT4=true -DQT5=false
 		-DCMAKE_BUILD_TYPE=RELEASE  
 		-DNOSECRETSUPPORT=false
+	    -DUSE_POLKIT=true
 	    -DNOKDESUPPORT=true  )
 	else
 	    mycmakeargs=(
@@ -51,6 +53,7 @@ src_configure() {
 		-DCMAKE_INSTALL_PREFIX=/usr -DQT5=true -DQT4=false
 		-DCMAKE_BUILD_TYPE=RELEASE  
 		-DNOSECRETSUPPORT=false
+	    -DUSE_POLKIT=true
 	    -DNOKDESUPPORT=true  )
 	fi
 	cmake-utils_src_configure
