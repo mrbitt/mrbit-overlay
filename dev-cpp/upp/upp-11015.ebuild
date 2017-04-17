@@ -9,8 +9,10 @@ inherit eutils toolchain-funcs
 MY_P=${PN}-x11-src-${PV}
 DESCRIPTION="Ultimate++ is a C++ cross-platform rapid application development framework"
 HOMEPAGE="http://www.ultimatepp.org/"
-SRC_URI="http://sourceforge.net/projects/${PN}/files/${PN}/${PV}/${MY_P}.tar.gz"
+#SRC_URI="http://sourceforge.net/projects/${PN}/files/${PN}/${PV}/${MY_P}.tar.gz"
+#SRC_URI="http://sourceforge.net/projects/upp/files/${PN}/2015.2/${MY_P}.tar.gz"
 #SRC_URI="http://upp-mirror.googlecode.com/files/upp-x11-src-${PV}.tar.gz"
+SRC_URI="http://www.ultimatepp.org/downloads/upp-x11-src-${PV}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"

@@ -20,7 +20,8 @@ CDEPEND="
 DEPEND="$CDEPEND
 	>=dev-lang/rust-1.15.0
 	media-libs/fontconfig
-	x11-misc/xclip"
+	x11-misc/xclip
+	app-cdr/ccd2iso"
 RDEPEND="${CDEPEND}"
 
 cargo_src_install() {

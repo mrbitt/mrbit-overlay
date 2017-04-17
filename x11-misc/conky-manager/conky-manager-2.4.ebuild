@@ -5,7 +5,7 @@
 EAPI="4"
 
 VALA_MIN_API_VERSION="0.26"
-VALA_MAX_API_VERSION="0.32"
+VALA_MAX_API_VERSION="0.34"
 VALA_USE_DEPEND=vapigen
 
 DESCRIPTION="Simple tool for managing conky scripts"
