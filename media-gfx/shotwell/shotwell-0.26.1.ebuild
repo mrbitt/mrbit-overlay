@@ -34,7 +34,7 @@ RDEPEND="
 	media-libs/lcms:2
 	>=media-libs/libexif-0.6.16:=
 	>=media-libs/libgphoto2-2.5:=
-	>=media-libs/libraw-0.13.2:=
+	media-libs/libraw
 	media-plugins/gst-plugins-gdkpixbuf:1.0
 	>=net-libs/libsoup-2.26.0:2.4
 	net-libs/webkit-gtk:4

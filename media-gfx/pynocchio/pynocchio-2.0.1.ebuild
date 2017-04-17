@@ -4,7 +4,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python3_4 )
+PYTHON_COMPAT=( python3_{4,5,6} )
 
 inherit distutils-r1 eutils gnome2-utils xdg ${GIT_ECLASS}
 
@@ -16,7 +16,7 @@ if [[ ${PV} == *9999* ]];then
 	KEYWORDS=""
 else
 	SRC_URI="${HOMEPAGE}/archive/${PV}.tar.gz -> ${P}.tar.gz"
-	KEYWORDS="~amd64 ~x86"
+	KEYWORDS="amd64 ~x86"
 	RESTRICT="mirror"
 fi
 

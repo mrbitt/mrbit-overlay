@@ -20,7 +20,7 @@ DEPEND="${RDEPEND}
     dev-qt/qtcore:4
     media-sound/sox
     >=media-video/ffmpeg-1
-    >=kde-base/kdelibs-4.4"
+    >=kde-frameworks/kdelibs-4.4"
     
 S=${WORKDIR}/${PN}-${PV}
 

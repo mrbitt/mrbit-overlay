@@ -22,7 +22,7 @@ RDEPEND="kde-frameworks/oxygen-icons"
 DEPEND="${RDEPEND}
     dev-qt/qtcore:4
     figlet? ( app-misc/figlet )
-    >=kde-base/kdelibs-4.14:4"
+    >=kde-frameworks/kdelibs-4.14:4"
     
 S=${WORKDIR}/Ascii-Design-${PV}
 #RESTRICT="strip"
