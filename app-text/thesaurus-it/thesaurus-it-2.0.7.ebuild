@@ -8,7 +8,7 @@ inherit multilib unpacker
 
 DESCRIPTION="Italian Thesaurus for OpenOffice.org 2and Libreoffice."
 HOMEPAGE="http://linguistico.sourceforge.net/wiki/doku.php?id=thesaurus_italiano"
-SRC_URI="http://ftp.tku.edu.tw/Linux/LinuxMint/latest/pools/B/pool/main/o/openoffice.org-${PN}/openoffice.org-${PN}_${PV}.gh.deb1-1.1_all.deb"
+SRC_URI="http://lmde-mirror.gwendallebihan.net/latest/pool/main/o/openoffice.org-${PN}/openoffice.org-${PN}_${PV}.gh.deb1-1.1_all.deb"
 
 LICENSE="gpl"
 SLOT="0"
