@@ -14,14 +14,17 @@ SRC_URI="http://sourceforge.net/projects/curlew/files/${PN}-${PV}/${PN}-${PV}.ta
 LICENSE="GPL"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE=""
+IUSE="ffmpeg libav"
 
 RDEPEND="dev-python/python-poppler-qt4[${PYTHON_USEDEP}]
-	dev-python/pyPdf[${PYTHON_USEDEP}]"
+	dev-python/PyPDF2[${PYTHON_USEDEP}]
+	dev-python/dbus-python[${PYTHON_USEDEP}]"
 DEPEND="${RDEPEND}
-        dev-python/configparser
-	>=media-video/ffmpeg-1
+    dev-python/configparser
+	ffmpeg? ( >=media-video/ffmpeg-1 )
+	libav? ( media-video/libav )
 	media-gfx/imagemagick
+	x11-themes/gnome-icon-theme
 	media-video/mediainfo"
 
 S=${WORKDIR}/${PN}-${PV}
