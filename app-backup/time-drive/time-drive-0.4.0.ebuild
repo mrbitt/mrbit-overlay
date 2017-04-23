@@ -2,13 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Id$
 
-EAPI="3"
+EAPI="5"
+PYTHON_COMPAT=( python{3_2,3_3,3_4,3_5} )
 
-PYTHON_DEPEND="2"
-SUPPORT_PYTHON_ABIS="1"
-RESTRICT_PYTHON_ABIS="3.*"
+#PYTHON_DEPEND="2"
+#SUPPORT_PYTHON_ABIS="1"
+#RESTRICT_PYTHON_ABIS="3.*"
 
-inherit distutils versionator
+inherit distutils-r1 versionator
 
 MY_PV="$(get_version_component_range 1-2)"
 
@@ -26,4 +27,5 @@ RDEPEND="
 	dev-python/PyQt4"
 DEPEND="app-arch/unzip"
 
-PYTHON_MODNAME="timedrive"
+#PYTHON_MODNAME="timedrive"
+

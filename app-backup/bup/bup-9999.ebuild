@@ -3,10 +3,11 @@
 # $Header: $
 
 EAPI=5
+PYTHON_COMPAT=( python2_7 )
 
 EGIT_REPO_URI="git://github.com/bup/${PN}.git
 	http://github.com/bup/${PN}.git"
-inherit git-2 eutils python
+inherit git-2 eutils python-single-r1
 
 DESCRIPTION="It backs things up based on the git packfile format"
 HOMEPAGE="http://github.com/bup/bup"
@@ -14,49 +15,45 @@ HOMEPAGE="http://github.com/bup/bup"
 LICENSE="LGPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="+doc"
+IUSE="+doc test web"
 
-DEPEND="|| (
-			dev-lang/python:2.4
-			dev-lang/python:2.5
-			dev-lang/python:2.6
-			dev-lang/python:2.7
-		)
-		dev-vcs/git
+DEPEND="${PYTHON_DEPS}
 		app-arch/par2cmdline
-		dev-python/fuse-python
-		dev-python/pyxattr
-		dev-python/pylibacl
-		doc? ( app-text/pandoc )"
-RDEPEND="${DEPEND}"
-
-pkg_setup() {
-    python_set_active_version 2
-	python_pkg_setup
-}
-
+	    dev-python/fuse-python[${PYTHON_USEDEP}]
+	    dev-python/pylibacl[${PYTHON_USEDEP}]
+	    dev-python/pyxattr[${PYTHON_USEDEP}]
+	    web? ( www-servers/tornado[${PYTHON_USEDEP}] )
+	    sys-libs/readline:0
+	    dev-vcs/git"
+RDEPEND="${DEPEND}
+         test? (
+				dev-lang/perl
+				net-misc/rsync
+	      ) 
+	      doc? ( app-text/pandoc )
+"
+# unresolved sandbox issues
+RESTRICT="test"
 src_prepare() {
-	epatch_user
-	python_convert_shebangs -r 2 .
+	default
+
+	sed -e "/^CFLAGS :=/s/-O2 -Werror//" \
+		-i Makefile || die
 }
 
 src_configure() {
-	echo "Nothing to configure..."
-}
+	# only build/install docs if enabled
+	export PANDOC=$(usex doc pandoc "")
 
-src_compile() {
-	emake CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-}
-
-src_install() {
-	emake install DESTDIR="${D}"
-
-	dodoc "${D}/usr/share/doc/${PN}"/*
-	rm -r "${D}/usr/share/doc/${PN}/" || die
-
-	dodoc README README.md DESIGN
+	./configure || die
 }
 
 src_test() {
 	emake test
+}
+
+src_install() {
+	emake DESTDIR="${D}" PREFIX=/usr LIBDIR="/usr/$(get_libdir)/bup" DOCDIR="/usr/share/${PF}" install
+	python_fix_shebang "${ED}"
+	python_optimize "${ED}"
 }

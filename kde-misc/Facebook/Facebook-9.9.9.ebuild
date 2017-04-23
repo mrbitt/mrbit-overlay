@@ -3,8 +3,9 @@
 # $Header: $
 
 EAPI="5"
+PYTHON_COMPAT=( python{2_7,3_4} )
 
-inherit distutils git-2 eutils kde4-base qt4-r2
+inherit distutils-r1 git-2 eutils kde4-base qt4-r2
 
 EGIT_REPO_URI="https://github.com/anandbose/facebook/"
 
@@ -17,11 +18,11 @@ SLOT="0"
 
 KEYWORDS="amd64 ~mips x86"
 
-RDEPEND=">=kde-frameworks/oxygen-icons-4.13:4[aqua=]"
+RDEPEND=">=kde-frameworks/oxygen-icons-4.13:4"
 DEPEND="${RDEPEND}
     dev-qt/qtcore:4
-    dev-qt/qtwebkit
-    >=kde-base/kdelibs-4.4:4[aqua=]"
+    dev-qt/qtwebkit:4
+    >=kde-framework/kdelibs-4.4:4"
     
 S=${WORKDIR}/${PN}-9.9.9
 
