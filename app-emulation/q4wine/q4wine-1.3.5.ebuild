@@ -1,9 +1,9 @@
-# Copyright 1999-2016 Gentoo Foundation
+# Copyright 1999-2017 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 
 EAPI=6
 
-inherit cmake-utils fdo-mime gnome2-utils git-r3
+inherit cmake-utils fdo-mime gnome2-utils
 
 # Upstream names the package PV-rX. We change that to
 # PV_pX so we can use portage revisions.
@@ -11,11 +11,11 @@ MY_P=${PN}-${PV/_p/-r}
 
 DESCRIPTION="Qt GUI configuration tool for Wine"
 HOMEPAGE="http://q4wine.brezblock.org.ua/"
-EGIT_REPO_URI="https://github.com/brezerk/q4wine.git"
+SRC_URI="mirror://sourceforge/${PN}/${MY_P}.tar.bz2"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS=""
+KEYWORDS="~amd64 ~x86"
 IUSE="+dbus debug +ico +iso +wineappdb"
 
 CDEPEND="
