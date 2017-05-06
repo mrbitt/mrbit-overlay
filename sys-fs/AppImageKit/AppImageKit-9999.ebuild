@@ -5,6 +5,7 @@
 EAPI=5
 
 EGIT_REPO_URI="git://github.com/probonopd/AppImageKit.git"
+EGIT_MASTER="appimagetool/master"
 
 inherit git-2 multilib
 
@@ -21,7 +22,10 @@ RDEPEND="sys-fs/fuse
          sys-apps/coreutils
          sys-fs/inotify-tools
          sys-devel/binutils
+         dev-libs/openssl
+         sys-fs/inotify-tools
          app-arch/lzlib
+         sys-fs/squashfs-tools
          media-libs/libpng "
 
 DEPEND="${RDEPEND}"
@@ -30,14 +34,15 @@ S=${WORKDIR}/${PN}
 
 
 src_configure() {
-     cmake . && make clean && make
+     #cmake . && make clean && make
+     ./build.sh -s
 }
 
 src_install() {
-	
+  cd ${S}
   insinto /usr/bin
-  doins AppImageAssistant AppImageExtract AppImageMonitor
+  doins build/appimaged build/appimagetool build/AppRun
 
   insinto /usr/share/appimage
-  doins desktopintegration AppRun.c README.md
+  doins AppRun.c README.md
 }
