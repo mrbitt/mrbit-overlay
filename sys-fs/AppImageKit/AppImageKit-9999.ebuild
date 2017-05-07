@@ -25,6 +25,10 @@ RDEPEND="sys-fs/fuse
          dev-libs/openssl
          sys-fs/inotify-tools
          app-arch/lzlib
+         net-misc/zsync
+         app-arch/xz-utils
+         app-arch/lz4
+         app-arch/libarchive
          sys-fs/squashfs-tools
          media-libs/libpng "
 
@@ -41,8 +45,14 @@ src_configure() {
 src_install() {
   cd ${S}
   insinto /usr/bin
-  doins build/appimaged build/appimagetool build/AppRun
-
+  doins build/appimaged build/appimagetool build/AppRun build/validate
+  chmod 755 "${D}"/usr/bin/* || die
+    
   insinto /usr/share/appimage
   doins AppRun.c README.md
+  insinto /usr/share/pixmaps
+  doins resources/appimagetool.svg
+  #doicon -s 128 resources/appimagetool.svg
+  insinto /usr/share/applications
+  doins resources/*.desktop
 }
