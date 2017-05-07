@@ -39,7 +39,7 @@ S=${WORKDIR}/${PN}
 
 src_configure() {
      #cmake . && make clean && make
-     ./build.sh -s
+     sh -ex ./build.sh -s
 }
 
 src_install() {
@@ -49,7 +49,7 @@ src_install() {
   chmod 755 "${D}"/usr/bin/* || die
     
   insinto /usr/share/appimage
-  doins AppRun.c README.md
+  doins resources/AppRun README.md
   insinto /usr/share/pixmaps
   doins resources/appimagetool.svg
   #doicon -s 128 resources/appimagetool.svg
