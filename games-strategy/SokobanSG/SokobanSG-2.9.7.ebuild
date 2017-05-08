@@ -4,7 +4,7 @@
 
 EAPI="5"
 
-_ID=1483687623
+_ID=1494275024
 
 DESCRIPTION="The classic Japanese game of Soko-Ban"
 HOMEPAGE="https://www.linux-apps.com/p/1109295"
