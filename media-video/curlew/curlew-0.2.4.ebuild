@@ -13,7 +13,7 @@ SRC_URI="http://sourceforge.net/projects/curlew/files/${PN}-${PV}/${PN}-${PV}.ta
 
 LICENSE="GPL"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 IUSE="ffmpeg libav"
 
 RDEPEND="dev-python/python-poppler-qt4[${PYTHON_USEDEP}]
