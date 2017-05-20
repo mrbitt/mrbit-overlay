@@ -28,7 +28,7 @@ RDEPEND="
 	dev-python/pyzmq[${PYTHON_USEDEP}]
 "
 DEPEND="
-    >=media-libs/libopenshot-0.1.3
+    >=media-libs/libopenshot-0.1.5
 	dev-python/setuptools[${PYTHON_USEDEP}]
 "
 
