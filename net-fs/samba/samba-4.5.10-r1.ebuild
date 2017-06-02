@@ -16,7 +16,7 @@ SRC_PATH="stable"
 SRC_URI="mirror://samba/${SRC_PATH}/${MY_P}.tar.gz
 	https://dev.gentoo.org/~polynomial-c/samba-disable-python-patches-4.5.0_rc1.tar.xz"
 [[ ${PV} = *_rc* ]] || \
-KEYWORDS="~amd64 ~arm ~hppa ~x86"
+KEYWORDS="amd64 ~arm ~hppa ~x86"
 
 DESCRIPTION="Samba Suite Version 4"
 HOMEPAGE="http://www.samba.org/"
@@ -92,6 +92,8 @@ S="${WORKDIR}/${MY_P}"
 PATCHES=(
 	"${FILESDIR}/${PN}-4.4.0-pam.patch"
 	"${FILESDIR}/${PN}-4.5.1-compile_et_fix.patch"
+	"${FILESDIR}/${PN}-4.6.3-4.5.9-4.4.13-CVE-2017-7494.patch"
+
 )
 
 #CONFDIR="${FILESDIR}/$(get_version_component_range 1-2)"

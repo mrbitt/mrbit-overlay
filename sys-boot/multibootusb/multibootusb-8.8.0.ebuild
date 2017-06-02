@@ -14,7 +14,7 @@ SRC_URI="https://sourceforge.net/projects/${PN}/files/${PV}/Source/${P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
+KEYWORDS="amd64 ~x86"
 
 IUSE="+python +ffmpeg libav"
 REQUIRED_USE="|| ( python  )"
