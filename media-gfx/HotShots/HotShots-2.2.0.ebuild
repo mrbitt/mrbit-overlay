@@ -18,7 +18,7 @@ KEYWORDS="amd64 ~mips x86"
 RDEPEND="x11-libs/libqxt"
 DEPEND="${RDEPEND}
     dev-qt/qtcore:4
-    >=kde-base/kdelibs-4.4:4"
+    >=kde-frameworks/kdelibs-4.4:4"
     
 S=${WORKDIR}/${P}-src
 

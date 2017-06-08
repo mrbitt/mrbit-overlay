@@ -5,7 +5,7 @@ EAPI="6"
 
 DESCRIPTION="Qt-based simple and easy to use music player designed for streaming online music and for playing files stored on your local drives"
 HOMEPAGE="http://qomp.sourceforge.net/"
-SRC_URI="https://dl.opendesktop.org/api/files/download/id/1482306779/${PN}_${PV}_src.tar.gz"
+SRC_URI="https://dl.opendesktop.org/api/files/download/id/1492190194/${PN}_${PV}_src.tar.gz"
 
 LICENSE="GPL"
 SLOT="0"
