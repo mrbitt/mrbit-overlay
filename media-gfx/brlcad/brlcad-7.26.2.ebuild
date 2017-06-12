@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI=4
+EAPI=5
 inherit cmake-utils eutils java-pkg-2 flag-o-matic
 
 DESCRIPTION="Constructive solid geometry modeling system"

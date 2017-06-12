@@ -11,7 +11,7 @@ MY_PN=${PN%%-0ubuntu1}
 
 DESCRIPTION="An opendesktop.org application."
 HOMEPAGE="www.linux-apps.com/p/1175480/"
-SRC_URI="https://dl.opendesktop.org/api/files/download/id/1496618209/${PN}_amd64.deb"
+SRC_URI="https://dl.opendesktop.org/api/files/download/id/1497148820/${PN}_amd64.deb"
 	
 LICENSE="Freeware"
 SLOT="0"
