@@ -49,9 +49,9 @@ S=${WORKDIR}/${P}
 #}
 
 src_configure() {
-filter-flags -std=c++0x
-append-ldflags $(no-as-needed)
-	if use Debug; then
+      filter-flags -std=c++0x
+      append-ldflags $(no-as-needed)
+	if use debug; then
 		CMAKE_BUILD_TYPE=Debug
 		else
 		CMAKE_BUILD_TYPE=Release
