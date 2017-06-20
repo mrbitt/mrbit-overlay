@@ -39,7 +39,7 @@ RESTRICT="strip"
 src_install() {
 	cp -pPR "${WORKDIR}"/* "${D}"/ || die "copying files failed!"
 	insinto opt/slimjet/lib
-	dosym  opt/slimjet/libffmpeg.so opt/slimjet/lib
+	#dosym  opt/slimjet/libffmpeg.so opt/slimjet/lib
 	#doins opt/slimjet/libffmpeg.so
 	
 }
