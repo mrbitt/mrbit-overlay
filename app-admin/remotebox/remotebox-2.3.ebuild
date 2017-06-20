@@ -17,7 +17,7 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE=""
 
-DEPEND="dev-perl/gtk2-perl
+DEPEND="dev-perl/Gtk2
 	dev-perl/libwww-perl
 	dev-perl/SOAP-Lite
 	net-misc/freerdp
