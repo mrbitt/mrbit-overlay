@@ -93,9 +93,11 @@ DEPEND=""
 
 S="${WORKDIR}"
 
-#src_prepare() {
-#	default
-
+src_prepare() {
+	default
+  #sed -i -e 's|/opt/kingsoft/wps-office|/usr/lib|g' ${S}/usr/bin/{wps,wpp,et} || die
+  #sed -i 's|/office6/${gApp}  ${gOptExt}|/office6/${gApp} -style gtk+ ${gOptExt}|' wps || die
+  #sed -i 's|/office6/${gApp} ${gOptExt}|/office6/${gApp} -style gtk+ ${gOptExt}|' wpp et || die
 	# Remove bundled libs and rely on system versions if possible
 	# Commented lines are about the libs that cannot be unbundled yet.
 #	cd "${S}"/opt/kingsoft/wps-office/office6/
@@ -105,7 +107,7 @@ S="${WORKDIR}"
 #	rm -f libQtWebKit.so* || die
 #	rm -f libphonon.so*
 #	rm -f libtiff.so.4* || die
-#}
+}
 
 src_install() {
 	exeinto /usr/bin
