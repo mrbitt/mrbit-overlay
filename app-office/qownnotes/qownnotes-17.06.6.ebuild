@@ -10,8 +10,9 @@ inherit eutils qmake-utils
 
 DESCRIPTION="OwnNotes is a plain-text notepad, that (optionally) works together with the notes application of ownCloud."
 HOMEPAGE="http://opendesktop.org/content/show.php/QOwnNotes?content=170846"
-MY_P="b3059-164402"
-SRC_URI="http://downloads.sourceforge.net/project/${PN}/src/${PN}-${PV}.tar.xz"
+MY_P="b3063-190621"
+#SRC_URI="http://downloads.sourceforge.net/project/${PN}/src/${PN}-${PV}.tar.xz"
+SRC_URI="https://sourceforge.net/projects/${PN}/files/src/${P}.tar.xz"
 #SRC_URI="https://github.com/pbek/QOwnNotes/archive/linux-${MY_P}.tar.gz -> ${P}.tar.gz"
 #S="${WORKDIR}/QOwnNotes-linux-${MY_P}/src"
 S="${WORKDIR}/${P}"
