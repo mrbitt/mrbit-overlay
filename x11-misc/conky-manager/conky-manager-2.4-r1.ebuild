@@ -38,6 +38,7 @@ S="${WORKDIR}/${PN}-${PV}~136~ubuntu16.04.1"
 #RESTRICT="strip"
 
 src_prepare() {
+	epatch "${FILESDIR}"/makefile-roundup.patch
 	vala_src_prepare
 	local valaver="$(vala_best_api_version)"
 	sed -i "14s|valac|valac-${valaver}|g" src/makefile || die "sed failed"
