@@ -20,11 +20,11 @@ S="${WORKDIR}/${PN}"
 
 
 src_install() {
-	insinto /usr/share/ldraw
+	insinto /usr/share/leocad
 	doins -r *
  # Fix permissions
-  find "${D}/usr/share/ldraw" -type f -exec chmod 644 {} +
-  find "${D}/usr/share/ldraw" -type d -exec chmod 755 {} +
+  find "${D}/usr/share/leocad" -type f -exec chmod 644 {} +
+  find "${D}/usr/share/leocad" -type d -exec chmod 755 {} +
   
   dodoc Readme.txt CAlicense.txt CAreadme.txt
  

@@ -2,14 +2,14 @@
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
-EAPI="5"
+EAPI="6"
 
-inherit qt4-r2 unpacker
+inherit qmake-utils unpacker
 
 DESCRIPTION="LeoCAD is a CAD program that uses bricks similar to those found in many toys."
 HOMEPAGE="http://www.leocad.org"
 SRC_URI="https://github.com/leozide/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz
-         https://github.com/leozide/${PN}/releases/download/v${PV}/Library-Linux-9306.zip"
+         https://github.com/leozide/${PN}/releases/download/v${PV}/Library-Linux-9781.zip"
          #http://www.ldraw.org/library/unofficial/ldrawunf.zip"
           
           
@@ -17,9 +17,19 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
 
-IUSE="jpeg zlib png +ldraw"
+IUSE="qt4 +qt5 jpeg zlib png +ldraw"
+REQUIRED_USE="^^ ( qt4 qt5 )"
 
-RDEPEND="virtual/opengl
+RDEPEND="
+    qt4? (
+		dev-qt/qtcore:4
+		dev-qt/qtgui:4
+		)
+	qt5? (
+		dev-qt/qtcore:5
+		dev-qt/qtgui:5
+		)
+    virtual/opengl
 	x11-libs/gtk+:2
 	jpeg? ( virtual/jpeg )
 	zlib? ( sys-libs/zlib )
@@ -32,7 +42,8 @@ S=${WORKDIR}/${P}
 src_prepare() {
 	
 	cd "${S}"
-
+    default 
+    
 	if ! use jpeg; then
 		sed -i \
 			-e "s:(test -s jpegtest); then :{(test -s jpegtest);} \&\& false; then :" \
@@ -51,8 +62,9 @@ src_prepare() {
 }
 
 src_compile() {
-	cd ${S}/trunk
-    eqmake4 LDRAW_LIBRARY_PATH=/usr/share/ldraw DISABLE_UPDATE_CHECK=1
+	#cd ${S}/trunk
+    use qt4 && eqmake4 LDRAW_LIBRARY_PATH=/usr/share/ldraw DISABLE_UPDATE_CHECK=1
+	use qt5 && eqmake5 INSTALL_PREFIX=/usr DISABLE_UPDATE_CHECK=1 LDRAW_LIBRARY_PATH=/usr/share/leocad
 	make clean && make
 }
 
@@ -61,8 +73,8 @@ src_install() {
     
     make INSTALL_ROOT="${D}" install
     
-    dodir /usr/share/ldraw
-    insinto /usr/share/ldraw/
+    dodir /usr/share/leocad
+    insinto /usr/share/leocad/
     doins "${WORKDIR}"/library.bin
  
   #if use unofficial; then

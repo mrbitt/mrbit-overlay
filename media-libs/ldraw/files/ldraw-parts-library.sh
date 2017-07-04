@@ -1,1 +1,1 @@
-export LDRAWDIR=/usr/share/ldraw
+export LDRAWDIR=/usr/share/leocad
