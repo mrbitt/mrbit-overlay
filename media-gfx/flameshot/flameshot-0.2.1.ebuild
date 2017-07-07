@@ -28,7 +28,7 @@ DEPEND="
 RDEPEND="${DEPEND}"
 
 src_prepare(){
-	sed -i "s#/usr/local#/usr#" ${PN}.pro
+	sed -i "s#/usr/local#/usr#" ${PN}.pro || die 
 	eapply_user
 }
 
@@ -44,6 +44,8 @@ src_configure(){
 
 src_install(){
 	emake INSTALL_ROOT="${D}" install
+	sed -i "s#/usr/local#/usr#"  ${D}/usr/share/applications/${PN}.desktop || die
+	sed -i "s#/usr/bin/${PN} gui#/usr/bin/${PN}#"  ${D}/usr/share/applications/${PN}.desktop || die
 }
 
 pkg_postinst(){
