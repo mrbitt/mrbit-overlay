@@ -7,8 +7,7 @@ inherit eutils qmake-utils fdo-mime
 DESCRIPTION="A Secure and Open Source Web Browser"
 HOMEPAGE="http://dooble.sourceforge.net/"
 
-SRC_URI="mirror://sourceforge/${PN}/Version%20${PV}/Dooble.d.tar.gz ->
-${P}.tar.gz"
+SRC_URI="https://github.com/textbrowser/${PN}/releases/download/${PV}/Dooble_Src.d.tar.gz -> ${P}.tar.gz"
 
 # icon sets are GPL-3 LGPL-2.1 while the code is BSD
 LICENSE="BSD GPL-3 LGPL-2.1"
@@ -38,7 +37,7 @@ DEPEND="dev-db/sqlite:3
 "
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}/dooble.d/Version 1.x/"
+S="${WORKDIR}/Version 1.x/"
 
 src_prepare() {
 	# Adjust paths from FreeBSD locations to Gentoo locations
@@ -52,15 +51,15 @@ src_prepare() {
 		-e 's/\(plugspec.path[[:space:]]*= \)\(.*\)$/\1\/usr\/include\/dooble\/plugin-spec/' \
 		-e 's/\(postinstall.path[[:space:]]*= \)\(.*\)$/\1\/usr\/share\/dooble/' \
 		-e 's/\(tab.path[[:space:]]*= \)\(.*\)$/\1\/usr\/share\/dooble/' \
-		dooble.pro dooble.qt5.pro
+		dooble.pro dooble.qt5.pro || die
 
 	sed -i -e "s:\"Icons:\"${EROOT}usr/share/dooble/Icons:" \
-		./Source/dsettings.cc
+		./Source/dsettings.cc || die
 	sed -i -e '/export/d' -e "s:/usr/local/dooble/Dooble:${EROOT}usr/bin/Dooble:g" \
 		-e "s:cd /usr/local/dooble:cd /usr/share/dooble:" \
-		-e "s:exec ./Dooble:exec ${EROOT}usr/bin/Dooble:" ./dooble.sh
+		-e "s:exec ./Dooble:exec ${EROOT}usr/bin/Dooble:" ./dooble.sh || die
 	sed -i -e "s:/usr/local:${EROOT}/usr/share:" -e 's:/text/xml:text/xml:' \
-		./dooble.desktop
+		./dooble.desktop || die
 }
 
 src_configure() {
@@ -68,16 +67,31 @@ src_configure() {
 }
 
 src_install() {
+	
 	dohtml Documentation/RELEASE-NOTES.html
 	dodoc Documentation/{THEMES,TO-DO}
-	dosym ../share/dooble/dooble.sh /usr/bin/dooble
-	dosym ../../lib/nsbrowser/plugins /usr/share/dooble/Plugins
+	
+	insinto /usr/share/dooble/
+	doins dooble.sh
+	fperms 0755 /usr/share/dooble/dooble.sh
+	
+	dosym /usr/$(get_libdir)/nsbrowser/plugins /usr/share/dooble/Plugins
 	dolib.so libSpotOn/libspoton.so
-	emake INSTALL_ROOT="${ED}" install
-
+	emake INSTALL_ROOT="${D}" install
+    
+    install -Dm755  Dooble   "${D}/usr/bin/${PN}"
+	install -Dm644  dooble.desktop  "${D}/usr/share/applications/${PN}.desktop"
+	
+	dodir /usr/share/icons/hicolor
+	insinto /usr/share/icons/hicolor
+	doins -r "${S}"/Icons/*
+	
+	dodir /usr/share/${PN}/translations
+	insinto /usr/share/${PN}/translations
+	doins "${S}"/Translations/${PN}_*.qm
 	# XXX: The build system installs the build path into INSTALL_ROOT.
 	# It should be fixed not to do this.
-	rm -r "${ED}/var" || die "Failed to remove build path from ${ED}"
+	#rm -r "${ED}/var" || die "Failed to remove build path from ${ED}"
 }
 
 pkg_postinst() {
