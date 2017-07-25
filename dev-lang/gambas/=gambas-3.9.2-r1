@@ -1,0 +1,19 @@
+
+[32;01mLocal copy of remote index is up-to-date and will be used.[39;49;00m
+[01memerge:[39;49;00m command-line interface to the Portage system
+[01mUsage:[39;49;00m
+   [36;01memerge[39;49;00m [ [32;01moptions[39;49;00m ] [ [32;01maction[39;49;00m ] [ [36;01mebuild[39;49;00m | [36;01mtbz2[39;49;00m | [36;01mfile[39;49;00m | [36;01m@set[39;49;00m | [36;01matom[39;49;00m ] [ ... ]
+   [36;01memerge[39;49;00m [ [32;01moptions[39;49;00m ] [ [32;01maction[39;49;00m ] < [36;01m@system[39;49;00m | [36;01m@world[39;49;00m >
+   [36;01memerge[39;49;00m < [36;01m--sync[39;49;00m | [36;01m--metadata[39;49;00m | [36;01m--info[39;49;00m >
+   [36;01memerge[39;49;00m [36;01m--resume[39;49;00m [ [32;01m--pretend[39;49;00m | [32;01m--ask[39;49;00m | [32;01m--skipfirst[39;49;00m ]
+   [36;01memerge[39;49;00m [36;01m--help[39;49;00m
+[01mOptions:[39;49;00m [32;01m-[39;49;00m[[32;01mabBcCdDefgGhjkKlnNoOpPqrsStuvVw[39;49;00m]
+          [ [32;01m--color[39;49;00m < [36;01my[39;49;00m | [36;01mn[39;49;00m >            ] [ [32;01m--columns[39;49;00m    ]
+          [ [32;01m--complete-graph[39;49;00m             ] [ [32;01m--deep[39;49;00m       ]
+          [ [32;01m--jobs[39;49;00m [36;01mJOBS[39;49;00m ] [ [32;01m--keep-going[39;49;00m ] [ [32;01m--load-average[39;49;00m [36;01mLOAD[39;49;00m            ]
+          [ [32;01m--newrepo[39;49;00m   ] [ [32;01m--newuse[39;49;00m     ] [ [32;01m--noconfmem[39;49;00m  ] [ [32;01m--nospinner[39;49;00m   ]
+          [ [32;01m--oneshot[39;49;00m   ] [ [32;01m--onlydeps[39;49;00m   ] [ [32;01m--quiet-build[39;49;00m [ [36;01my[39;49;00m | [36;01mn[39;49;00m ]        ]
+          [ [32;01m--reinstall [39;49;00m[36;01mchanged-use[39;49;00m      ] [ [32;01m--with-bdeps[39;49;00m < [36;01my[39;49;00m | [36;01mn[39;49;00m >         ]
+[01mActions:[39;49;00m  [ [32;01m--depclean[39;49;00m | [32;01m--list-sets[39;49;00m | [32;01m--search[39;49;00m | [32;01m--sync[39;49;00m | [32;01m--version[39;49;00m        ]
+
+   For more help consult the man page.
