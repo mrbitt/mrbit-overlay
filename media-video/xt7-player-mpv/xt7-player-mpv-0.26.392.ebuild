@@ -16,7 +16,7 @@ LICENSE="GPL-3"
 SLOT="0"
 
 KEYWORDS="~amd64"
-IUSE="+qt4 -qt5 taglib global-hotkeys +dvb youtube" # FIXME
+IUSE="qt4 +qt5 taglib global-hotkeys +dvb youtube" # FIXME
 
 COMMON_DEPEND="
 	dev-lang/gambas:3[libxml,qt4,dbus,x11,net,curl]
