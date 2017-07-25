@@ -35,7 +35,7 @@ DEPEND="reiserfs? ( sys-fs/progsreiserfs )
 	# sys-libs/ncurses[tinfo]
 RDEPEND="${DEPEND}"
 
-DOCS=( AUTHORS ChangeLog NEWS README TODO )
+DOCS=( AUTHORS ChangeLog NEWS README.md TODO )
 
 my_use_enable() {
 	use $1 && echo --enable-$1

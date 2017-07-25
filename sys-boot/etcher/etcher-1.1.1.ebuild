@@ -8,8 +8,8 @@ inherit eutils
 DESCRIPTION="Burn images to SD cards & USB drives, safe & easy."
 HOMEPAGE="http://www.etcher.io"
 SRC_URI="${SRC_URI}
-	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x64.zip ) 
-	x86? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x86.zip )"
+	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x64.zip )"
+	#x86? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x86.zip )"
 	
 LICENSE="apache"
 SLOT="0"
@@ -38,7 +38,7 @@ src_prepare() {
 	
 	local a=x86
 	ARCH=$(usex amd64 "x86_64" "i386")
-    [ "$ARCH" == "x86_64" ] && a=x64
+    [ "$ARCH" == "x86_64" ] && a=x86_64
 
     sed "s/##AppImage##/Etcher-${PV}-linux-$a.AppImage/g" "${FILESDIR}"/etcher.in > etcher
 }
@@ -47,10 +47,10 @@ src_install() {
 	
 	local a=x86
 	ARCH=$(usex amd64 "x86_64" "i386")
-    [ "$ARCH" == "x86_64" ] && a=x64
+    [ "$ARCH" == "x86_64" ] && a=x86_64
 	
 	dobin ${PN}
-	install -D "Etcher-${PV}-linux-$a.AppImage" "${D}/usr/share/etcher/Etcher-${PV}-linux-$a.AppImage"
-    install --mode=644 -D "${FILESDIR}/etcher.png" "${D}/usr/share/etcher/etcher.png"
-    install -D "${FILESDIR}/Etcher.desktop" "${D}/usr/share/applications/Etcher.desktop"
+	install -D "etcher-${PV}-$a.AppImage" "${D}/usr/share/etcher/Etcher-${PV}-linux-$a.AppImage" || die
+    install --mode=644 -D "${FILESDIR}/etcher.png" "${D}/usr/share/etcher/etcher.png" || die
+    install -D "${FILESDIR}/Etcher.desktop" "${D}/usr/share/applications/Etcher.desktop" || die
 }
