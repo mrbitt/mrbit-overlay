@@ -41,9 +41,9 @@ pkg_setup() {
 src_install() {
 	declare BRAVE_HOME=/opt/${BRAVE_PN}
 
-	newicon "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}.png"
-	newicon -s 128 "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}.png" || die
-	domenu "${FILESDIR}"/${PN}.desktop
+	newicon "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}-bin.png"
+	newicon -s 128 "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}-bin.png" || die
+	domenu "${FILESDIR}"/${PN}-bin.desktop
 
 	dodir ${BRAVE_HOME%/*}
 	mv "${S}" "${ED}"${BRAVE_HOME} || die
@@ -54,7 +54,7 @@ src_install() {
 	#!/bin/sh
 	unset LD_PRELOAD
 	LD_LIBRARY_PATH="${BRAVE_HOME}/"
-	exec ${BRAVE_HOME}/${BRAVE_PN} "\$@"
+	exec ${BRAVE_HOME}/${PN} "\$@"
 	EOF
 	chmod 0755 "${ED}usr/bin/${PN}"
 
@@ -62,6 +62,8 @@ src_install() {
 	insinto /etc/revdep-rebuild
 	echo "SEARCH_DIRS_MASK=${BRAVE_HOME}" >> ${T}/10${PN}
 	doins "${T}"/10${PN} || die
+	insinto /usr/share/applications
+	doins "${FILESDIR}"/${PN}-bin.desktop
 }
 
 pkg_postinst() {
