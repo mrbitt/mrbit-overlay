@@ -34,5 +34,5 @@ src_install() {
 	insinto /usr/share/icons/Obsidian_gray
 	doins -r * || die
 	dodoc README.md LICENSE
-	rm -f "${D}"/usr/share/icons/Obsidian/{LICENSE,README.md,logo.jpg} || die
+	rm -f "${D}"/usr/share/icons/Obsidian_gray/{LICENSE,README.md,logo.jpg} || die
 }
