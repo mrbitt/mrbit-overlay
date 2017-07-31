@@ -34,4 +34,6 @@ src_install() {
 	doins -r * || die
 	dodoc README.md LICENSE
 	rm -f "${D}"/usr/share/icons/Obsidian/{LICENSE,README.md,logo.jpg} || die
+	find ${D} -type f -exec chmod 644 {} \;
+	find ${D} -type d -exec chmod 755 {} \;
 }
