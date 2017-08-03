@@ -33,4 +33,6 @@ src_compile() {
 
 src_install() {
 	emake INSTALL_ROOT=${D} install
+	insinto /usr/share/applications
+	newins "${FILESDIR}/ocs_mimeapps.list" mimeapps.list
 }
