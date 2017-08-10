@@ -8,7 +8,7 @@ inherit eutils
 DESCRIPTION="Burn images to SD cards & USB drives, safe & easy."
 HOMEPAGE="http://www.etcher.io"
 SRC_URI="${SRC_URI}
-	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x64.zip )"
+	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/${P}-linux-x86_64.zip )"
 	#x86? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x86.zip )"
 	
 LICENSE="apache"
