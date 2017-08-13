@@ -104,6 +104,7 @@ src_configure() {
 	# The bundled libdnet is incompatible with the version available in the
 	# tree, so we cannot use the system library here.
 	# nls disabled for split nmap ebuild - flag used for manipulations above
+	export PYTHON=python2.7
 	econf \
 		--enable-ipv6 \
 		--with-zenmap \
