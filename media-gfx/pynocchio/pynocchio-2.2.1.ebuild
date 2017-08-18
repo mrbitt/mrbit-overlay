@@ -8,7 +8,7 @@ PYTHON_COMPAT=( python3_{4,5,6} )
 
 inherit distutils-r1 eutils gnome2-utils xdg ${GIT_ECLASS}
 
-DESCRIPTION="Qt4-based image viewer specialized in manga/comic reading"
+DESCRIPTION="Qt4/Qt5-based image viewer specialized in manga/comic reading"
 HOMEPAGE="https://github.com/pynocchio/pynocchio"
 if [[ ${PV} == *9999* ]];then
 	GIT_ECLASS="git-r3"
