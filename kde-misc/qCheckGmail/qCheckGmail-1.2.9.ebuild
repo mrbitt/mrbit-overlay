@@ -6,7 +6,7 @@ EAPI="5"
 
 DESCRIPTION="is yet another KDE application that uses gmail atom feed to report if a user has new email in their gmail accounts"
 HOMEPAGE="http://mhogomchungu.github.io/qCheckGMail/"
-SRC_URI="https://github.com/mhogomchungu/qCheckGMail/releases/download/${PV}/${PN}-${PV}.tar.bz2"
+SRC_URI="https://github.com/mhogomchungu/qCheckGMail/archive/${PV}.tar.gz -> {P}.tar.gz"
 
 LICENSE="GPL"
 SLOT="0"
