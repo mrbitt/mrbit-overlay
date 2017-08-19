@@ -18,9 +18,14 @@ KEYWORDS="amd64 x86"
 RDEPEND=""
 DEPEND="${RDEPEND}
     dev-qt/qtcore:5
-    "
+    kde-frameworks/knotifications:5"
     
 S=${WORKDIR}/qCheckGMail-${PV}
 #RESTRICT="strip"
 
-
+src_configure() {
+       local mycmakeargs=(
+		-DKF5=ON
+	)
+	cmake-utils_src_configure
+}
