@@ -9,12 +9,12 @@ First, install Layman from the official Portage tree. Must use the use-flag USE=
 
 emerge layman
 
-Then, in the section "overlays" in the /etc/layman/layman.cfg, add the following URL: https://github.com/mrbitt/mrbit-overlay/blob/master/mrbitt-repo.xml
+Then, in the section "overlays" in the /etc/layman/layman.cfg, add the following URL: https://raw.githubusercontent.com/mrbitt/mrbit-overlay/master/mrbitt-repo.xml
 
 If you want to refresh the overlay (and all another overlays), just type:
 
 layman -S 
 
-layman -a mrbit-overlay
+layman -a mrbitt-overlay
 
 That's all, folks!
