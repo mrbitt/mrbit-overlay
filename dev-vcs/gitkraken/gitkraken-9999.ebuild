@@ -32,7 +32,7 @@ LICENSE="custom"
 
 src_prepare() {
 	unpack ./control.tar.gz
-	unpack ./data.tar.gz
+	unpack ./data.tar.xz
 }
 
 src_install() {

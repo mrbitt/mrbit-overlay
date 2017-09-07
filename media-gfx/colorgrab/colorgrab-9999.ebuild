@@ -4,15 +4,14 @@
 
 EAPI=6
 
-inherit eutils cmake-utils gnome2-utils xdg-utils
+inherit git-r3 eutils cmake-utils gnome2-utils xdg-utils
 
 DESCRIPTION="A cross-platform color picker"
 HOMEPAGE="https://github.com/nielssp/colorgrab"
-SRC_URI="https://github.com/nielssp/colorgrab/archive/v${PV}.tar.gz -> ${P}.tar.gz"
+EGIT_REPO_URI="https://github.com/nielssp/colorgrab"
 
 LICENSE="MIT"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 RDEPEND="x11-libs/wxGTK:3.0"
@@ -23,8 +22,6 @@ src_configure() {
 }
 
 src_compile() {
-	sed -i "176s|color|(wxObject*)\\&color|" src/tools/PaletteTool.cpp || die "sed failed" 
-	#sed -i "176s|color|true|" src/tools/PaletteTool.cpp || die "sed failed" 
 	emake
 }
 
