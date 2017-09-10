@@ -41,6 +41,7 @@ src_configure() {
 src_install() {
 	default
 	if ! use compat; then
+	    dosym /usr/sbin/fatlabel /usr/sbin/dosfslabel
 		# Keep fsck -t vfat and mkfs -t vfat working, bug 584980.
 		dosym fsck.fat /usr/sbin/fsck.vfat
 		dosym mkfs.fat /usr/sbin/mkfs.vfat
