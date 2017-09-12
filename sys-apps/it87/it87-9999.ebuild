@@ -42,8 +42,8 @@ pkg_setup() {
 	
 	linux-mod_pkg_setup
 
-	BUILD_PARAMS="-C ${KV_DIR} M=${S}"
-	BUILD_TARGETS="modules"
+	BUILD_PARAMS="-j1 -C ${KV_DIR} M=${S}"
+	BUILD_TARGETS="clean modules"
 	#convert_to_m ${S}/Makefile
 }
 
