@@ -4,10 +4,11 @@
 
 EAPI=5
 
-PYTHON_DEPEND="3"
-SUPPORT_PYTHON_ABIS="1"
+PYTHON_COMPAT=( python{3_2,3_3,3_4,3_5} )
+#PYTHON_DEPEND="3"
+#SUPPORT_PYTHON_ABIS="1"
 
-inherit distutils eutils
+inherit distutils-r1 eutils
 
 DESCRIPTION="A system tray application for the weather status"
 HOMEPAGE="http://opendesktop.org/content/show.php/meteo-qt?content=167733"
@@ -15,12 +16,12 @@ SRC_URI="https://github.com/dglent/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="BSD"
 SLOT="0"
-KEYWORDS="~amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
+KEYWORDS="amd64 ~x86 ~x86-fbsd ~amd64-linux ~x86-linux"
 IUSE=""
 
 RDEPEND="
 	dev-python/urllib3
-	dev-python/lxml
+	dev-python/lxml[${PYTHON_USEDEP}]
 	dev-python/setuptools"
 DEPEND="${RDEPEND}
 	( dev-python/PyQt5[gui,widgets] )
