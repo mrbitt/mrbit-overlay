@@ -22,11 +22,12 @@ RDEPEND="
 DEPEND="${RDEPEND}"
 
 S=${WORKDIR}/ocsstore-release-${PV}
-
+	
 src_compile() {
 	cd ${S}
-    export QT_SELECT := qt5 
-    make
+	#append-cxxflags -std=c++11
+	eqmake5 
+	make clean && make 
 }
 
 src_install() {
