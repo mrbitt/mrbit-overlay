@@ -3,8 +3,8 @@
 # $Id$
 
 EAPI=6
-
-inherit eutils qmake-utils
+PLOCALES="de en"
+inherit eutils l10n qmake-utils
 
 DESCRIPTION="Simple desktop clock that is easy to configure"
 HOMEPAGE="https://github.com/phobi4n/Simple-Arc-Clock"
@@ -21,7 +21,7 @@ DEPEND="
 	 dev-qt/qtwidgets:5 "
 RDEPEND="${DEPEND} "
 
-S="${WORKDIR}/Simple-Arc-Clock-${PV}/"
+S="${WORKDIR}/Simple-Arc-Clock-${PV}"
 
 src_configure() {
 	    export QT_SELECT := qt5 
@@ -36,4 +36,6 @@ src_install() {
   install -D -m644 ./arcclock.svg "${D}/usr/share/pixmaps/"
   dodir /usr/share/applications
   install -D -m644 ./arcclock.desktop "${D}/usr/share/applications/"
+  insinto /usr/share/Simple-Arc-Clock/lang
+  doins "${S}"/ts/arc*.*
 }
