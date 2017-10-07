@@ -8,7 +8,7 @@ inherit eutils vala versionator
 
 DESCRIPTION="A system restore utility for Linux"
 HOMEPAGE="https://github.com/teejee2008/timeshift"
-SRC_URI="https://github.com/teejee2008/${PN}/archive/v17.2.tar.gz -> ${P}.tar.gz"
+SRC_URI="https://github.com/teejee2008/${PN}/archive/v${PV}.tar.gz -> ${P}.tar.gz"
 
 LICENSE="gpl"
 SLOT="0"
@@ -37,7 +37,7 @@ src_compile() {
 	local valaver="$(vala_best_api_version)"
 	#sed -i "14s|valac|valac-${valaver}|g" src/makefile || die "sed failed"
     sed "s|valac|valac-$(vala_best_api_version)|g" -i src/makefile || die "sed failed"
-    sed -i "9s|Caption|X-Caption|g" src/${PN}.desktop || die "sed failed"
+    sed -i "9s|Caption|X-Caption|g" src/${PN}-gtk.desktop || die "sed failed"
 	local valaver="$(vala_best_api_version)"
 	emake
 }
