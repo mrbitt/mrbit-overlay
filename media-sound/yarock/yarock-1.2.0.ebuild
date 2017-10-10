@@ -10,15 +10,15 @@ inherit cmake-utils
 
 MY_PN="Yarock"
 MY_PP=""
-MY_P="${MY_PN}_${PV}${MY_PP}_source"
+MY_P="${MY_PN}_${PV}${MY_PP}_Sources"
 DESCRIPTION="Yarock is Qt4/Qt5 modern music player designed to provide an easy and pretty music collection browser based on cover art."
 HOMEPAGE="http://qt-apps.org/content/show.php?content=129372"
-SRC_URI="http://launchpad.net/yarock/1.x/${PV}/+download/${MY_P}.tar.gz"
+SRC_URI="http://launchpad.net/${PN}/1.x/${PV}/+download/${MY_P}.tar.gz"
 
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
-IUSE="phonon +qt4 qt5 vlc"
+IUSE="phonon qt4 +qt5 +vlc"
 IUSE+="${LANGS// / linguas_}"
 
 DEPEND="
@@ -35,11 +35,12 @@ DEPEND="
 		>=dev-qt/qtwidgets-5.3.2:5
 		>=dev-qt/qtnetwork-5.3.2:5
 		>=dev-qt/qtxml-5.3.2:5
-		>=dev-qt/qtconcurent-5.3.2:5
+		>=dev-qt/qtconcurrent-5.3.2:5
 		>=dev-qt/qtdbus-5.3.2:5
 		>=dev-qt/qtsql-5.3.2:5[sqlite]
 	)
 	media-libs/taglib
+	dev-cpp/htmlcxx
 	phonon? ( media-libs/phonon )
 	vlc? ( media-video/vlc )
 "
@@ -48,7 +49,7 @@ RDEPEND="${DEPEND}"
 
 REQUIRED_USE="|| ( phonon vlc )"
 
-DOCS="CHANGES README"
+DOCS="CHANGES.md README.md"
 
 S="${WORKDIR}/${MY_P}"
 
