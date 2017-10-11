@@ -14,7 +14,7 @@ LICENSE="MPL-2.0"
 SLOT=0
 KEYWORDS="~amd64"
 
-SRC_URI="https://github.com/brave/browser-laptop/releases/download/v${PV}dev/Brave.tar.bz2 -> ${P}.tar.bz2"
+SRC_URI="https://github.com/brave/browser-laptop/releases/download/v${PV}developer/Brave.tar.bz2 -> ${P}.tar.bz2"
 RESTRICT=""
 
 IUSE=""
@@ -41,9 +41,9 @@ pkg_setup() {
 src_install() {
 	declare BRAVE_HOME=/opt/${BRAVE_PN}
 
-	newicon "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}-bin.png"
-	newicon -s 128 "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}-bin.png" || die
-	domenu "${FILESDIR}"/${PN}-bin.desktop
+	newicon "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}.png"
+	newicon -s 128 "${S}/resources/extensions/brave/img/braveAbout.png" "${PN}.png" || die
+	domenu "${FILESDIR}"/${PN}.desktop
 
 	dodir ${BRAVE_HOME%/*}
 	mv "${S}" "${ED}"${BRAVE_HOME} || die
@@ -54,7 +54,7 @@ src_install() {
 	#!/bin/sh
 	unset LD_PRELOAD
 	LD_LIBRARY_PATH="${BRAVE_HOME}/"
-	exec ${BRAVE_HOME}/${PN} "\$@"
+	exec ${BRAVE_HOME}/${BRAVE_PN} "\$@"
 	EOF
 	chmod 0755 "${ED}usr/bin/${PN}"
 
@@ -62,8 +62,6 @@ src_install() {
 	insinto /etc/revdep-rebuild
 	echo "SEARCH_DIRS_MASK=${BRAVE_HOME}" >> ${T}/10${PN}
 	doins "${T}"/10${PN} || die
-	insinto /usr/share/applications
-	doins "${FILESDIR}"/${PN}-bin.desktop
 }
 
 pkg_postinst() {

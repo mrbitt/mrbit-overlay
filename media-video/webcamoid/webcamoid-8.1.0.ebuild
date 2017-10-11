@@ -2,7 +2,7 @@
 # Distributed under the terms of the GNU General Public License v3
 
 EAPI="6"
-PLOCALES="ca de el es et fr gl it ja ko pt ru zh_CN zh_TW"
+PLOCALES="ca de el es et fr gl it ja ko kab nl pt ru zh_CN zh_TW"
 inherit l10n qmake-utils versionator
 
 DESCRIPTION="qt5 Webcamoid, the full webcam and multimedia suite."
@@ -10,33 +10,40 @@ HOMEPAGE="https://github.com/hipersayanX/webcamoid"
 #SRC_URI="https://github.com/hipersayanX/webcamoid/archive/${PV}.tar.gz"
 SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz -> ${P}.tar.gz"
 
-LICENSE="GPLv3"
+LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 x86"
-IUSE="doc headers jack pulseaudio"
+IUSE_AVKYS=( alsa coreaudio ffmpeg gstreamer jack libuvc oss pulseaudio qtaudio v4l2 v4l2utils videoeffects )
+IUSE="${IUSE_AVKYS[@]} doc headers"
 
-RDEPEND="dev-qt/qtwidgets:5
-	 dev-qt/qtgui:5
-	 dev-qt/qtcore:5
-	 dev-qt/qtsvg:5
-	 dev-qt/qtquickcontrols
-	 dev-qt/qtscript:5
-	 dev-qt/qtgui
-     dev-qt/qtnetwork:5
-	 dev-qt/qtopengl:5
-	     sys-devel/bison
-         sys-devel/flex
-         >=media-libs/gstreamer-1.6.0
-	     >=media-video/ffmpeg-2.8.0:=
-         media-plugins/frei0r-plugins
-         media-libs/libv4l
+REQUIRED_USE="
+	v4l2utils? ( v4l2 )"
+
+RDEPEND="
+	dev-qt/qtconcurrent:5
+	dev-qt/qtcore:5
+	dev-qt/qtdeclarative:5
+	dev-qt/qtgui:5
+	dev-qt/qtnetwork:5
+	dev-qt/qtopengl:5
+	dev-qt/qtquickcontrols:5
+	dev-qt/qtsvg:5
+	dev-qt/qtwidgets:5
+	ffmpeg? ( >=media-video/ffmpeg-3.1.0:= )
+	gstreamer? ( >=media-libs/gstreamer-1.6.0 )
 	jack? ( virtual/jack )
-	pulseaudio? ( media-sound/pulseaudio ) "
+	libuvc? ( media-libs/libuvc )
+	pulseaudio? ( media-sound/pulseaudio )
+	qtaudio? ( dev-qt/qtmultimedia:5 )
+	v4l2? ( media-libs/libv4l )
+"
 
 DEPEND="${RDEPEND}
-        >=sys-kernel/linux-headers-3.6
-	    virtual/pkgconfig
-	  doc? ( dev-qt/qdoc )"
+	>=sys-kernel/linux-headers-3.6
+	virtual/pkgconfig
+	doc? ( dev-qt/qdoc )
+"
+
 
 DOCS=( AUTHORS CONTRIBUTING.md ChangeLog README.md THANKS )
 
@@ -68,11 +75,22 @@ src_prepare() {
 }
 
 src_compile() {
-    eqmake5 "PREFIX=/usr" \
-		"BUILDDOCS=$(usex doc 1 0)" \
+   local myqmakeargs=(
+		"PREFIX=/usr"
+		"BUILDDOCS=$(usex doc 1 0)"
 		"INSTALLDEVHEADERS=$(usex headers 1 0)"
-    #eqmake5  Webcamoid.pro
-    #emake || die
+		"LIBDIR=/usr/$(get_libdir)"
+		"NOAVFOUNDATION=1"
+		"NODSHOW=1"
+		"NOVCAMWIN=1"
+		"NOWASAPI=1"
+	)
+
+	for x in ${IUSE_AVKYS[@]}; do
+		use ${x} || myqmakeargs+=( "NO${x^^}=1" )
+	done
+
+	eqmake5 ${myqmakeargs[@]}
 }
 
 src_install() {
