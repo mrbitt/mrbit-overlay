@@ -14,7 +14,7 @@ LICENSE="MPL-2.0"
 SLOT=0
 KEYWORDS="~amd64"
 
-SRC_URI="https://github.com/brave/browser-laptop/releases/download/v${PV}developer/Brave.tar.bz2 -> ${P}.tar.bz2"
+SRC_URI="https://github.com/brave/browser-laptop/releases/download/v${PV}beta/${PN}-beta.tar.bz2 -> ${P}.tar.bz2"
 RESTRICT=""
 
 IUSE=""
@@ -27,7 +27,7 @@ DEPEND="${RDEPEND}
 	gnome-base/gconf
 "
 
-S="${WORKDIR}/Brave-linux-x64"
+S="${WORKDIR}/${PN}-beta-linux-x64"
 
 pkg_setup() {
 	ERROR_PID_NS="PID_NS is required for sandbox to work"

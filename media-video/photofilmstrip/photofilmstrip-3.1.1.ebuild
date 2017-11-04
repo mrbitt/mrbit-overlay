@@ -17,8 +17,8 @@ SLOT="0"
 KEYWORDS="~amd64 ~x86"
 IUSE="cairo sdl"
 
-RDEPEND="dev-python/wxpython:2.8[cairo?,${PYTHON_USEDEP}]
-	virtual/python-imaging[${PYTHON_USEDEP}]
+RDEPEND="dev-python/wxpython:3.0[cairo?,${PYTHON_USEDEP}]
+	dev-python/pillow[${PYTHON_USEDEP}]
 	media-video/mplayer[encode]
 	sdl? ( dev-python/pygame[${PYTHON_USEDEP}] )"
 
@@ -32,8 +32,6 @@ DEPEND="${RDEPEND}"
 DOCS=( CHANGES COPYING README )
 
 src_prepare() {
-	# Remove unneeded icon resources update needing running X
-	epatch "${FILESDIR}/${P}-PIL_modules_imports_fix.patch"
 	sed -i \
         -e '/self\._make_resources\(\)/d' \
         setup.py
@@ -43,8 +41,6 @@ src_prepare() {
         -e '/^Version.*/d' \
         data/photofilmstrip.desktop
         
-	sed -i "s|import\ Image|from\ PIL\ import\ Image|" "${PN}/core/PILBackend.py" || sed error
-	
 	distutils-r1_src_prepare
 }
 

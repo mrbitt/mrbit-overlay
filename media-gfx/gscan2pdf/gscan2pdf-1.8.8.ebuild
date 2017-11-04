@@ -12,7 +12,7 @@ SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
 LICENSE="GPL-3"
 SLOT="0"
 KEYWORDS="amd64 ~x86"
-
+IUSE="+gocr +tesseract -cuneiform" 
 # OCR tests fail with tesseract[opencl], not fixed by addpredict
 # and others on Wayland and the console
 RESTRICT="test"
@@ -29,6 +29,7 @@ RDEPEND="
 	dev-perl/Gtk2-ImageView
 	dev-perl/Gtk2
 	dev-perl/HTML-Parser
+	dev-perl/Image-Sane
 	dev-perl/Locale-gettext
 	dev-perl/List-MoreUtils
 	dev-perl/Log-Log4perl
@@ -48,6 +49,9 @@ RDEPEND="
 	media-gfx/gtkimageview
 	media-gfx/imagemagick[png,tiff,perl]
 	media-gfx/sane-backends
+tesseract? ( app-text/tesseract[osd,tiff] )
+gocr? (	app-text/gocr )
+cuneiform? ( app-text/cuneiform )
 	media-libs/tiff"
 
 mydoc="History"
