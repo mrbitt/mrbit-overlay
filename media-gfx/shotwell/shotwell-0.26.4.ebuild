@@ -19,6 +19,7 @@ IUSE=""
 
 RDEPEND="
 	app-text/gnome-doc-utils
+	media-libs/gexiv2
 	>=dev-db/sqlite-3.5.9:3
 	>=dev-libs/glib-2.30.0:2
 	>=dev-libs/json-glib-0.7.6

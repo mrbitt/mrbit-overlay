@@ -1,0 +1,339 @@
+Description: Fix BUILD_MATH flag, in order to fix broken cpugauge and
+ logscales in graphs.
+Origin: upstream, https://github.com/brndnmtthws/conky/commit/2fab2d38207d73533d29062883b284d80e5325a2
+Bug: https://github.com/brndnmtthws/conky/issues/128
+Bug-Debian: https://bugs.debian.org/809546
+Last-Update: 2016-01-06
+
+
+From a85ffd5d0dcb07946fc19bad8ea5789e3358bbb3 Mon Sep 17 00:00:00 2001
+From: mxmlnkn <mxmlnkn@github.de>
+Date: Fri, 11 Dec 2015 01:39:59 +0100
+Subject: [PATCH 1/2] logscale not working was caused by using MATH instead of
+ BUILD_MATH
+
+---
+ src/conky.cc    | 10 +++++-----
+ src/net_stat.cc | 17 +++++++++++++++++
+ src/specials.cc | 54 ++++++++++++++++++++++++++++++++++++++++++++++++++----
+ src/weather.cc  |  4 ++--
+ 4 files changed, 74 insertions(+), 11 deletions(-)
+
+--- a/src/conky.cc
++++ b/src/conky.cc
+@@ -281,7 +281,7 @@
+ #endif /* BUILD_MYSQL */
+ #ifdef BUILD_WEATHER_METAR
+                 << _("  * Weather (METAR)\n")
+-#endif /* BUILD_WEATHER_METAR */                
++#endif /* BUILD_WEATHER_METAR */
+ #ifdef BUILD_WEATHER_XOAP
+                 << _("  * Weather (XOAP)\n")
+ #endif /* BUILD_WEATHER_XOAP */
+@@ -1501,10 +1501,10 @@
+ 				{
+ 					int h, by = 0;
+ 					unsigned long last_colour = current_color;
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 					float angle, px, py;
+ 					double usage, scale;
+-#endif /* MATH */
++#endif /* BUILD_MATH */
+ 
+ 					if (cur_x - text_start_x > mw && mw > 0) {
+ 						break;
+@@ -1530,7 +1530,7 @@
+ 					XDrawArc(display, window.drawable, window.gc,
+ 							cur_x, by, w, h * 2, 0, 180*64);
+ 
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 					usage = current->arg;
+ 					scale = current->scale;
+ 					angle = M_PI * usage / scale;
+@@ -1539,7 +1539,7 @@
+ 
+ 					XDrawLine(display, window.drawable, window.gc,
+ 							cur_x + (w/2.), by+(h), (int)(px), (int)(py));
+-#endif /* MATH */
++#endif /* BUILD_MATH */
+ 
+ 					if (h > cur_y_add
+ 							&& h > font_h) {
+@@ -1683,16 +1683,15 @@
+ 						cur_x = tmp_x;
+ 						cur_y = tmp_y;
+ 					}
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 					if (show_graph_scale.get(*state) && (current->show_scale == 1)) {
+ 						int tmp_x = cur_x;
+ 						int tmp_y = cur_y;
+ 						char *tmp_str;
+ 						cur_x += font_ascent() / 2;
+ 						cur_y += font_h / 2;
+-						tmp_str = (char *)
+-							calloc(log10(floor(current->scale)) + 4,
+-									sizeof(char));
++						const int tmp_str_len = 64;
++						tmp_str = (char *) calloc(tmp_str_len, sizeof(char));
+ 						sprintf(tmp_str, "%.1f", current->scale);
+ 						draw_string(tmp_str);
+ 						free(tmp_str);
+@@ -2007,7 +2006,7 @@
+ 		/* there is some extra space for borders and outlines */
+ 		int border_total = get_border_total();
+ 
+-		XClearArea(display, window.window, text_start_x - border_total, 
++		XClearArea(display, window.window, text_start_x - border_total,
+ 			text_start_y - border_total, text_width + 2*border_total,
+ 			text_height + 2*border_total, exposures ? True : 0);
+ 	}
+@@ -2142,7 +2141,7 @@
+ 							XFreePixmap(display, window.back_buffer);
+ 							window.back_buffer = XCreatePixmap(display,
+ 								window.window, window.width, window.height, DefaultDepth(display, screen));
+-						
++
+ 							if (window.back_buffer != None) {
+ 								window.drawable = window.back_buffer;
+ 							} else {
+@@ -2721,7 +2720,7 @@
+ 	l.replace(-2);
+ 	if(l.type(-1) != lua::TSTRING)
+ 		throw conky::error(_("missing text block in configuration"));
+-	
++
+ 	/* Remove \\-\n. */
+ 	l.gsub(l.tocstring(-1), "\\\n", "");
+ 	l.replace(-2);
+--- a/src/net_stat.cc
++++ b/src/net_stat.cc
+@@ -272,8 +272,19 @@
+ #endif /* __linux__ */
+ 
+ #ifdef BUILD_X11
++
++/**
++ * This function is called periodically to update the download and upload graphs
++ *
++ * - evaluates argument strings like 'eth0 50,120 #FFFFFF #FF0000 0 -l'
++ * - sets the obj->data.opaque pointer to the interface specified
++ *
++ * @param[out] obj  struct which will hold evaluated arguments
++ * @param[in]  arg  argument string to evaluate
++ **/
+ void parse_net_stat_graph_arg(struct text_object *obj, const char *arg, void *free_at_crash)
+ {
++	/* scan arguments and get interface name back */
+ 	char *buf = 0;
+ 	buf = scan_graph(obj, arg, 0);
+ 
+@@ -286,6 +297,12 @@
+ 	obj->data.opaque = get_net_stat(DEFAULTNETDEV, obj, free_at_crash);
+ }
+ 
++/**
++ * returns the download speed in kiB/s for the interface referenced by obj
++ *
++ * @param[in] obj struct containting a member data, which is a struct
++ *                containing a void * to a net_stat struct
++ **/
+ double downspeedgraphval(struct text_object *obj)
+ {
+ 	struct net_stat *ns = (struct net_stat *)obj->data.opaque;
+--- a/src/specials.cc
++++ b/src/specials.cc
+@@ -57,7 +57,7 @@
+ 										std::numeric_limits<int>::max(), 0, false);
+ 	conky::range_config_setting<int> default_graph_height("default_graph_height", 0,
+ 										std::numeric_limits<int>::max(), 25, false);
+-	
++
+ 	conky::range_config_setting<int> default_gauge_width("default_gauge_width", 0,
+ 										std::numeric_limits<int>::max(), 40, false);
+ 	conky::range_config_setting<int> default_gauge_height("default_gauge_height", 0,
+@@ -178,6 +178,18 @@
+ 		obj->data.s = strndup(args, DEFAULT_TEXT_BUFFER_SIZE);
+ }
+ 
++/**
++ * parses for [height,width] [color1 color2] [scale] [-t] [-l]
++ *
++ * -l will set the showlog flag, enabling logarithmic graph scales
++ * -t will set the tempgrad member to true, enabling temperature gradient colors
++ *
++ * @param[out] obj  struct in which to save width, height and other options
++ * @param[in]  args argument string to parse
++ * @param[in]  defscale default scale if no scale argument given
++ * @return string to the command argument, NULL if argument didn't start with
++ *         a string, but a number or if invalid argument string
++ **/
+ char *scan_graph(struct text_object *obj, const char *args, double defscale)
+ {
+ 	struct graph *g;
+@@ -196,19 +208,33 @@
+ 	g->scale = defscale;
+ 	g->tempgrad = FALSE;
+ 	if (args) {
++		/* set tempgrad to true, if '-t' specified.
++		 * It doesn#t matter where the argument is exactly. */
+ 		if (strstr(args, " " TEMPGRAD) || strncmp(args, TEMPGRAD, strlen(TEMPGRAD)) == 0) {
+ 			g->tempgrad = TRUE;
+ 		}
++		/* set showlog-flag, if '-l' specified
++		 * It doesn#t matter where the argument is exactly. */
+ 		if (strstr(args, " " LOGGRAPH) || strncmp(args, LOGGRAPH, strlen(LOGGRAPH)) == 0) {
+ 			g->flags |= SF_SHOWLOG;
+ 		}
++
++		/* all the following functions try to interpret the beginning of a
++		 * a string with different formaters. If successfuly the return from
++		 * this whole function */
++
++		/* interpret the beginning(!) of the argument string as:
++		 * '[height],[width] [color1] [color2] [scale]'
++		 * This means parameters like -t and -l may not be in the beginning */
+ 		if (sscanf(args, "%d,%d %x %x %lf", &g->height, &g->width, &g->first_colour, &g->last_colour, &g->scale) == 5) {
+ 			return NULL;
+ 		}
++		/* [height],[width] [color1] [color2] */
+ 		g->scale = defscale;
+ 		if (sscanf(args, "%d,%d %x %x", &g->height, &g->width, &g->first_colour, &g->last_colour) == 4) {
+ 			return NULL;
+ 		}
++		/* [command] [height],[width] [color1] [color2] [scale] */
+ 		if (sscanf(args, "%1023s %d,%d %x %x %lf", buf, &g->height, &g->width, &g->first_colour, &g->last_colour, &g->scale) == 6) {
+ 			return strndup(buf, text_buffer_size.get(*state));
+ 		}
+@@ -216,6 +242,7 @@
+ 		if (sscanf(args, "%1023s %d,%d %x %x", buf, &g->height, &g->width, &g->first_colour, &g->last_colour) == 5) {
+ 			return strndup(buf, text_buffer_size.get(*state));
+ 		}
++
+ 		buf[0] = '\0';
+ 		g->height = 25;
+ 		g->width = 0;
+@@ -233,6 +260,7 @@
+ 		if (sscanf(args, "%1023s %x %x", buf, &g->first_colour, &g->last_colour) == 3) {
+ 			return strndup(buf, text_buffer_size.get(*state));
+ 		}
++
+ 		buf[0] = '\0';
+ 		g->first_colour = 0;
+ 		g->last_colour = 0;
+@@ -261,8 +289,6 @@
+ 			buf[_size] = 0;
+ 		}
+ 
+-#undef g
+-
+ 		return strndup(buf, text_buffer_size.get(*state));
+ 	}
+ 
+@@ -286,6 +312,14 @@
+ 	return newnode;
+ }
+ 
++/**
++ * expands the current global linked list specials to special_count elements
++ *
++ * increases special_count
++ * @param[out] buf is set to "\x01\x00" not sure why ???
++ * @param[in]  t   special type enum, e.g. alignc, alignr, fg, bg, ...
++ * @return pointer to the newly inserted special of type t
++ **/
+ struct special_t *new_special(char *buf, enum special_types t)
+ {
+ 	special_t* current;
+@@ -295,6 +329,7 @@
+ 	if(!specials)
+ 		specials = new_special_t_node();
+ 	current = specials;
++	/* allocate special_count linked list elements */
+ 	for(int i=0; i < special_count; i++) {
+ 		if(current->next == NULL)
+ 			current->next = new_special_t_node();
+@@ -380,6 +415,9 @@
+ 	}
+ }
+ 
++/**
++ * Adds value f to graph possibly truncating and scaling the graph
++ **/
+ static void graph_append(struct special_t *graph, double f, char showaslog)
+ {
+ 	int i;
+@@ -388,7 +426,7 @@
+ 	if (!graph->graph) return;
+ 
+ 	if (showaslog) {
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 		f = log10(f + 1);
+ #endif
+ 	}
+@@ -402,7 +440,7 @@
+ 		graph->graph[i] = graph->graph[i - 1];
+ 	}
+ 	graph->graph[0] = f;	/* add new data */
+-	
++
+ 	if(graph->scaled) {
+ 		graph->scale = *std::max_element(graph->graph + 0, graph->graph + graph->graph_width);
+ 		if(graph->scale < 1e-47) {
+@@ -442,6 +480,14 @@
+ 	*p = '\0';
+ }
+ 
++/**
++ * Creates a visual graph and/or appends val to the graph / plot
++ *
++ * @param[in] obj struct containing all relevant flags like width, height, ...
++ * @param[in] buf buffer for ascii art graph in console
++ * @param[in] buf_max_size maximum length of buf
++ * @param[in] val value to plot i.e. to add to plot
++ **/
+ void new_graph(struct text_object *obj, char *buf, int buf_max_size, double val)
+ {
+ 	struct special_t *s = 0;
+@@ -452,6 +498,7 @@
+ 
+ 	s = new_special(buf, GRAPH);
+ 
++	/* set graph (special) width to width in obj */
+ 	s->width = g->width;
+ 	if (s->width) s->graph_width = s->width;
+ 
+@@ -486,12 +533,12 @@
+ 		s->show_scale = 1;
+ 	}
+ 	s->tempgrad = g->tempgrad;
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 	if (g->flags & SF_SHOWLOG) {
+ 		s->scale = log10(s->scale + 1);
+ 	}
+ #endif
+-	graph_append(s, val, g->flags & SF_SHOWLOG);
++	graph_append(s, val, g->flags);
+ 
+ 	if (not out_to_x.get(*state))
+ 		new_graph_in_shell(s, buf, buf_max_size);
+--- a/src/weather.cc
++++ b/src/weather.cc
+@@ -159,11 +159,11 @@
+ 	const float b = 237.7f;
+ 
+ 	float diff = a*(dew_point/(b+dew_point)-air/(b+air));
+-#ifdef MATH
++#ifdef BUILD_MATH
+ 	return (int)(100.f*expf(diff));
+ #else
+ 	return (int)(16.666667163372f*(6.f+diff*(6.f+diff*(3.f+diff))));
+-#endif /* MATH */
++#endif /* BUILD_MATH */
+ }
+ 
+ #ifdef BUILD_WEATHER_XOAP

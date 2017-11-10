@@ -24,7 +24,7 @@ SRC_URI=""
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS=""
-IUSE="xcomposite"
+IUSE="crypt xcomposite desktop_manager gtk3"
 
 
 # Installation instructions (from BZR source) and dependencies are listed here:
@@ -33,51 +33,32 @@ IUSE="xcomposite"
 RDEPEND="
 	dev-libs/dbus-glib
 	dev-libs/glib:2
-	dev-libs/libxml2
-	gnome-base/librsvg
+	dev-libs/libxml2:2
+	gnome-base/librsvg:2
+	net-misc/curl
 	sys-apps/dbus
 	x11-libs/cairo
-	x11-libs/gtk+:2
+	x11-libs/pango
+	!gtk3? ( x11-libs/gtk+:2 )
 	x11-libs/gtkglext
 	x11-libs/libXrender
-	net-misc/curl
-	x11-libs/pango
+	gtk3? ( x11-libs/gtk+:3 )
+	crypt? ( sys-libs/glibc )
 	xcomposite? (
 		x11-libs/libXcomposite
 		x11-libs/libXinerama
 		x11-libs/libXtst
 	)
 "
-
-
 DEPEND="${RDEPEND}
 	dev-util/intltool
-	dev-util/pkgconfig
+	virtual/pkgconfig
 	sys-devel/gettext
 "
-
-
-pkg_setup()
-{
-	ewarn ""
-	ewarn ""
-	ewarn "You are installing from a LIVE EBUILD, NOT AN OFFICIAL RELEASE."
-	ewarn "   Thus, it may FAIL to build properly."
-	ewarn ""
-	ewarn "This ebuild is not supported by a Gentoo developer."
-	ewarn "   So, please do NOT report bugs to Gentoo's bugzilla."
-	ewarn "   Instead, report all bugs to write2david@gmail.com"
-	ewarn ""
-	ewarn ""
-
-}
-
 
 src_prepare() {
 	bzr_src_prepare
 }
-
-
 
 src_configure() {
 
@@ -93,21 +74,24 @@ src_configure() {
 
 	# Adding the "-DLIB_SUFFIX" flag b/c https://bugs.launchpad.net/cairo-dock-core/+bug/1073734	
 
-
+    mycmakeargs=(
+		`use gtk3 && echo "-Dforce-gtk2=OFF" || echo "-Dforce-gtk2=ON"`
+		`use desktop_manager && echo "-Denable-desktop-manager=ON" || echo "-Denable-desktop-manager=OFF"`
+	)
     mycmakeargs="${mycmakeargs} -DROOT_PREFIX=${D} -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX=" 
     cmake-utils_src_configure
 }
 
-
 pkg_postinst() {
-	ewarn ""
-	ewarn ""
-	ewarn "You have installed from a LIVE EBUILD, NOT AN OFFICIAL RELEASE."
-	ewarn "   Thus, it may FAIL to run properly."
-	ewarn ""
-	ewarn "This ebuild is not supported by a Gentoo developer."
-	ewarn "   So, please do NOT report bugs to Gentoo's bugzilla."
-	ewarn "   Instead, report all bugs to write2david@gmail.com"
-	ewarn ""
-	ewarn ""
+	elog "Additional plugins are available to extend the functionality"
+	elog "of Cairo-Dock. It is recommended to install at least"
+	elog "x11-pluings/cairo-dock-plugins."
+	elog
+	elog "Cairo-Dock is an app that draws on a RGBA GLX visual."
+	elog "Some users have noticed that if the dock is launched,"
+	elog "severals qt4-based applications could crash, like skype or vlc."
+	elog "If you have this problem, add the following line into your bashrc :"
+	echo
+	elog "alias vlc='export XLIB_SKIP_ARGB_VISUALS=1; vlc; unset XLIB_SKIP_ARGB_VISUALS'"
+	elog "see http://www.qtforum.org/article/26669/qt4-mess-up-the-opengl-context.html for more details."
 }

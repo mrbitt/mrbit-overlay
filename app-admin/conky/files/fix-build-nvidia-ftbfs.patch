@@ -1,0 +1,16 @@
+Description: Fix build failure when compiled with -DBUILD_NVIDIA=ON
+Forwarded: https://github.com/brndnmtthws/conky/pull/248
+Author: Vincent Cheng <vcheng@debian.org>
+Last-Update: 2016-05-03
+
+--- a/src/nvidia.cc
++++ b/src/nvidia.cc
+@@ -232,7 +232,7 @@
+ 					0,
+ 					
+ 					NV_CTRL_THERMAL_COOLER_SPEED,
+-					NV_CTRL_THERMAL_COOLER_CURRENT_LEVEL,		// NOTE: not sure if this should be NV_CTRL_THERMAL_COOLER_LEVEL instead
++					NV_CTRL_THERMAL_COOLER_LEVEL,
+ 
+ 					NV_CTRL_GPU_CURRENT_PERFORMANCE_LEVEL,
+ 					NV_CTRL_IMAGE_SETTINGS,

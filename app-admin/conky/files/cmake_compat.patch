@@ -1,0 +1,16 @@
+Description: Fix FTBFS with cmake <= 3.3
+Origin: upstream, https://github.com/brndnmtthws/conky/commit/ce08b9fe7b20454870a4aae20b442da24ce51dcd
+Last-Update: 2015-12-24
+
+--- a/cmake/ConkyPlatformChecks.cmake
++++ b/cmake/ConkyPlatformChecks.cmake
+@@ -141,7 +141,8 @@
+ endif(BUILD_MYSQL)
+ 
+ if(BUILD_WLAN)
+-	check_include_file(iwlib.h IWLIB_H -D_GNU_SOURCE)
++	set(CMAKE_REQUIRED_DEFINITIONS -D_GNU_SOURCE)
++	check_include_files(iwlib.h IWLIB_H)
+ 	if(NOT IWLIB_H)
+ 		message(FATAL_ERROR "Unable to find iwlib.h")
+ 	endif(NOT IWLIB_H)

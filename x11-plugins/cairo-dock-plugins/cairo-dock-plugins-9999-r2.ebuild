@@ -28,52 +28,49 @@ KEYWORDS=""
 # The next line has been stripped down somewhat from a longer version
 # used in the ebuilds of other overlays.  For more info, see:
 # https://bugs.launchpad.net/cairo-dock-plug-ins/+bug/922981/comments/8
-IUSE="alsa exif gmenu terminal vala webkit xfce xgamma xklavier"
+IUSE="alsa exif gmenu gtk3 kde terminal gnote vala webkit xfce xgamma xklavier twitter indicator3 zeitgeist mail"
 
 # Installation instructions (from BZR source) and dependencies are listed here:
 # http://glx-dock.org/ww_page.php?p=From%20BZR&lang=en
 
 RDEPEND="
-	~x11-misc/cairo-dock-${PV}
-	x11-libs/cairo
-	gnome-base/librsvg
+	dev-libs/dbus-glib
+	dev-libs/glib:2
 	dev-libs/libxml2
+	gnome-base/librsvg:2
+	sys-apps/dbus
+	x11-libs/cairo
+	!gtk3? ( x11-libs/gtk+:2 )
+	x11-libs/gtkglext
+	~x11-misc/cairo-dock-${PV}
+	gtk3? ( x11-libs/gtk+:3 )
 	alsa? ( media-libs/alsa-lib )
 	exif? ( media-libs/libexif )
 	gmenu? ( gnome-base/gnome-menus )
-	terminal? ( x11-libs/vte )
-	webkit? ( >=net-libs/webkit-gtk-1.0 )
+	kde? ( kde-frameworks/kdelibs )
+	terminal? ( x11-libs/vte:= )
+	vala? ( dev-lang/vala:= )
+	webkit? ( >=net-libs/webkit-gtk-1.4.0:3 )
 	xfce? ( xfce-base/thunar )
 	xgamma? ( x11-libs/libXxf86vm )
 	xklavier? ( x11-libs/libxklavier )
-	vala? ( dev-lang/vala:0.12 )
+	gnote? ( app-misc/gnote )
+	twitter? ( dev-python/oauth dev-python/simplejson )
+	indicator3? ( dev-libs/libindicator:= )
+	zeitgeist? ( dev-libs/libzeitgeist )
+	mail? ( net-libs/libetpan )
 "
 
 DEPEND="${RDEPEND}
 	dev-util/intltool
 	sys-devel/gettext
-	dev-util/pkgconfig
-	dev-libs/libdbusmenu[gtk]
+	virtual/pkgconfig
+	dev-libs/libdbusmenu[gtk3]
 "
-
-pkg_setup()
-{
-	ewarn ""
-	ewarn ""
-	ewarn "You are installing from a LIVE EBUILD, NOT AN OFFICIAL RELEASE."
-	ewarn "   Thus, it may FAIL to build properly."
-	ewarn ""
-	ewarn "This ebuild is not supported by a Gentoo developer."
-	ewarn "   So, please do NOT report bugs to Gentoo's bugzilla."
-	ewarn "   Instead, report all bugs to write2david@gmail.com"
-	ewarn ""
-	ewarn ""
-}
 
 src_prepare() {
 	bzr_src_prepare
 }
-
 
 src_configure() {
 
@@ -96,20 +93,12 @@ src_configure() {
 
 
 	# Adding the "-DLIB_SUFFIX" flag b/c https://bugs.launchpad.net/cairo-dock-core/+bug/1073734	
-
+    mycmakeargs=(
+		# broken with 0.99.x (as of cairo-dock 3.3.2)
+		"-Denable-upower-support=OFF"
+		"-Denable-sound-effects=OFF"
+		"-Denable-alsa-mixer=OFF"
+		`use gtk3 && echo "-Dforce-gtk2=OFF" || echo "-Dforce-gtk2=ON"` )
 	mycmakeargs="${mycmakeargs} -DROOT_PREFIX=${D} -DCMAKE_INSTALL_PREFIX=/usr -DLIB_SUFFIX="
 	cmake-utils_src_configure
-}
-
-pkg_postinst() {
-	ewarn ""
-	ewarn ""
-	ewarn "You have installed from a LIVE EBUILD, NOT AN OFFICIAL RELEASE."
-	ewarn "   Thus, it may FAIL to run properly."
-	ewarn ""
-	ewarn "This ebuild is not supported by a Gentoo developer."
-	ewarn "   So, please do NOT report bugs to Gentoo's bugzilla."
-	ewarn "   Instead, report all bugs to write2david@gmail.com"
-	ewarn ""
-	ewarn ""
 }
