@@ -38,6 +38,7 @@ RDEPEND="
 		dev-qt/qtsql:5[sqlite]
 		dev-qt/qtwebkit:5
 		dev-qt/qtwidgets:5
+		dev-qt/linguist-tools:5
 		dev-qt/qtxml:5
 	)
 	dev-qt/qtsingleapplication[X,qt4(+)?,qt5(-)?]
