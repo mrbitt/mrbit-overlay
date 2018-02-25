@@ -28,6 +28,12 @@ DEPEND="media-libs/glu
         dev-qt/designer:5
         sys-devel/gcc" 
 
+src_prepare() {
+  rm *.tar.gz
+  cd qcad-${PV}
+  sed -e 's|$${QT_VERSION}|5.5.0|g' \
+      -i src/3rdparty/3rdparty.pro # Don't require specific Qt version
+}
  src_compile() {
 	    eqmake5  ${PN}.pro
 	    emake || die
