@@ -8,9 +8,8 @@ inherit eutils
 DESCRIPTION="Burn images to SD cards & USB drives, safe & easy."
 HOMEPAGE="http://www.etcher.io"
 SRC_URI="${SRC_URI}
-	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/${P}-linux-x86_64.zip )"
+	amd64? ( https://github.com/resin-io/etcher/releases/download/v${PV}/${PN}-electron-${PV}-linux-x64.zip )"
 	#x86? ( https://github.com/resin-io/etcher/releases/download/v${PV}/Etcher-${PV}-linux-x86.zip )"
-	
 LICENSE="apache"
 SLOT="0"
 KEYWORDS="~amd64 ~x86"
@@ -50,7 +49,7 @@ src_install() {
     [ "$ARCH" == "x86_64" ] && a=x86_64
 	
 	dobin ${PN}
-	install -D "etcher-${PV}-$a.AppImage" "${D}/usr/share/etcher/Etcher-${PV}-linux-$a.AppImage" || die
+	install -D "etcher-electron-${PV}-$a.AppImage" "${D}/usr/share/etcher/Etcher-${PV}-linux-$a.AppImage" || die
     install --mode=644 -D "${FILESDIR}/etcher.png" "${D}/usr/share/etcher/etcher.png" || die
     install -D "${FILESDIR}/Etcher.desktop" "${D}/usr/share/applications/Etcher.desktop" || die
 }
