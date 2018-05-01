@@ -25,7 +25,7 @@ DEPEND="qt4? (
 	    
 RDEPEND="${DEPEND}"
 
-S="${WORKDIR}"/tools-${PV}
+S="${WORKDIR}"/${P}
 
 src_prepare() {
 	echo "VERSION = ${PV}" > libguytools_version.pro.inc

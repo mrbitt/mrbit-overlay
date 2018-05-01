@@ -26,7 +26,8 @@ CDEPEND="app-arch/bzip2
 	dev-qt/qtgui:4
 	sys-apps/util-linux
 	sys-fs/e2fsprogs
-	sys-libs/zlib"
+	sys-libs/zlib
+	app-arch/zstd"
 RDEPEND="${CDEPEND}
 	>=app-backup/fsarchiver-${MIN_PV}[lzma,lzo]"
 DEPEND="${CDEPEND}"

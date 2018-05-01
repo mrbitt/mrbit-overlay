@@ -15,7 +15,8 @@ SRC_URI="https://sourceforge.net/projects/${PN}/files/${PN}/LatestSource/${P}.ta
 LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="~x86 ~arm amd64"
-IUSE="debug +hdparm +udisk +smart +parted qt4 +qt5"
+#broken with the latest libewf, see: https://sourceforge.net/p/guymager/feature-requests/11/
+IUSE="debug +hdparm +udisk +smart libewf +parted qt4 +qt5"
 
 RDEPEND="qt4? (
 				dev-qt/qtcore:4
@@ -36,10 +37,12 @@ DEPEND="${RDEPEND}
 	app-forensics/sleuthkit
 	app-forensics/libewf
 	sys-libs/zlib
+	sys-auth/polkit
 	sys-process/procps
 	hdparm? ( sys-apps/hdparm )
 	udisk? ( sys-fs/udisks )
 	smart? ( sys-apps/smartmontools )
+	libewf? ( app-forensics/libewf )
 	parted? ( sys-block/parted ) "
 
 S="${WORKDIR}/${P}"
@@ -47,13 +50,14 @@ S="${WORKDIR}/${P}"
 PATCHES=(
 	# "${FILESDIR}/systemlibs.patch"
 	# "${FILESDIR}/support_new_libewf.patch"
+	# "${FILESDIR}/libewf201711.patch"
 )
 
 src_configure() {
 		if use qt4 ; then
-			eqmake4
+			eqmake4 DEFINES*="ENABLE_LIBEWF=$(usex libewf '1' '0')"
 	    else
-			eqmake5
+			eqmake5 DEFINES*="ENABLE_LIBEWF=$(usex libewf '1' '0')"
 	    fi
 }
 
@@ -75,7 +79,8 @@ src_install() {
 	insinto /etc/guymager
 	doins guymager.cfg
 
-	sed -i -e "s:guymager_128.png:guymager:" ${PN}.desktop || die
-	newicon guymager_128.png ${PN}.png ||  die "doicons failed!"
+	#sed -i -e "s:guymager_128.png:guymager:" ${PN}.desktop || die
+	#newicon guymager_128.png ${PN}.png ||  die "doicons failed!"
+	doicon guymager_128.png
 	domenu guymager.desktop
 }
