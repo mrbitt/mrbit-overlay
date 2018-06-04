@@ -22,6 +22,7 @@ DEPEND="
 	media-libs/tiff
 	media-libs/lcms:2"
 RDEPEND="${DEPEND}
+    media-libs/libraw
 	media-libs/exiftool
 	media-gfx/ufraw[gtk]
 	media-gfx/dcraw
@@ -43,7 +44,7 @@ src_install() {
 	cd ${WORKDIR}/fotoxx-maps-1.1
 	emake DESTDIR="${D}" install
 	cd ${WORKDIR}/${P}
-	newmenu desktop ${PN}.desktop
+	#newmenu desktop ${PN}.desktop
 	rm -f "${D}"/usr/share/doc/${PF}/*.man
 	docompress -x /usr/share/doc
 }
