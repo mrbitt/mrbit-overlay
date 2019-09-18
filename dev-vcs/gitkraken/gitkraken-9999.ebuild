@@ -28,11 +28,12 @@ DEPEND="${RDEPEND}
          dev-lang/python
          virtual/libudev"
 
-LICENSE="custom"
+LICENSE="EULA"
 
 src_prepare() {
 	unpack ./control.tar.gz
 	unpack ./data.tar.xz
+	default
 }
 
 src_install() {
